@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { usePortfolio } from '../context/PortfolioContext';
-import { ArrowUpRight, Sparkles, Check, ArrowRight, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { ArrowUpRight, Sparkles, ArrowRight, X } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ServicesSectionProps {
   onInquireService: (serviceName: string) => void;
@@ -9,8 +9,15 @@ interface ServicesSectionProps {
 
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onInquireService }) => {
   const { services } = usePortfolio();
-  // Default to first service expanded
-  const [activeId, setActiveId] = useState<string>(services[0]?.id || 's1');
+
+  // Filter out "Wireframing" and "Application" sections
+  const displayServices = services.filter(
+    (s) =>
+      !s.title.toLowerCase().includes('wireframing') &&
+      !s.title.toLowerCase().includes('application')
+  );
+
+  const [activeId, setActiveId] = useState<string>(displayServices[0]?.id || 's1');
 
   return (
     <section id="services" className="py-20 relative">
@@ -38,7 +45,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onInquireServi
 
         {/* Accordion Cards Stack */}
         <div className="space-y-4">
-          {services.map((service) => {
+          {displayServices.map((service) => {
             const isOpen = activeId === service.id;
 
             return (

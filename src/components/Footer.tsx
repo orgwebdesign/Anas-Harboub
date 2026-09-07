@@ -52,14 +52,6 @@ export const Footer: React.FC<FooterProps> = ({ activeTab, setActiveTab, onOpenC
             >
               Infographiste
             </button>
-            <button
-              onClick={() => setActiveTab('admin')}
-              className={`text-sm font-semibold transition-colors cursor-pointer ${
-                activeTab === 'admin' ? 'text-[#FF8A00]' : 'text-gray-300 hover:text-white'
-              }`}
-            >
-              ⚙️ Admin
-            </button>
           </div>
 
           {/* Contact Button */}

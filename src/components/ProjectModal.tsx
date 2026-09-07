@@ -110,6 +110,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               </div>
 
               <div className="flex items-center gap-3 w-full sm:w-auto">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 sm:flex-initial px-5 py-3 rounded-full bg-white/10 text-white font-extrabold text-xs hover:bg-white/20 transition-all cursor-pointer flex items-center justify-center gap-2 border border-white/20"
+                  >
+                    <span>Voir en live</span>
+                    <ExternalLink className="w-4 h-4 text-[#FF8A00]" />
+                  </a>
+                )}
                 <button
                   onClick={() => {
                     onClose();

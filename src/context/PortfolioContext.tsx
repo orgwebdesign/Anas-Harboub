@@ -110,7 +110,7 @@ interface PortfolioContextType {
   resetToDefault: () => void;
 }
 
-const STORAGE_PROJECTS_KEY = 'anass_harboub_projects_v2';
+const STORAGE_PROJECTS_KEY = 'anass_harboub_projects_v3';
 const STORAGE_SERVICES_KEY = 'anass_harboub_services_v2';
 const STORAGE_PAGES_KEY = 'anass_harboub_pages_v4';
 const STORAGE_HOME_KEY = 'anass_harboub_home_v3';

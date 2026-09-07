@@ -1,4 +1,4 @@
-export type PageTab = 'all' | 'web-design' | 'vibe-nocode' | 'designer' | 'admin';
+export type PageTab = 'all' | 'web-design' | 'vibe-nocode' | 'designer';
 
 export interface Project {
   id: string;

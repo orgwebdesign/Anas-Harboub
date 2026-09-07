@@ -5,6 +5,16 @@ import anassPortraitImg from '../assets/images/regenerated_image_1786287595697.p
 import saasWebImg from '../assets/images/project_saas_web_1786228043768.jpg';
 import noCodeAppImg from '../assets/images/project_nocode_app_1786228055167.jpg';
 import designSystemImg from '../assets/images/project_design_system_1786228068168.jpg';
+import qualyxHero from '../assets/images/qualyx_hero.png';
+import iacrmHero from '../assets/images/iacrm_hero.png';
+import mtcHero from '../assets/images/mtc_holistique_hero.png';
+import carsHero from '../assets/images/cars_and_co_hero.png';
+import natuliqueHero from '../assets/images/natulique_swiss_hero.png';
+import jeremieHero from '../assets/images/jeremie_boulaire_hero.png';
+import mccpVslHero from '../assets/images/mccp_natulique_vsl_hero.png';
+import yachtsHero from '../assets/images/lm_luxe_yachts_hero.png';
+import havetHero from '../assets/images/gonzague_havet_hero.png';
+import mooineHero from '../assets/images/institut_mooine_hero.png';
 
 export const fallbackPortrait = portraitImg;
 
@@ -116,6 +126,232 @@ export const SERVICES_DATA: Service[] = [
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: "p_qualyx",
+    title: "Qualyx — Native AI That Converts Leads into Clients",
+    client: "Qualyx AI",
+    category: "Web Design",
+    year: "2026",
+    description: "Revolutionize your B2B lead generation with a native sales AI platform. Designed for dynamic persona creation and high-converting landing pages.",
+    longDescription: "Designed and developed the official landing page and platform UI for Qualyx — the premier native sales AI platform. Features custom lime-green accents, conversion metric badges (+120% conversion rate, -24% sales cycle), dynamic AI persona generators, and a VIP early-access lead funnel.",
+    imageUrl: qualyxHero,
+    tags: ["Web Design", "Figma", "Landing Page", "WordPress", "HTML/CSS"],
+    metrics: [
+      { label: "Conversion Boost", value: "+120%" },
+      { label: "Sales Cycle", value: "-24%" }
+    ],
+    deliverables: [
+      "High-converting Landing Page Architecture",
+      "WordPress & HTML/CSS Custom Integration",
+      "AI Persona & Funnel Mockups",
+      "Brand Identity & Lime Accent Design System"
+    ],
+    featured: true
+  },
+  {
+    id: "p_cars",
+    title: "Cars & Co — Premium Luxury Car Rental Experience",
+    client: "Cars & Co Marrakech",
+    category: "Web Design",
+    year: "2025",
+    description: "High-end car rental platform offering luxury, city, and professional chauffeur vehicles with instant online booking.",
+    longDescription: "Designed and developed the digital brand experience and online booking platform for Cars & Co in Marrakech. Features high-end luxury vehicle showcases (Mercedes Class A, Range Rover, Porsche), instant delivery options, and responsive multi-page booking flows.",
+    imageUrl: carsHero,
+    tags: ["Web Design", "Figma", "WordPress", "Framer", "Illustrator"],
+    metrics: [
+      { label: "Direct Bookings", value: "+62%" },
+      { label: "Fleet Rating", value: "4.9★" }
+    ],
+    deliverables: [
+      "Luxury Gold-Accented Dark Interface",
+      "Vehicle Fleet Filter & Instant Reservation System",
+      "WordPress & Framer Responsive Development",
+      "Custom Vector Illustration & Branding"
+    ],
+    liveUrl: "https://cars-and-co.com/",
+    featured: true
+  },
+  {
+    id: "p_iacrm",
+    title: "IACRM — AI at the Heart of Customer Growth",
+    client: "IACRM Platform",
+    category: "Web Design",
+    year: "2025",
+    description: "From first contact to long-term retention: a modular, predictive AI-powered CRM landing page engineered for revenue growth.",
+    longDescription: "Designed and architected the high-converting landing page for IACRM. Features deep navy blue lighting glows, futuristic circuit frame graphics, interactive CRM feature pillars, and modular conversion funnels.",
+    imageUrl: iacrmHero,
+    tags: ["Web Design", "Figma", "Landing Page", "WordPress", "Framer"],
+    metrics: [
+      { label: "Customer Retention", value: "+38%" },
+      { label: "Predictive Insights", value: "Real-time" }
+    ],
+    deliverables: [
+      "Editorial Navy Blue Hero & Micro-animations",
+      "Interactive CRM Feature Showcase & Framer Motion",
+      "WordPress & Custom HTML/CSS Landing Page Integration",
+      "Responsive Lead Capture & VIP List Funnel"
+    ],
+    featured: true
+  },
+  {
+    id: "p_natulique",
+    title: "Natulique Swiss — Certified Organic Haircare Distribution",
+    client: "Natulique Switzerland",
+    category: "Web Design",
+    year: "2025",
+    description: "Official Swiss e-commerce & distribution platform for certified organic hair products. Features warm beige design and partner portals.",
+    longDescription: "Designed and developed the Swiss e-commerce platform and B2B professional portal for Natulique. Features editorial product photography showcases, ammonia-free hair color guides, salon partner registration, and responsive shopping carts.",
+    imageUrl: natuliqueHero,
+    tags: ["Web Design", "E-Commerce", "Figma", "WordPress", "Framer"],
+    metrics: [
+      { label: "Salon Partners", value: "120+" },
+      { label: "Organic Rating", value: "100% Certified" }
+    ],
+    deliverables: [
+      "Warm Beige Editorial E-Commerce UI",
+      "B2B Professional Salon Partner Portal",
+      "WordPress & Framer Responsive Development",
+      "Custom Product Catalog & Routine Filter"
+    ],
+    liveUrl: "https://natuliquesuisse.ch/",
+    featured: true
+  },
+  {
+    id: "p_yachts",
+    title: "LM Luxe Yachts Ibiza — Premium Luxury Yacht Brokerage",
+    client: "LM Luxe Yachts Ibiza",
+    category: "Web Design",
+    year: "2025",
+    description: "High-end maritime e-commerce and charter platform for luxury yachts in Ibiza and France with aerial visuals.",
+    longDescription: "Designed and developed the luxury maritime showcase and charter reservation platform for LM Luxe Yachts Ibiza. Features high-resolution aerial video integration, custom yacht specification filters, champagne gold editorial UI, and multi-currency inquiry funnels.",
+    imageUrl: yachtsHero,
+    tags: ["Web Design", "Luxury UI", "Figma", "WordPress", "E-Commerce"],
+    metrics: [
+      { label: "Charter Inquiries", value: "+68%" },
+      { label: "Fleet Value", value: "€45M+" }
+    ],
+    deliverables: [
+      "Champagne Gold Luxury Maritime UI",
+      "Interactive Fleet Specification & Charter Filter",
+      "WordPress Responsive Integration",
+      "Aerial Photography & Video Art Direction"
+    ],
+    liveUrl: "https://lmluxeyachtsibiza.com/",
+    featured: true
+  },
+  {
+    id: "p_mtc",
+    title: "MTC Holistique — Center for Physiotherapy & Massage",
+    client: "MTC Holistique Center",
+    category: "Web Design",
+    year: "2026",
+    description: "Serene digital experience for a holistic wellness center specializing in physiotherapy and restorative care.",
+    longDescription: "Designed the brand identity and official landing page for MTC Holistique. Crafted with warm organic tones, turquoise call-to-actions, online session booking funnels, and mobile-first responsive architecture.",
+    imageUrl: mtcHero,
+    tags: ["Web Design", "Healthcare", "Figma", "WordPress", "HTML/CSS"],
+    metrics: [
+      { label: "Online Bookings", value: "+54%" },
+      { label: "Client Rating", value: "4.9★" }
+    ],
+    deliverables: [
+      "Serene Organic Landing Page Design",
+      "WordPress & HTML/CSS/JS Custom Development",
+      "Online Appointment & Session Booking Flow",
+      "Mobile & Tablet Responsive Typography"
+    ],
+    featured: false
+  },
+  {
+    id: "p_jeremie",
+    title: "Jérémie Boulaire — Legal Counsel & Doctor of Law",
+    client: "Cabinet Jérémie Boulaire",
+    category: "Web Design",
+    year: "2026",
+    description: "Editorial website for Doctor of Law Jérémie Boulaire. Designed with monochrome elegance and gold highlights.",
+    longDescription: "Designed and developed the professional legal practice website for Maître Jérémie Boulaire. Features high-end portrait art direction, contract expertise breakdown, client consultation scheduling, and mobile-optimized typography.",
+    imageUrl: jeremieHero,
+    tags: ["Web Design", "Legal UI", "Figma", "WordPress", "Branding"],
+    metrics: [
+      { label: "Legal Consultations", value: "+45%" },
+      { label: "Degree", value: "Docteur en Droit" }
+    ],
+    deliverables: [
+      "Refined Monochrome Legal Practice UI",
+      "Contract & Consumer Law Expertise Architecture",
+      "WordPress Responsive Integration",
+      "Gold CTA & Portrait Art Direction"
+    ],
+    liveUrl: "https://jeremieboulaire.fr/",
+    featured: false
+  },
+  {
+    id: "p_mccp",
+    title: "MCCP Natulique — Head Spa Luxury VSL & Giveaway",
+    client: "MCCP Natulique",
+    category: "Web Design",
+    year: "2026",
+    description: "High-converting Video Sales Letter and giveaway landing page combining Japanese scalp therapy with organic science.",
+    longDescription: "Designed and developed the high-impact VSL sales funnel and giveaway landing page for Natulique Head Spa in Switzerland. Features a rich espresso brown and cream luxury palette, embedded video sales letter layout, partner bonus badges, and lead capture architecture.",
+    imageUrl: mccpVslHero,
+    tags: ["Web Design", "VSL Funnel", "Figma", "WordPress", "Conversion"],
+    metrics: [
+      { label: "VSL Watch Time", value: "78%" },
+      { label: "Partner Leads", value: "+52%" }
+    ],
+    deliverables: [
+      "Rich Espresso & Cream Luxury Palette",
+      "Video Sales Letter (VSL) Funnel Layout",
+      "WordPress Responsive Integration",
+      "Giveaway & Lead Capture Architecture"
+    ],
+    featured: false
+  },
+  {
+    id: "p_havet",
+    title: "Gonzague Havet — Digital Transformation Ecosystem",
+    client: "Gonzague Havet Consulting",
+    category: "Web Design",
+    year: "2025",
+    description: "High-impact VSL and digital transformation ecosystem page integrating HD Communication and IT Development.",
+    longDescription: "Designed and developed the executive consulting portal and VSL sales ecosystem for Gonzague Havet. Features corporate navy blue styling, multi-entity branding (HD Communication, HD Dev, HD Solutions), strategy case study showcases, and executive appointment scheduling.",
+    imageUrl: havetHero,
+    tags: ["Web Design", "Ecosystem", "Figma", "WordPress", "Framer"],
+    metrics: [
+      { label: "Enterprise Leads", value: "+84%" },
+      { label: "Ecosystem Entities", value: "3 Platforms" }
+    ],
+    deliverables: [
+      "Corporate Deep Navy & Blue Art Direction",
+      "Multi-entity Digital Ecosystem Architecture",
+      "WordPress & Framer Responsive Development",
+      "Video Sales Letter & Executive Booking Funnel"
+    ],
+    liveUrl: "https://gonzaguehavet.com/",
+    featured: false
+  },
+  {
+    id: "p_mooine",
+    title: "Institut Mooine — Health & Wellness Center",
+    client: "Institut Mooine",
+    category: "Web Design",
+    year: "2025",
+    description: "Tailored digital experience for a health and wellness institute with session booking funnels.",
+    longDescription: "Designed and developed the official website and consultation booking funnel for Institut Mooine. Features serene turquoise-teal gradients, customized treatment consultation paths, patient testimonial showcases, and mobile booking integration.",
+    imageUrl: mooineHero,
+    tags: ["Web Design", "Wellness", "Figma", "WordPress", "UI/UX"],
+    metrics: [
+      { label: "Care Bookings", value: "+58%" },
+      { label: "Patient Rating", value: "4.9★" }
+    ],
+    deliverables: [
+      "Serene Teal & Peach Health & Wellness UI",
+      "Customized Slimming & Pain Care Filter",
+      "WordPress Responsive Integration",
+      "Online Consultation Booking Architecture"
+    ],
+    liveUrl: "https://www.mooine.com/",
+    featured: false
+  },
+  {
     id: "p1",
     title: "Aura AI — Next Gen SaaS Platform",
     client: "Aura Labs Inc.",
@@ -137,7 +373,7 @@ export const PROJECTS_DATA: Project[] = [
       "Framer No-Code Export"
     ],
     liveUrl: "https://aura-ai-demo.example.com",
-    featured: true
+    featured: false
   },
   {
     id: "p2",

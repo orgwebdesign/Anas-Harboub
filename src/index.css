@@ -7,8 +7,25 @@
     color: #F3F4F6;
   }
 
-  h1, h2, h3, h4, .font-heading {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-heading {
     font-family: 'Manrope', sans-serif;
+  }
+
+  @font-face {
+    font-family: 'Ananda Black Personal Use';
+    src: local('Ananda Black Personal Use'), local('AnandaBlackPersonalUse-Regular'), local('Ananda Black');
+  }
+
+  .font-ananda {
+    font-family: 'Ananda Black Personal Use', 'AnandaBlackPersonalUse-Regular', 'Grand Hotel', 'Kaushan Script', 'Satisfy', cursive;
+  }
+
+  .font-signature {
+    font-family: 'Ananda Black Personal Use', 'AnandaBlackPersonalUse-Regular', 'Kaushan Script', 'Caveat', 'Dancing Script', 'Great Vibes', cursive;
   }
 }
 
@@ -36,25 +53,33 @@
 /* Notched / Chamfered corners for expanded service accordion card */
 .notched-card-orange {
   background: #FF8A00;
-  clip-path: polygon(
-    0 0,
-    calc(100% - 24px) 0,
-    100% 24px,
-    100% 100%,
-    24px 100%,
-    0 calc(100% - 24px)
-  );
+  clip-path: polygon(0 0,
+      calc(100% - 24px) 0,
+      100% 24px,
+      100% 100%,
+      24px 100%,
+      0 calc(100% - 24px));
 }
 
 /* Marquee ticker animation */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-horizontal {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-100% - var(--gap, 1rem))); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
 }
 
 .animate-marquee {
@@ -84,14 +109,45 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0B0C0E;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #23252D;
   border-radius: 4px;
 }
+
+/* Slow Orange Opacity Pulse for Navigation Buttons & Arrow (Zero size change, purely opacity) */
+@keyframes orangePulseSlow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes textArrowPulseSlow {
+  0%, 100% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 4px rgba(255, 137, 0, 0.25));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(255, 137, 0, 0.9));
+  }
+}
+
+.animate-orange-pulse {
+  animation: orangePulseSlow 3.2s ease-in-out infinite;
+}
+
+.animate-text-arrow-pulse {
+  animation: textArrowPulseSlow 3.2s ease-in-out infinite;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #FF8A00;
 }
-

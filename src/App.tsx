@@ -6,15 +6,15 @@ import { HeroSection } from './components/HeroSection';
 import { MarqueeTicker } from './components/MarqueeTicker';
 import { ServicesSection } from './components/ServicesSection';
 import { TechLogosSection } from './components/TechLogosSection';
-import { ProjectsSection } from './components/ProjectsSection';
 import { AboutSection } from './components/AboutSection';
 import { WebDesignPage } from './components/WebDesignPage';
 import { VibeNoCodePage } from './components/VibeNoCodePage';
 import { DesignerPage } from './components/DesignerPage';
-import { AdminPage } from './components/AdminPage';
 import { ContactModal } from './components/ContactModal';
 import { ProjectModal } from './components/ProjectModal';
 import { Footer } from './components/Footer';
+import { TestimonialsSection } from './components/TestimonialsSection';
+import { RightFixedToggle } from './components/RightFixedToggle';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
@@ -50,6 +50,17 @@ export default function App() {
           onOpenContact={() => setIsContactOpen(true)}
         />
 
+        {/* Right Side Fixed Navigation Bar */}
+        <RightFixedToggle
+          activeTab={activeTab}
+          setActiveTab={(tab) => {
+            setActiveTab(tab);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          isContactOpen={isContactOpen}
+          onOpenContact={() => setIsContactOpen(true)}
+        />
+
         {/* Main View Router */}
         <main className="relative">
           <AnimatePresence mode="wait">
@@ -70,18 +81,13 @@ export default function App() {
                 {/* Ticker */}
                 <MarqueeTicker />
 
-                {/* Accordion Services Section with Notched Orange Cards */}
+                {/* Accordion Services Section with Notched Orange Cards (How I Bring Ideas to Life) */}
                 <ServicesSection
                   onInquireService={handleOpenContactWithService}
                 />
 
                 {/* Tech Logos Loop */}
                 <TechLogosSection />
-
-                {/* Selected Projects Showcase */}
-                <ProjectsSection
-                  onSelectProject={(project) => setSelectedProject(project)}
-                />
 
                 {/* About Section */}
                 <AboutSection
@@ -134,22 +140,11 @@ export default function App() {
                 />
               </motion.div>
             )}
-
-            {activeTab === 'admin' && (
-              <motion.div
-                key="admin"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-              >
-                <AdminPage
-                  onNavigateHome={() => setActiveTab('all')}
-                />
-              </motion.div>
-            )}
           </AnimatePresence>
         </main>
+
+        {/* Client Testimonials Section: Placed right before Footer */}
+        <TestimonialsSection onOpenContact={() => setIsContactOpen(true)} />
 
         {/* Footer */}
         <Footer
