@@ -58,7 +58,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-              Crafted with <span className="text-[#FF8A00]">Purpose & Precision</span>
+              Crafted with <span className="text-[#C4D600]">Purpose & Precision</span>
             </h2>
           </div>
 
@@ -79,7 +79,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {isActive && (
                     <motion.span
                       layoutId="activeFilterTabDesktop"
-                      className="absolute inset-0 bg-[#FF8A00] rounded-full shadow-[0_0_20px_rgba(255,138,0,0.35)]"
+                      className="absolute inset-0 bg-[#C4D600] rounded-full shadow-[0_0_20px_rgba(196, 214, 0,0.35)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 28 }}
                     />
                   )}
@@ -120,7 +120,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {isActive && (
                     <motion.span
                       layoutId="activeFilterTabMobile"
-                      className="absolute inset-0 bg-[#FF8A00] rounded-full shadow-[0_0_15px_rgba(255,138,0,0.35)]"
+                      className="absolute inset-0 bg-[#C4D600] rounded-full shadow-[0_0_15px_rgba(196, 214, 0,0.35)]"
                       transition={{ type: 'spring', stiffness: 380, damping: 28 }}
                     />
                   )}
@@ -154,7 +154,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 onClick={() => onSelectProject(project)}
-                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#FF8A00]/50 transition-all duration-500 hover:-translate-y-1.5 shadow-xl cursor-pointer flex flex-col justify-between"
+                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#C4D600]/50 transition-all duration-500 hover:-translate-y-1.5 shadow-xl cursor-pointer flex flex-col justify-between"
               >
                 <div>
                   {/* Image Container with Hover Scale */}
@@ -168,7 +168,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                     {/* Category Overlay Pill */}
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[#FF8A00] font-bold text-xs border border-white/10">
+                      <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[#C4D600] font-bold text-xs border border-white/10">
                         {project.category}
                       </span>
                     </div>
@@ -182,7 +182,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                     {/* Quick Hover Arrow Overlay */}
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-[#FF8A00] text-black flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform">
+                      <div className="w-12 h-12 rounded-full bg-[#C4D600] text-black flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform">
                         <ArrowUpRight className="w-6 h-6" />
                       </div>
                     </div>
@@ -195,13 +195,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                         {project.client}
                       </span>
                       {project.featured && (
-                        <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#FF8A00] bg-[#FF8A00]/10 px-2 py-0.5 rounded-md">
+                        <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#C4D600] bg-[#C4D600]/10 px-2 py-0.5 rounded-md">
                           Featured
                         </span>
                       )}
                     </div>
 
-                    <h3 className="text-xl font-extrabold text-white font-heading group-hover:text-[#FF8A00] transition-colors leading-snug">
+                    <h3 className="text-xl font-extrabold text-white font-heading group-hover:text-[#C4D600] transition-colors leading-snug">
                       {project.title}
                     </h3>
 

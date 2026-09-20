@@ -49,12 +49,12 @@ export const ExperienceCounterCard: React.FC = () => {
   return (
     <div
       ref={cardRef}
-      className="p-6 rounded-2xl bg-[#141519] border border-white/10 relative shadow-2xl overflow-hidden group hover:border-[#FF8A00]/40 transition-colors"
+      className="p-6 rounded-2xl bg-[#141519] border border-white/10 relative shadow-2xl overflow-hidden group hover:border-[#C4D600]/40 transition-colors"
     >
       {/* GSAP Animated Ambient Glow */}
       <div
         ref={glowRef}
-        className="absolute -top-10 -right-10 w-32 h-32 bg-[#FF8A00]/25 rounded-full blur-2xl pointer-events-none"
+        className="absolute -top-10 -right-10 w-32 h-32 bg-[#C4D600]/25 rounded-full blur-2xl pointer-events-none"
       />
 
       <div className="flex items-baseline gap-1 my-1">
@@ -64,7 +64,7 @@ export const ExperienceCounterCard: React.FC = () => {
         >
           0
         </span>
-        <span className="font-heading text-4xl sm:text-5xl font-black text-[#FF8A00]">
+        <span className="font-heading text-4xl sm:text-5xl font-black text-[#C4D600]">
           +
         </span>
         <span className="text-xl sm:text-2xl font-bold text-gray-100 uppercase tracking-wide ml-1">
@@ -72,7 +72,7 @@ export const ExperienceCounterCard: React.FC = () => {
         </span>
       </div>
 
-      <div className="text-sm font-bold text-[#FF8A00] uppercase tracking-wider mb-2">
+      <div className="text-sm font-bold text-[#C4D600] uppercase tracking-wider mb-2">
         Experience
       </div>
 
@@ -81,7 +81,7 @@ export const ExperienceCounterCard: React.FC = () => {
       </p>
 
       <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-center">
-        <p className="text-base sm:text-lg font-bold tracking-widest text-[#FF8A00] text-center">
+        <p className="text-base sm:text-lg font-bold tracking-widest text-[#C4D600] text-center">
           2020 — 2026
         </p>
       </div>

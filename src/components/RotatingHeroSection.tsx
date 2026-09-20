@@ -43,12 +43,12 @@ export const RotatingHeroSection: React.FC = () => {
       let imageRevealed = false;
 
       const introHeaders = [
-        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#FF8A00] font-extrabold">meet Anass</span>',
-        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#FF8A00] font-extrabold">design experiences</span>',
-        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#FF8A00] font-extrabold">build for the web</span>',
-        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#FF8A00] font-extrabold">shape the brand</span>',
-        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#FF8A00] font-extrabold">make it move</span>',
-        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#FF8A00] font-extrabold">work together</span>',
+        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#C4D600] font-extrabold">meet Anass</span>',
+        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#C4D600] font-extrabold">design experiences</span>',
+        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#C4D600] font-extrabold">build for the web</span>',
+        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#C4D600] font-extrabold">shape the brand</span>',
+        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#C4D600] font-extrabold">make it move</span>',
+        '<span class="text-white/60 font-normal mr-2">time to</span><span class="text-[#C4D600] font-extrabold">work together</span>',
       ];
 
       function updateHeaderText() {
@@ -148,7 +148,7 @@ export const RotatingHeroSection: React.FC = () => {
   }, []);
 
   return (
-    <div ref={rootRef} className="relative w-full text-white selection:bg-[#FF8A00] selection:text-black">
+    <div ref={rootRef} className="relative w-full text-white selection:bg-[#C4D600] selection:text-black">
       {/* Sticky Pinned Hero Section */}
       <section className="sticky relative w-full h-screen bg-[#0B0C0E] overflow-hidden flex items-center justify-center">
         {/* Decorative Grid Lines */}
@@ -160,7 +160,7 @@ export const RotatingHeroSection: React.FC = () => {
           style={{ transformOrigin: 'center center', transformStyle: 'preserve-3d', willChange: 'transform' }}
         >
           <div
-            className="hand absolute w-[6%] h-[52.75%] bg-[#E5E7EB] rounded-full overflow-hidden opacity-100 shadow-[0_0_25px_rgba(255,138,0,0.3)] border border-white/20"
+            className="hand absolute w-[6%] h-[52.75%] bg-[#E5E7EB] rounded-full overflow-hidden opacity-100 shadow-[0_0_25px_rgba(196, 214, 0,0.3)] border border-white/20"
             style={{ willChange: 'transform' }}
           >
             <img
@@ -175,7 +175,7 @@ export const RotatingHeroSection: React.FC = () => {
         <div className="intro absolute top-[calc(50%-20px)] left-[8%] sm:left-[15%] md:left-[22%] w-[84%] sm:w-[50%] md:w-[28%] z-20 pointer-events-none space-y-4">
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold font-heading tracking-tight leading-tight">
             <span className="text-white/60 font-normal mr-2">time to</span>
-            <span className="text-[#FF8A00]">meet Anass</span>
+            <span className="text-[#C4D600]">meet Anass</span>
           </h1>
           <div className="space-y-3">
             <p className="text-xs sm:text-sm text-gray-400 font-medium leading-relaxed opacity-100 transition-all duration-300">
@@ -189,10 +189,10 @@ export const RotatingHeroSection: React.FC = () => {
 
         {/* Revealed Brand Wordmark */}
         <div className="website-content absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-30 pointer-events-none w-full px-4">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#FF8A00]/10 border border-[#FF8A00]/30 text-[#FF8A00] text-xs font-mono tracking-widest uppercase mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#C4D600]/10 border border-[#C4D600]/30 text-[#C4D600] text-xs font-mono tracking-widest uppercase mb-4">
             Interactive Showcase
           </span>
-          <h1 className="text-[11vw] sm:text-[10vw] font-black uppercase tracking-tight text-[#FF8A00] font-heading leading-none drop-shadow-[0_10px_40px_rgba(255,138,0,0.4)]">
+          <h1 className="text-[11vw] sm:text-[10vw] font-black uppercase tracking-tight text-[#C4D600] font-heading leading-none drop-shadow-[0_10px_40px_rgba(196, 214, 0,0.4)]">
             ANASS HARBOUB
           </h1>
           <p className="text-xs sm:text-base font-mono uppercase tracking-[0.25em] text-gray-400 mt-4">
@@ -204,9 +204,9 @@ export const RotatingHeroSection: React.FC = () => {
       {/* Follow-up Section */}
       <section id="about" className="relative w-full min-h-[60vh] bg-[#141519] border-t border-white/10 py-20 px-6 flex flex-col items-center justify-center text-center space-y-6">
         <div className="max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono uppercase tracking-widest text-[#FF8A00]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono uppercase tracking-widest text-[#C4D600]">
             <span>05</span>
-            <span className="w-1 h-1 rounded-full bg-[#FF8A00]" />
+            <span className="w-1 h-1 rounded-full bg-[#C4D600]" />
             <span>Next Generation Web Development</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">

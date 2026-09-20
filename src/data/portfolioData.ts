@@ -65,15 +65,16 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "s2",
     number: "02.",
-    title: "UI/UX Design",
-    shortDesc: "User research, wireframing, high-fidelity prototypes & design systems.",
-    fullDesc: "Architecting intuitive digital interfaces that balance sleek visual aesthetics with frictionless user journeys across desktop and mobile screens.",
+    title: "Graphics Designer",
+    shortDesc: "Brand visual identity, logos, print media, social kits & marketing graphics.",
+    fullDesc: "Crafting distinctive brand identities, bespoke logo systems, brand guidelines, and high-impact graphic design across digital and print media that elevate brand presence and command attention.",
     tags: [
-      "User Experience Strategy",
-      "Wireframing & Flowmaps",
-      "Figma Design Systems",
-      "Micro-Interactions",
-      "Usability Testing"
+      "Brand & Visual Identity",
+      "Logo Design",
+      "Print & Editorial Design",
+      "Social Media & Ad Creatives",
+      "Packaging & Merchandising",
+      "Typography & Art Direction"
     ],
     categoryTab: "designer"
   },

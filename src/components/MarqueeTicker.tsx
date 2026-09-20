@@ -17,7 +17,7 @@ export const MarqueeTicker: React.FC = () => {
         uppercase
         color="#000000"
         ribbon={true}
-        ribbonColor="#FF8A00"
+        ribbonColor="#C4D600"
         ribbonWidth={42}
         pauseOnHover
         className="w-full"

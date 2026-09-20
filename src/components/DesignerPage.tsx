@@ -42,7 +42,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
         <div className="p-6 sm:p-8 rounded-[32px] bg-[#141519] border border-white/10 shadow-2xl space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
             <div>
-              <span className="text-xs uppercase tracking-widest text-[#FF8A00] font-bold block">
+              <span className="text-xs uppercase tracking-widest text-[#C4D600] font-bold block">
                 Figma Design Token Explorer
               </span>
               <h3 className="text-xl font-bold text-white font-heading mt-1">
@@ -54,7 +54,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               <button
                 onClick={() => setActiveTokenTab('colors')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  activeTokenTab === 'colors' ? 'bg-[#FF8A00] text-black' : 'text-gray-400 hover:text-white'
+                  activeTokenTab === 'colors' ? 'bg-[#C4D600] text-black' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 Color Palette
@@ -62,7 +62,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               <button
                 onClick={() => setActiveTokenTab('typography')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  activeTokenTab === 'typography' ? 'bg-[#FF8A00] text-black' : 'text-gray-400 hover:text-white'
+                  activeTokenTab === 'typography' ? 'bg-[#C4D600] text-black' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 Typography
@@ -70,7 +70,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               <button
                 onClick={() => setActiveTokenTab('components')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  activeTokenTab === 'components' ? 'bg-[#FF8A00] text-black' : 'text-gray-400 hover:text-white'
+                  activeTokenTab === 'components' ? 'bg-[#C4D600] text-black' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 UI Components
@@ -83,10 +83,10 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
             {activeTokenTab === 'colors' && (
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div className="p-4 rounded-xl bg-[#0B0C0E] border border-white/10 space-y-3">
-                  <div className="h-16 rounded-lg bg-[#FF8A00] shadow-lg" />
+                  <div className="h-16 rounded-lg bg-[#C4D600] shadow-lg" />
                   <div>
-                    <span className="font-mono text-xs text-white font-bold block">#FF8A00</span>
-                    <span className="text-[10px] text-gray-400">Vivid Orange Accent</span>
+                    <span className="font-mono text-xs text-white font-bold block">#C4D600</span>
+                    <span className="text-[10px] text-gray-400">Electric Lime Accent</span>
                   </div>
                 </div>
                 <div className="p-4 rounded-xl bg-[#0B0C0E] border border-white/10 space-y-3">
@@ -117,14 +117,14 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               <div className="space-y-4">
                 <div className="p-4 rounded-xl bg-[#141519] flex items-center justify-between">
                   <div>
-                    <span className="text-xs text-[#FF8A00] font-mono">Display H1 (Manrope 64px)</span>
+                    <span className="text-xs text-[#C4D600] font-mono">Display H1 (Manrope 64px)</span>
                     <h4 className="text-2xl font-extrabold text-white font-heading">Digital Experiences</h4>
                   </div>
                   <span className="text-xs text-gray-400 font-mono">1.125 Ratio</span>
                 </div>
                 <div className="p-4 rounded-xl bg-[#141519] flex items-center justify-between">
                   <div>
-                    <span className="text-xs text-[#FF8A00] font-mono">Heading H2 (Manrope 32px)</span>
+                    <span className="text-xs text-[#C4D600] font-mono">Heading H2 (Manrope 32px)</span>
                     <h5 className="text-lg font-bold text-white font-heading">Designed for Humans</h5>
                   </div>
                   <span className="text-xs text-gray-400 font-mono">1.15 Ratio</span>
@@ -134,7 +134,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
 
             {activeTokenTab === 'components' && (
               <div className="flex flex-wrap items-center gap-4">
-                <button className="px-6 py-3 rounded-full bg-[#FF8A00] text-black font-extrabold text-sm shadow-xl">
+                <button className="px-6 py-3 rounded-full bg-[#C4D600] text-black font-extrabold text-sm shadow-xl">
                   Primary Pill Button
                 </button>
                 <button className="px-6 py-3 rounded-full bg-[#1A1B20] text-white border border-white/20 font-bold text-sm">
@@ -168,7 +168,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               <div
                 key={project.id}
                 onClick={() => onSelectProject(project)}
-                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#FF8A00] transition-all duration-300 cursor-pointer shadow-xl"
+                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#C4D600] transition-all duration-300 cursor-pointer shadow-xl"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-black/50 relative">
                   <img
@@ -178,17 +178,17 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#FF8A00] text-black font-bold text-xs">
+                    <span className="px-3 py-1 rounded-full bg-[#C4D600] text-black font-bold text-xs">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#FF8A00] transition-colors">
+                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#C4D600] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-400">{project.description}</p>
-                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#FF8A00]">
+                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#C4D600]">
                     <span>Explore Design Case Study</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
@@ -208,7 +208,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
           </p>
           <button
             onClick={onOpenContact}
-            className="px-8 py-3.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-sm hover:bg-[#ffa026] transition-all cursor-pointer inline-flex items-center gap-2 shadow-xl"
+            className="px-8 py-3.5 rounded-full bg-[#C4D600] text-black font-extrabold text-sm hover:bg-[#d2e500] transition-all cursor-pointer inline-flex items-center gap-2 shadow-xl"
           >
             <span>Inquire Design Collaboration</span>
             <ArrowUpRight className="w-4 h-4" />

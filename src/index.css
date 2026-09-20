@@ -31,34 +31,106 @@
 
 /* Custom Orange Theme Accents & Shadows */
 .bg-orange-accent {
-  background-color: #FF8A00;
+  background-color: #C4D600;
 }
 
 .text-orange-accent {
-  color: #FF8A00;
+  color: #C4D600;
 }
 
 .border-orange-accent {
-  border-color: #FF8A00;
+  border-color: #C4D600;
 }
 
 .glow-orange {
-  box-shadow: 0 0 35px -5px rgba(255, 138, 0, 0.35);
+  box-shadow: 0 0 35px -5px rgba(196, 214, 0, 0.35);
 }
 
 .glow-orange-sm {
-  box-shadow: 0 0 15px -3px rgba(255, 138, 0, 0.25);
+  box-shadow: 0 0 15px -3px rgba(196, 214, 0, 0.25);
 }
 
 /* Notched / Chamfered corners for expanded service accordion card */
 .notched-card-orange {
-  background: #FF8A00;
+  background: #C4D600;
   clip-path: polygon(0 0,
       calc(100% - 24px) 0,
       100% 24px,
       100% 100%,
       24px 100%,
       0 calc(100% - 24px));
+}
+
+/* Liquid Water Fill Button Animation ("kay3mer blma") */
+.btn-liquid-fill {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  color: #FFFFFF;
+  z-index: 1;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease,
+              transform 0.15s ease;
+}
+
+.btn-liquid-fill::before,
+.btn-liquid-fill::after {
+  content: '';
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 280%;
+  border-radius: 40%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Secondary wave (slightly translucent lime) */
+.btn-liquid-fill::after {
+  top: 105%;
+  background-color: rgba(196, 214, 0, 0.65);
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0) rotate(0deg);
+}
+
+/* Primary wave (solid lime green) */
+.btn-liquid-fill::before {
+  top: 100%;
+  background-color: #C4D600;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(0) rotate(0deg);
+}
+
+.btn-liquid-fill:hover::after,
+.btn-liquid-fill:focus-visible::after,
+.btn-liquid-fill:active::after {
+  transform: translateY(-84%) rotate(240deg);
+}
+
+.btn-liquid-fill:hover::before,
+.btn-liquid-fill:focus-visible::before,
+.btn-liquid-fill:active::before {
+  transform: translateY(-84%) rotate(180deg);
+}
+
+.btn-liquid-fill:hover,
+.btn-liquid-fill:focus-visible,
+.btn-liquid-fill:active {
+  color: #000000;
+  box-shadow: 0 0 25px rgba(196, 214, 0, 0.5);
+  border-color: #C4D600;
+}
+
+.btn-liquid-fill:active {
+  transform: scale(0.96);
+}
+
+.btn-liquid-fill * {
+  position: relative;
+  z-index: 10;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s ease;
 }
 
 /* Marquee ticker animation */
@@ -132,11 +204,11 @@
 @keyframes textArrowPulseSlow {
   0%, 100% {
     opacity: 0.65;
-    filter: drop-shadow(0 0 4px rgba(255, 137, 0, 0.25));
+    filter: drop-shadow(0 0 4px rgba(196, 214, 0, 0.25));
   }
   50% {
     opacity: 1;
-    filter: drop-shadow(0 0 16px rgba(255, 137, 0, 0.9));
+    filter: drop-shadow(0 0 16px rgba(196, 214, 0, 0.9));
   }
 }
 
@@ -149,5 +221,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF8A00;
+  background: #C4D600;
 }

@@ -22,21 +22,21 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onInquireServi
   return (
     <section id="services" className="py-20 relative">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight">
-              How I Bring <span className="text-[#FF8A00] relative inline-block">
+              How I Bring <span className="text-[#C4D600] relative inline-block">
                 Ideas to Life
-                <Sparkles className="w-5 h-5 text-[#FF8A00] absolute -top-3 -right-6 animate-bounce" />
+                <Sparkles className="w-5 h-5 text-[#C4D600] absolute -top-3 -right-6 animate-bounce" />
               </span>
             </h2>
           </div>
 
           <button
             onClick={() => onInquireService('General Services')}
-            className="self-start md:self-auto px-6 py-3 rounded-full bg-[#1A1B20] border border-white/10 text-white font-semibold text-sm hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all flex items-center gap-2 cursor-pointer group"
+            className="btn-liquid-fill self-start md:self-auto px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 cursor-pointer group"
           >
             <span>View All Services</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -112,18 +112,18 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onInquireServi
                   /* Slim Dark Horizontal Accordion Row */
                   <button
                     onClick={() => setActiveId(service.id)}
-                    className="w-full text-left p-6 sm:p-8 rounded-2xl bg-[#141519] border border-white/10 hover:border-[#FF8A00]/50 transition-all duration-300 flex items-center justify-between gap-4 group cursor-pointer"
+                    className="w-full text-left p-6 sm:p-8 rounded-2xl bg-[#141519] border border-white/10 hover:border-[#C4D600]/50 transition-all duration-300 flex items-center justify-between gap-4 group cursor-pointer"
                   >
                     <div className="flex items-center gap-6">
-                      <span className="font-mono font-bold text-gray-500 text-lg sm:text-xl group-hover:text-[#FF8A00] transition-colors">
+                      <span className="font-mono font-bold text-gray-500 text-lg sm:text-xl group-hover:text-[#C4D600] transition-colors">
                         {service.number}
                       </span>
-                      <h3 className="text-xl sm:text-3xl font-extrabold text-white font-heading tracking-tight group-hover:text-[#FF8A00] transition-colors">
+                      <h3 className="text-xl sm:text-3xl font-extrabold text-white font-heading tracking-tight group-hover:text-[#C4D600] transition-colors">
                         {service.title}
                       </h3>
                     </div>
 
-                    <div className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 group-hover:bg-[#FF8A00] group-hover:text-black group-hover:border-[#FF8A00] text-gray-400 flex items-center justify-center transition-all duration-300">
+                    <div className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 group-hover:bg-[#C4D600] group-hover:text-black group-hover:border-[#C4D600] text-gray-400 flex items-center justify-center transition-all duration-300">
                       <ArrowUpRight className="w-5 h-5 transition-transform group-hover:rotate-45" />
                     </div>
                   </button>

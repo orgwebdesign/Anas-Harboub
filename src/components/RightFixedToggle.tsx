@@ -16,7 +16,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
 }) => {
   // Desktop state:
   // In normal stage ('all'), ALL buttons are gray (#b2b2b2).
-  // Clicking any button switches its color to orange (#ff8900).
+  // Clicking any button switches its color to orange (#c4d600).
   const isDot1Active = activeTab === 'web-design';
   const isDot2Active = activeTab === 'vibe-nocode';
   const isDot3Active = activeTab === 'designer';
@@ -61,7 +61,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
         {/* Tooltip for Dot 1 (Web Design) */}
         {hoveredItem === 'web-design' && (
           <div className="absolute right-full top-[21.5%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
-            <span className="text-[#ff8900] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(255,137,0,0.85)]">
+            <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
               Web Design
             </span>
           </div>
@@ -70,17 +70,17 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
         {/* Tooltip for Dot 2 (Vibe no Code) */}
         {hoveredItem === 'vibe-nocode' && (
           <div className="absolute right-full top-[50.3%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
-            <span className="text-[#ff8900] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(255,137,0,0.85)]">
+            <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
               Vibe no Code
             </span>
           </div>
         )}
 
-        {/* Tooltip for Dot 3 (Graphiste) */}
+        {/* Tooltip for Dot 3 (Graphics Designer) */}
         {hoveredItem === 'designer' && (
           <div className="absolute right-full top-[79.1%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
-            <span className="text-[#ff8900] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(255,137,0,0.85)]">
-              Graphiste
+            <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
+              Graphics Designer
             </span>
           </div>
         )}
@@ -104,12 +104,12 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
               {/* Generous hit target area */}
               <rect x="0" y="0" width="32.57" height="26" fill="transparent" />
               
-              {/* Base circle: gray (#b2b2b2) when inactive, orange (#ff8900) when active */}
+              {/* Base circle: gray (#b2b2b2) when inactive, orange (#c4d600) when active */}
               <circle
                 cx="16.19"
                 cy="16.13"
                 r="8.97"
-                fill={isDot1Active ? '#ff8900' : '#b2b2b2'}
+                fill={isDot1Active ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
 
@@ -119,7 +119,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                   cx="16.19"
                   cy="16.13"
                   r="8.97"
-                  fill="#ff8900"
+                  fill="#c4d600"
                   className="animate-orange-pulse pointer-events-none"
                 />
               )}
@@ -143,7 +143,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 cx="16.19"
                 cy="37.77"
                 r="8.97"
-                fill={isDot2Active ? '#ff8900' : '#b2b2b2'}
+                fill={isDot2Active ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
 
@@ -153,7 +153,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                   cx="16.19"
                   cy="37.77"
                   r="8.97"
-                  fill="#ff8900"
+                  fill="#c4d600"
                   className="animate-orange-pulse pointer-events-none"
                 />
               )}
@@ -177,7 +177,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 cx="16.19"
                 cy="59.40"
                 r="8.97"
-                fill={isDot3Active ? '#ff8900' : '#b2b2b2'}
+                fill={isDot3Active ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
 
@@ -187,7 +187,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                   cx="16.19"
                   cy="59.40"
                   r="8.97"
-                  fill="#ff8900"
+                  fill="#c4d600"
                   className="animate-orange-pulse pointer-events-none"
                 />
               )}
@@ -200,13 +200,13 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
       </div>
 
       {/* Contact Me Button (4th Button):
-          - On Mobile: Placed at bottom right ("on bas") and colored ORANGE (#ff8900).
+          - On Mobile: Placed at bottom right ("on bas") and colored ORANGE (#c4d600).
           - On Desktop: Base gray (#b2b2b2) with slow orange opacity beacon overlay. NO size change! */}
       <div className="relative flex items-center justify-center mt-2 md:mt-2">
         {/* Tooltip for Contact */}
         {hoveredItem === 'contact' && (
           <div className="absolute right-full top-1/2 -translate-y-1/2 mr-4 whitespace-nowrap pointer-events-none font-ananda z-50 hidden md:block animate-in fade-in slide-in-from-right-2 duration-150">
-            <span className="text-[#ff8900] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(255,137,0,0.85)]">
+            <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
               Contact Me
             </span>
           </div>
@@ -221,7 +221,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
           aria-label="Contact Me"
         >
           {/* Exact Smile SVG:
-              - Mobile: ALWAYS orange (#ff8900)
+              - Mobile: ALWAYS orange (#c4d600)
               - Desktop: gray (#b2b2b2) in normal stage with orange opacity overlay beacon pulsing slowly */}
           <div className="w-[50px] sm:w-[56px] flex items-center justify-center">
             <svg viewBox="0 0 33.26 32.91" className="w-full h-auto overflow-visible block">
@@ -233,8 +233,8 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 fill="currentColor"
                 className={`transition-colors duration-300 ${
                   isContactOpen
-                    ? 'text-[#ff8900]'
-                    : 'text-[#ff8900] md:text-[#b2b2b2]'
+                    ? 'text-[#c4d600]'
+                    : 'text-[#c4d600] md:text-[#b2b2b2]'
                 }`}
                 d="M28.83,12.77c-1.51-6.04-6.91-10-13.01-9.65-5.85.34-11.07,4.77-11.74,10.87-.34,3.12-.44,11.41.12,14.5l12.9-.08c8.07-.05,13.64-8.03,11.73-15.65ZM15.83,23.05c-4.19-.2-7.66-4.07-5.86-4.76,1.36-.53,2.09,2.85,5.9,2.98,4.25.14,5.03-3.08,6.2-2.91,2.55.36-1.49,4.94-6.24,4.7Z"
               />
@@ -242,7 +242,7 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
               {/* Orange opacity beacon overlay on desktop (pure opacity animation, NO size change) */}
               {!isContactOpen && (
                 <path
-                  fill="#ff8900"
+                  fill="#c4d600"
                   className="hidden md:block animate-orange-pulse pointer-events-none"
                   d="M28.83,12.77c-1.51-6.04-6.91-10-13.01-9.65-5.85.34-11.07,4.77-11.74,10.87-.34,3.12-.44,11.41.12,14.5l12.9-.08c8.07-.05,13.64-8.03,11.73-15.65ZM15.83,23.05c-4.19-.2-7.66-4.07-5.86-4.76,1.36-.53,2.09,2.85,5.9,2.98,4.25.14,5.03-3.08,6.2-2.91,2.55.36-1.49,4.94-6.24,4.7Z"
                 />

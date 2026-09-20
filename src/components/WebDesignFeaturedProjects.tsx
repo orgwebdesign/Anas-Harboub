@@ -466,7 +466,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
           <div className="lg:col-span-5 space-y-6 text-left">
             {/* Category Tag */}
             <div className="flex items-center gap-2 font-mono text-xs font-bold tracking-widest uppercase">
-              <span className="text-[#FF8A00]">{project.number}</span>
+              <span className="text-[#C4D600]">{project.number}</span>
               <span className="text-gray-500">/</span>
               <span className="text-gray-400">{project.category}</span>
             </div>
@@ -513,7 +513,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   href={project.liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="group px-6 py-3 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs sm:text-sm hover:bg-[#ffa026] hover:shadow-[0_0_25px_rgba(255,138,0,0.4)] transition-all duration-300 cursor-pointer inline-flex items-center gap-2 shadow-lg"
+                  className="btn-liquid-fill group px-6 py-3 rounded-full font-bold text-xs sm:text-sm cursor-pointer inline-flex items-center gap-2 shadow-lg"
                 >
                   <span>{project.buttonText || "Voir en live"}</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -521,7 +521,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
               ) : (
                 <button
                   onClick={() => onSelectProject(project.projectRef)}
-                  className="group px-6 py-3 rounded-full border border-[#FF8A00]/50 text-[#FF8A00] hover:bg-[#FF8A00] hover:text-black font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer inline-flex items-center gap-2 shadow-lg"
+                  className="btn-liquid-fill group px-6 py-3 rounded-full font-bold text-xs sm:text-sm cursor-pointer inline-flex items-center gap-2 shadow-lg"
                 >
                   <span>{project.buttonText || "View Case Study"}</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -534,9 +534,9 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   <button
                     key={idx}
                     onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                    className="group px-5 py-3 rounded-full bg-[#1A1B20] border border-white/20 text-white hover:border-[#FF8A00] hover:text-[#FF8A00] font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer inline-flex items-center gap-2 shadow-lg"
+                    className="group px-5 py-3 rounded-full bg-[#1A1B20] border border-white/20 text-white hover:border-[#C4D600] hover:text-[#C4D600] font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer inline-flex items-center gap-2 shadow-lg"
                   >
-                    <BtnIcon className="w-4 h-4 text-[#FF8A00]" />
+                    <BtnIcon className="w-4 h-4 text-[#C4D600]" />
                     <span>{btn.label}</span>
                   </button>
                 );
@@ -560,7 +560,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   />
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#FF8A00]" />
+                    <Eye className="w-5 h-5 text-[#C4D600]" />
                     <span>Click to Preview Figma Presentation</span>
                   </div>
                 </div>
@@ -593,7 +593,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   />
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#FF8A00]" />
+                    <Eye className="w-5 h-5 text-[#C4D600]" />
                     <span>Click to Preview Figma Presentation</span>
                   </div>
                 </div>
@@ -622,7 +622,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         <button
                           key={idx}
                           onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs hover:bg-[#ffa026] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
+                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
                         >
                           <BtnIcon className="w-4 h-4" />
                           <span>{btn.label}</span>
@@ -656,7 +656,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         <button
                           key={idx}
                           onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs hover:bg-[#ffa026] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
+                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
                         >
                           <BtnIcon className="w-4 h-4" />
                           <span>{btn.label}</span>
@@ -685,7 +685,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   />
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#FF8A00]" />
+                    <Eye className="w-5 h-5 text-[#C4D600]" />
                     <span>Click to Preview Figma Presentation</span>
                   </div>
                 </div>
@@ -709,7 +709,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   />
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#FF8A00]" />
+                    <Eye className="w-5 h-5 text-[#C4D600]" />
                     <span>Click to Preview Figma Presentation</span>
                   </div>
                 </div>
@@ -738,7 +738,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         <button
                           key={idx}
                           onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs hover:bg-[#ffa026] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
+                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
                         >
                           <BtnIcon className="w-4 h-4" />
                           <span>{btn.label}</span>
@@ -767,7 +767,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   />
                   <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#FF8A00]" />
+                    <Eye className="w-5 h-5 text-[#C4D600]" />
                     <span>Click to Preview Figma Presentation</span>
                   </div>
                 </div>
@@ -796,7 +796,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         <button
                           key={idx}
                           onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs hover:bg-[#ffa026] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
+                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
                         >
                           <BtnIcon className="w-4 h-4" />
                           <span>{btn.label}</span>
@@ -830,7 +830,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         <button
                           key={idx}
                           onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs hover:bg-[#ffa026] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
+                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
                         >
                           <BtnIcon className="w-4 h-4" />
                           <span>{btn.label}</span>
@@ -858,7 +858,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
               {/* Modal Header */}
               <div className="p-4 sm:p-5 border-b border-white/10 flex items-center justify-between bg-[#0E0F13]">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#FF8A00]/10 text-[#FF8A00] flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-[#C4D600]/10 text-[#C4D600] flex items-center justify-center">
                     <Eye className="w-4 h-4" />
                   </div>
                   <div>
@@ -876,10 +876,10 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                     href={figmaModal.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-[#FF8A00] text-gray-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:border-[#C4D600] text-gray-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5"
                   >
                     <span>Open in Figma</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-[#FF8A00]" />
+                    <ExternalLink className="w-3.5 h-3.5 text-[#C4D600]" />
                   </a>
 
                   <button

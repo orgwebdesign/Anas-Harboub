@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
   const navLinks: { label: string; tab: PageTab }[] = [
     { label: 'Web Design', tab: 'web-design' },
     { label: 'Vibe No Code', tab: 'vibe-nocode' },
-    { label: 'Infographiste', tab: 'designer' },
+    { label: 'Graphics Designer', tab: 'designer' },
   ];
 
   // Compact state is active only when scrolled down AND user is not hovering over the navbar
@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
           >
             <button
               onClick={onOpenContact}
-              className="group relative inline-flex items-center gap-2 rounded-full bg-white text-black font-semibold transition-all duration-500 hover:bg-[#FF8A00] hover:text-black hover:shadow-[0_0_20px_rgba(255,138,0,0.5)] cursor-pointer whitespace-nowrap px-5 py-2.5 text-sm"
+              className="group relative inline-flex items-center gap-2 rounded-full bg-white text-black font-semibold transition-all duration-500 hover:bg-[#C4D600] hover:text-black hover:shadow-[0_0_20px_rgba(196, 214, 0,0.5)] cursor-pointer whitespace-nowrap px-5 py-2.5 text-sm"
             >
               <span>Contact me</span>
               <div className="rounded-full bg-black/10 group-hover:bg-black group-hover:text-white flex items-center justify-center transition-all duration-500 w-6 h-6">
@@ -101,10 +101,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
                 setMobileMenuOpen(false);
               }}
               className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors flex items-center gap-2 ${
-                activeTab === 'all' ? 'bg-[#FF8A00]/20 text-[#FF8A00] border border-[#FF8A00]/30' : 'text-gray-300 hover:bg-white/5'
+                activeTab === 'all' ? 'bg-[#C4D600]/20 text-[#C4D600] border border-[#C4D600]/30' : 'text-gray-300 hover:bg-white/5'
               }`}
             >
-              <Home className="w-4 h-4 text-[#FF8A00]" />
+              <Home className="w-4 h-4 text-[#C4D600]" />
               <span>All Overview</span>
             </button>
 
@@ -117,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
                 }}
                 className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                   activeTab === link.tab
-                    ? 'bg-[#FF8A00] text-black font-semibold'
+                    ? 'bg-[#C4D600] text-black font-semibold'
                     : 'text-gray-300 hover:bg-white/5'
                 }`}
               >
@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
                   setMobileMenuOpen(false);
                   onOpenContact();
                 }}
-                className="w-full py-3 rounded-xl bg-[#FF8A00] text-black font-bold text-center flex items-center justify-center gap-2 shadow-lg"
+                className="w-full py-3 rounded-xl bg-[#C4D600] text-black font-bold text-center flex items-center justify-center gap-2 shadow-lg"
               >
                 <span>Contact me</span>
                 <ArrowUpRight className="w-4 h-4" />

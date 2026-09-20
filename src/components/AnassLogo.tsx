@@ -47,7 +47,7 @@ export const AnassLogo: React.FC<AnassLogoProps> = ({ className = '', height = 4
              L 332 250 
              L 310 152 
              Z"
-          fill="#FF8A00"
+          fill="#C4D600"
         />
       </svg>
     </div>

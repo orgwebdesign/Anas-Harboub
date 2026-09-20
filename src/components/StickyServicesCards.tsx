@@ -164,9 +164,9 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
       title: 'Landing Pages & VSL',
       desc: 'Landing pages, sales pages, VSL pages, campaign pages',
       icon: Rocket,
-      bgClass: 'bg-[#FF8A00] text-black border border-white/20 shadow-[0_20px_50px_rgba(255,138,0,0.4)]',
-      badgeClass: 'bg-black text-[#FF8A00]',
-      iconClass: 'bg-black text-[#FF8A00]',
+      bgClass: 'bg-[#C4D600] text-black border border-white/20 shadow-[0_20px_50px_rgba(196, 214, 0,0.4)]',
+      badgeClass: 'bg-black text-[#C4D600]',
+      iconClass: 'bg-black text-[#C4D600]',
     },
     {
       id: 'card-2',
@@ -174,9 +174,9 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
       title: 'SaaS & Web Apps',
       desc: 'SaaS platforms, web applications, client portals',
       icon: AppWindow,
-      bgClass: 'bg-[#181920] text-white border border-[#FF8A00]/30 shadow-2xl',
-      badgeClass: 'bg-[#FF8A00] text-black',
-      iconClass: 'bg-[#FF8A00] text-black',
+      bgClass: 'bg-[#181920] text-white border border-[#C4D600]/30 shadow-2xl',
+      badgeClass: 'bg-[#C4D600] text-black',
+      iconClass: 'bg-[#C4D600] text-black',
     },
     {
       id: 'card-3',
@@ -185,8 +185,8 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
       desc: 'Admin dashboards, analytics, CRM & management interfaces',
       icon: LayoutDashboard,
       bgClass: 'bg-[#0E0F13] text-white border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.9)]',
-      badgeClass: 'bg-white/10 text-[#FF8A00] border border-white/10',
-      iconClass: 'bg-[#FF8A00]/20 text-[#FF8A00] border border-[#FF8A00]/30',
+      badgeClass: 'bg-white/10 text-[#C4D600] border border-white/10',
+      iconClass: 'bg-[#C4D600]/20 text-[#C4D600] border border-[#C4D600]/30',
     },
     {
       id: 'card-4',
@@ -194,19 +194,19 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
       title: 'Corporate & E-commerce',
       desc: 'Business websites, corporate sites & online stores',
       icon: ShoppingBag,
-      bgClass: 'bg-[#FF8A00] text-black border border-white/20 shadow-[0_20px_50px_rgba(255,138,0,0.5)]',
-      badgeClass: 'bg-black text-[#FF8A00]',
-      iconClass: 'bg-black text-[#FF8A00]',
+      bgClass: 'bg-[#C4D600] text-black border border-white/20 shadow-[0_20px_50px_rgba(196, 214, 0,0.5)]',
+      badgeClass: 'bg-black text-[#C4D600]',
+      iconClass: 'bg-black text-[#C4D600]',
     },
   ];
 
   return (
-    <div ref={rootRef} className="relative w-full text-white selection:bg-[#FF8A00] selection:text-black">
+    <div ref={rootRef} className="relative w-full text-white selection:bg-[#C4D600] selection:text-black">
       {/* Pinned Scroll Region */}
       <section className="hero-section-pin relative w-full h-screen bg-[#0B0C0E] overflow-hidden flex items-center justify-center border border-white/10 rounded-[24px] sm:rounded-[32px]">
         {/* Subtle Radial Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(#FF8A00_1px,transparent_1px)] [background-size:32px_32px] sm:[background-size:40px_40px] opacity-10 pointer-events-none" />
-        <div className="absolute w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-[#FF8A00]/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#C4D600_1px,transparent_1px)] [background-size:32px_32px] sm:[background-size:40px_40px] opacity-10 pointer-events-none" />
+        <div className="absolute w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-[#C4D600]/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
         {/* Hero Content (Headline overlay centered cleanly) */}
         <div className="hero-content absolute inset-x-0 top-1/2 -translate-y-1/2 w-full px-4 sm:px-6 text-center z-10 pointer-events-none space-y-3 sm:space-y-4">
@@ -216,7 +216,7 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
             <motion.span
               animate={{ opacity: [0.35, 1, 0.35] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-              className="text-[#FF8A00] inline-block"
+              className="text-[#C4D600] inline-block"
             >
               Design
             </motion.span>{' '}
@@ -225,7 +225,7 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
             <motion.span
               animate={{ opacity: [0.35, 1, 0.35] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="text-[#FF8A00] inline-block"
+              className="text-[#C4D600] inline-block"
             >
               ideas
             </motion.span>{' '}
@@ -243,7 +243,7 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
         >
           {/* Front Card */}
           <div
-            className="card card-front absolute top-1/2 left-1/2 w-[84vw] max-w-[360px] aspect-[4/5] p-5 sm:p-8 md:p-10 rounded-[24px] sm:rounded-[28px] bg-[#FF8A00] text-black border border-white/30 flex flex-col justify-between items-center text-center shadow-[0_25px_60px_rgba(255,138,0,0.45)] cursor-pointer"
+            className="card card-front absolute top-1/2 left-1/2 w-[84vw] max-w-[360px] aspect-[4/5] p-5 sm:p-8 md:p-10 rounded-[24px] sm:rounded-[28px] bg-[#C4D600] text-black border border-white/30 flex flex-col justify-between items-center text-center shadow-[0_25px_60px_rgba(196, 214, 0,0.45)] cursor-pointer"
             style={{ 
               transform: 'translate(-50%, 50%) rotateY(0deg)',
               backfaceVisibility: 'hidden',
@@ -251,7 +251,7 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
             }}
           >
             <div className="flex items-center justify-between w-full">
-              <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black text-[#FF8A00] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
+              <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-black text-[#C4D600] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
                 00 — START HERE
               </span>
               <span className="text-[10px] sm:text-xs font-mono font-bold uppercase text-black/70">Overview</span>
@@ -266,7 +266,7 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
               </p>
             </div>
 
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-black text-[#FF8A00] flex items-center justify-center border border-white/20 animate-bounce">
+            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-black text-[#C4D600] flex items-center justify-center border border-white/20 animate-bounce">
               <ChevronDown className="w-5 h-5 sm:w-7 sm:h-7" />
             </div>
           </div>

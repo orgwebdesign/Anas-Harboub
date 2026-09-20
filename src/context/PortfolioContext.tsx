@@ -111,7 +111,7 @@ interface PortfolioContextType {
 }
 
 const STORAGE_PROJECTS_KEY = 'anass_harboub_projects_v3';
-const STORAGE_SERVICES_KEY = 'anass_harboub_services_v2';
+const STORAGE_SERVICES_KEY = 'anass_harboub_services_v3';
 const STORAGE_PAGES_KEY = 'anass_harboub_pages_v4';
 const STORAGE_HOME_KEY = 'anass_harboub_home_v3';
 
@@ -139,7 +139,7 @@ export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          return parsed.map((s: Service) => (s.id === 's2' && s.title === 'UI/UX Design' ? SERVICES_DATA[1] : s));
         }
       }
     } catch (e) {

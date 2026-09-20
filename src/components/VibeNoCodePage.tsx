@@ -74,12 +74,12 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
         <div className="p-6 sm:p-8 rounded-[32px] bg-[#141519] border border-white/10 shadow-2xl relative overflow-hidden space-y-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Terminal className="w-5 h-5 text-[#FF8A00]" />
+              <Terminal className="w-5 h-5 text-[#C4D600]" />
               <h3 className="text-xl font-bold text-white font-heading">
                 Vibe No-Code & AI Workflow Engine
               </h3>
             </div>
-            <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#FF8A00]/10 text-[#FF8A00] font-bold">
+            <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#C4D600]/10 text-[#C4D600] font-bold">
               AI Powered
             </span>
           </div>
@@ -93,13 +93,13 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
                 type="text"
                 value={promptInput}
                 onChange={(e) => setPromptInput(e.target.value)}
-                className="flex-1 px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF8A00]"
+                className="flex-1 px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                 placeholder="Describe your app idea..."
               />
               <button
                 onClick={handleSimulateGeneration}
                 disabled={isGenerating}
-                className="px-6 py-3 rounded-xl bg-[#FF8A00] text-black font-extrabold text-sm hover:bg-[#ffa026] transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0 disabled:opacity-50"
+                className="px-6 py-3 rounded-xl bg-[#C4D600] text-black font-extrabold text-sm hover:bg-[#d2e500] transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0 disabled:opacity-50"
               >
                 {isGenerating ? (
                   <>
@@ -117,7 +117,7 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
           </div>
 
           {generationOutput && (
-            <div className="p-4 rounded-xl bg-[#0B0C0E] border border-[#FF8A00]/30 text-xs font-mono text-gray-200 animate-in fade-in">
+            <div className="p-4 rounded-xl bg-[#0B0C0E] border border-[#C4D600]/30 text-xs font-mono text-gray-200 animate-in fade-in">
               {generationOutput}
             </div>
           )}
@@ -134,12 +134,12 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
               return (
                 <div
                   key={tool.name}
-                  className="p-6 rounded-2xl bg-[#141519] border border-white/10 hover:border-[#FF8A00]/50 transition-all duration-300 group"
+                  className="p-6 rounded-2xl bg-[#141519] border border-white/10 hover:border-[#C4D600]/50 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#FF8A00]/10 border border-[#FF8A00]/20 flex items-center justify-center text-[#FF8A00] mb-4 group-hover:bg-[#FF8A00] group-hover:text-black transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-[#C4D600]/10 border border-[#C4D600]/20 flex items-center justify-center text-[#C4D600] mb-4 group-hover:bg-[#C4D600] group-hover:text-black transition-all duration-300">
                     <ToolIcon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#FF8A00] transition-colors">
+                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#C4D600] transition-colors">
                     {tool.name}
                   </h3>
                   <p className="text-sm text-gray-400 mt-2">{tool.desc}</p>
@@ -157,7 +157,7 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {processSteps.map((s) => (
               <div key={s.step} className="p-6 rounded-2xl bg-[#141519] border border-white/10 space-y-3">
-                <span className="font-mono font-bold text-2xl text-[#FF8A00]">
+                <span className="font-mono font-bold text-2xl text-[#C4D600]">
                   {s.step}
                 </span>
                 <h3 className="text-lg font-bold text-white font-heading">{s.title}</h3>
@@ -177,7 +177,7 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
               <div
                 key={project.id}
                 onClick={() => onSelectProject(project)}
-                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#FF8A00] transition-all duration-300 cursor-pointer shadow-xl"
+                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#C4D600] transition-all duration-300 cursor-pointer shadow-xl"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-black/50 relative">
                   <img
@@ -187,17 +187,17 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#FF8A00] text-black font-bold text-xs">
+                    <span className="px-3 py-1 rounded-full bg-[#C4D600] text-black font-bold text-xs">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#FF8A00] transition-colors">
+                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#C4D600] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-400">{project.description}</p>
-                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#FF8A00]">
+                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#C4D600]">
                     <span>View Interactive Project</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
@@ -217,10 +217,10 @@ export const VibeNoCodePage: React.FC<VibeNoCodePageProps> = ({ onSelectProject,
           </p>
           <button
             onClick={onOpenContact}
-            className="px-8 py-3.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-sm hover:bg-[#ffa026] transition-all cursor-pointer inline-flex items-center gap-2 shadow-xl"
+            className="btn-liquid-fill px-8 py-3.5 rounded-full font-extrabold text-sm cursor-pointer inline-flex items-center gap-2 shadow-xl group"
           >
             <span>Launch Your No-Code Build</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
           </button>
         </div>
 

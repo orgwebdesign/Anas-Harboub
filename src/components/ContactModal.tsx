@@ -51,7 +51,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
 
           {isSubmitted ? (
             <div className="text-center py-12 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#FF8A00]/20 text-[#FF8A00] flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-[#C4D600]/20 text-[#C4D600] flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
@@ -65,7 +65,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                   setIsSubmitted(false);
                   onClose();
                 }}
-                className="px-8 py-3 rounded-full bg-[#FF8A00] text-black font-extrabold text-sm hover:bg-[#ffa026] transition-all cursor-pointer mt-4"
+                className="px-8 py-3 rounded-full bg-[#C4D600] text-black font-extrabold text-sm hover:bg-[#d2e500] transition-all cursor-pointer mt-4"
               >
                 Back to Portfolio
               </button>
@@ -74,13 +74,13 @@ export const ContactModal: React.FC<ContactModalProps> = ({
             <div className="space-y-6">
               {/* Header */}
               <div>
-                <div className="flex items-center gap-2 text-[#FF8A00] font-bold text-xs uppercase tracking-wider mb-2">
+                <div className="flex items-center gap-2 text-[#C4D600] font-bold text-xs uppercase tracking-wider mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Start A Project</span>
                 </div>
                 <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-heading tracking-tight">
                   Have a project in mind? <br />
-                  <span className="text-[#FF8A00]">Let's build something great.</span>
+                  <span className="text-[#C4D600]">Let's build something great.</span>
                 </h2>
               </div>
 
@@ -88,18 +88,18 @@ export const ContactModal: React.FC<ContactModalProps> = ({
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href={`mailto:${ANASS_BIO.socials.email}`}
-                  className="px-3.5 py-2 rounded-full bg-[#1A1B20] border border-white/10 text-xs font-semibold text-gray-300 hover:text-[#FF8A00] hover:border-[#FF8A00] transition-colors flex items-center gap-2"
+                  className="px-3.5 py-2 rounded-full bg-[#1A1B20] border border-white/10 text-xs font-semibold text-gray-300 hover:text-[#C4D600] hover:border-[#C4D600] transition-colors flex items-center gap-2"
                 >
-                  <Mail className="w-3.5 h-3.5 text-[#FF8A00]" />
+                  <Mail className="w-3.5 h-3.5 text-[#C4D600]" />
                   <span>{ANASS_BIO.socials.email}</span>
                 </a>
                 <a
                   href={ANASS_BIO.socials.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3.5 py-2 rounded-full bg-[#1A1B20] border border-white/10 text-xs font-semibold text-gray-300 hover:text-[#FF8A00] hover:border-[#FF8A00] transition-colors flex items-center gap-2"
+                  className="px-3.5 py-2 rounded-full bg-[#1A1B20] border border-white/10 text-xs font-semibold text-gray-300 hover:text-[#C4D600] hover:border-[#C4D600] transition-colors flex items-center gap-2"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#FF8A00]" />
+                  <Phone className="w-3.5 h-3.5 text-[#C4D600]" />
                   <span>WhatsApp Chat</span>
                 </a>
               </div>
@@ -115,7 +115,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Alex Morgan"
-                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF8A00]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -126,7 +126,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="alex@company.com"
-                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF8A00]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                     />
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     <select
                       value={formData.projectType}
                       onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF8A00]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                     >
                       <option value="Web Design">Web Design</option>
                       <option value="Vibe No Code">Vibe No Code</option>
@@ -150,7 +150,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF8A00]"
+                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                     >
                       <option value="<$3k">&lt; $3,000</option>
                       <option value="$3k – $5k">$3,000 – $5,000</option>
@@ -168,13 +168,13 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell me about your goals, timeline, and vision..."
-                    className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF8A00]"
+                    className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-[#FF8A00] text-black font-extrabold text-sm hover:bg-[#ffa026] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl"
+                  className="w-full py-4 rounded-full bg-[#C4D600] text-black font-extrabold text-sm hover:bg-[#d2e500] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xl"
                 >
                   <span>Send Project Inquiry</span>
                   <Send className="w-4 h-4" />

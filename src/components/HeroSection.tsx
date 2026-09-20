@@ -18,7 +18,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
   return (
     <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
       {/* Ambient background glow shapes - Hardware accelerated radial gradient */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(255,138,0,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(196, 214, 0,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Hero Title */}
@@ -29,7 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
           className="text-center max-w-4xl mx-auto"
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] font-heading mb-3">
-            I'm <span className="text-[#FF8A00] underline decoration-[#FF8A00]/30 underline-offset-8">{homeConfig.name}</span>
+            I'm <span className="text-[#C4D600] underline decoration-[#C4D600]/30 underline-offset-8">{homeConfig.name}</span>
           </h1>
           <div className="max-w-3xl mx-auto my-2 min-h-[140px]">
             <FallingText
@@ -66,7 +66,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
                   href={ANASS_BIO.socials.behance}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#FF8A00] hover:border-[#FF8A00] transition-all duration-300 text-xs font-bold"
+                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#C4D600] hover:border-[#C4D600] transition-all duration-300 text-xs font-bold"
                   title="Behance"
                 >
                   Bē
@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
                   href={ANASS_BIO.socials.dribbble}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#FF8A00] hover:border-[#FF8A00] transition-all duration-300 text-xs font-bold"
+                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#C4D600] hover:border-[#C4D600] transition-all duration-300 text-xs font-bold"
                   title="Dribbble"
                 >
                   Dr
@@ -84,7 +84,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
                   href={ANASS_BIO.socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#FF8A00] hover:border-[#FF8A00] transition-all duration-300 text-xs font-bold"
+                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#C4D600] hover:border-[#C4D600] transition-all duration-300 text-xs font-bold"
                   title="LinkedIn"
                 >
                   in
@@ -93,7 +93,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
                   href={ANASS_BIO.socials.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#FF8A00] hover:border-[#FF8A00] transition-all duration-300 text-xs font-bold"
+                  className="w-10 h-10 rounded-full bg-[#1A1B20] border border-white/10 flex items-center justify-center text-gray-300 hover:text-black hover:bg-[#C4D600] hover:border-[#C4D600] transition-all duration-300 text-xs font-bold"
                   title="Instagram"
                 >
                   Ig
@@ -103,16 +103,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
 
             {/* Metrics Card */}
             <div className="p-4 rounded-2xl bg-[#141519] border border-white/10 shadow-xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-16 h-16 bg-[#FF8A00]/10 rounded-full blur-xl group-hover:bg-[#FF8A00]/20 transition-colors" />
+              <div className="absolute top-0 right-0 w-16 h-16 bg-[#C4D600]/10 rounded-full blur-xl group-hover:bg-[#C4D600]/20 transition-colors" />
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-[#FF8A00] text-black font-bold text-xs flex items-center justify-center border-2 border-[#141519]">
+                  <div className="w-8 h-8 rounded-full bg-[#C4D600] text-black font-bold text-xs flex items-center justify-center border-2 border-[#141519]">
                     AH
                   </div>
                   <div className="w-8 h-8 rounded-full bg-gray-800 text-white font-bold text-xs flex items-center justify-center border-2 border-[#141519]">
                     UI
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-gray-700 text-orange-400 font-bold text-xs flex items-center justify-center border-2 border-[#141519]">
+                  <div className="w-8 h-8 rounded-full bg-gray-700 text-[#C4D600] font-bold text-xs flex items-center justify-center border-2 border-[#141519]">
                     AI
                   </div>
                 </div>
@@ -138,14 +138,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
             {/* Transparent Background Cutout Portrait Stage */}
             <div className="relative w-[300px] sm:w-[380px] lg:w-[420px] aspect-[3/4] flex items-end justify-center">
               {/* Radial orange glow halo behind subject */}
-              <div className="absolute inset-0 bg-[#FF8A00]/20 rounded-full blur-[70px] pointer-events-none transform translate-y-6 scale-90" />
+              <div className="absolute inset-0 bg-[#C4D600]/20 rounded-full blur-[70px] pointer-events-none transform translate-y-6 scale-90" />
               
               {/* Cutout Portrait Image */}
               <div className="relative z-10 w-full h-full flex items-end justify-center overflow-hidden">
                 <img
                   src={portraitUrl}
                   alt={`${homeConfig.name} UI UX Designer`}
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 drop-shadow-[0_20px_50px_rgba(255,138,0,0.25)]"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 drop-shadow-[0_20px_50px_rgba(196, 214, 0,0.25)]"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = fallbackPortrait;
                   }}
@@ -179,20 +179,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
           {/* Primary CTA: View Portfolio */}
           <button
             onClick={onExploreClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#FF8A00] text-black font-extrabold text-base transition-all duration-300 hover:bg-[#ffa026] hover:shadow-[0_0_30px_rgba(255,138,0,0.5)] hover:-translate-y-0.5 flex items-center justify-center gap-3 cursor-pointer group"
+            className="btn-liquid-fill w-full sm:w-[210px] h-[56px] rounded-full font-bold text-base flex items-center justify-center gap-2.5 cursor-pointer group"
           >
             <span>View Portfolio</span>
-            <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center transition-transform group-hover:rotate-45">
-              <ArrowUpRight className="w-4 h-4" />
-            </div>
+            <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" />
           </button>
 
           {/* Secondary CTA: Hire Me */}
           <button
             onClick={onHireClick}
-            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#141519] text-white border border-white/20 font-bold text-base transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
+            className="btn-liquid-fill w-full sm:w-[210px] h-[56px] rounded-full font-bold text-base flex items-center justify-center gap-2.5 cursor-pointer group"
           >
             <span>Hire Me</span>
+            <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" />
           </button>
         </motion.div>
       </div>

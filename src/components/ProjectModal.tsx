@@ -34,7 +34,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
             {/* Top Banner & Header */}
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3.5 py-1 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs">
+                <span className="px-3.5 py-1 rounded-full bg-[#C4D600] text-black font-extrabold text-xs">
                   {project.category}
                 </span>
                 <span className="px-3 py-1 rounded-full bg-[#1A1B20] text-gray-300 font-mono text-xs border border-white/10">
@@ -46,7 +46,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               </h2>
               <div className="flex items-center gap-4 text-xs text-gray-400 font-medium">
                 <div className="flex items-center gap-1.5">
-                  <User className="w-3.5 h-3.5 text-[#FF8A00]" />
+                  <User className="w-3.5 h-3.5 text-[#C4D600]" />
                   <span>Client: {project.client}</span>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {project.metrics.map((m) => (
                   <div key={m.label} className="p-4 rounded-xl bg-[#0B0C0E] border border-white/5">
-                    <span className="text-2xl font-extrabold font-heading text-[#FF8A00] block">
+                    <span className="text-2xl font-extrabold font-heading text-[#C4D600] block">
                       {m.value}
                     </span>
                     <span className="text-xs text-gray-400 block mt-1">{m.label}</span>
@@ -91,7 +91,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {project.deliverables.map((d) => (
                     <div key={d} className="flex items-center gap-2 text-xs sm:text-sm text-gray-300">
-                      <CheckCircle2 className="w-4 h-4 text-[#FF8A00] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#C4D600] shrink-0" />
                       <span>{d}</span>
                     </div>
                   ))}
@@ -118,7 +118,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                     className="flex-1 sm:flex-initial px-5 py-3 rounded-full bg-white/10 text-white font-extrabold text-xs hover:bg-white/20 transition-all cursor-pointer flex items-center justify-center gap-2 border border-white/20"
                   >
                     <span>Voir en live</span>
-                    <ExternalLink className="w-4 h-4 text-[#FF8A00]" />
+                    <ExternalLink className="w-4 h-4 text-[#C4D600]" />
                   </a>
                 )}
                 <button
@@ -126,7 +126,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
                     onClose();
                     onOpenContact();
                   }}
-                  className="flex-1 sm:flex-initial px-6 py-3 rounded-full bg-[#FF8A00] text-black font-extrabold text-xs hover:bg-[#ffa026] transition-all cursor-pointer flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-initial px-6 py-3 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>Build Similar Project</span>
                   <ArrowUpRight className="w-4 h-4" />

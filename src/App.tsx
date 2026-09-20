@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <PortfolioProvider>
-      <div className="min-h-screen bg-[#0B0C0E] text-[#F3F4F6] font-sans selection:bg-[#FF8A00] selection:text-black">
+      <div className="min-h-screen bg-[#0B0C0E] text-[#F3F4F6] font-sans selection:bg-[#C4D600] selection:text-black">
         {/* Top Navbar */}
         <Navbar
           activeTab={activeTab}

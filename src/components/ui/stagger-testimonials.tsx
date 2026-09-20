@@ -186,8 +186,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       className={cn(
         "absolute left-1/2 top-1/2 cursor-pointer border-2 p-6 sm:p-8 transition-transform duration-500 ease-out select-none will-change-transform",
         isCenter 
-          ? "z-20 bg-[#FF8A00] text-black border-[#FF8A00] shadow-[0_15px_35px_rgba(255,138,0,0.4)]" 
-          : "z-10 bg-[#131418] text-gray-200 border-white/10 hover:border-[#FF8A00]/50"
+          ? "z-20 bg-[#C4D600] text-black border-[#C4D600] shadow-[0_15px_35px_rgba(196, 214, 0,0.4)]" 
+          : "z-10 bg-[#131418] text-gray-200 border-white/10 hover:border-[#C4D600]/50"
       )}
       style={{
         width: cardSize,
@@ -240,7 +240,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
                   key={i}
                   className={cn(
                     "w-3.5 h-3.5 fill-current",
-                    isCenter ? "text-black" : "text-[#FF8A00]"
+                    isCenter ? "text-black" : "text-[#C4D600]"
                   )}
                 />
               ))}
@@ -259,7 +259,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           "text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border",
           isCenter
             ? "bg-black/10 border-black/20 text-black"
-            : "bg-white/5 border-white/10 text-[#FF8A00]"
+            : "bg-white/5 border-white/10 text-[#C4D600]"
         )}>
           {testimonial.lang === 'ar' ? 'العربية' : testimonial.lang === 'fr' ? 'Français' : 'English'}
         </span>
@@ -373,8 +373,8 @@ export const StaggerTestimonials: React.FC = () => {
           onClick={() => handleMove(-1)}
           className={cn(
             "flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-2xl transition-colors duration-200 cursor-pointer",
-            "bg-[#141519] text-white border-2 border-white/15 hover:border-[#FF8A00] hover:bg-[#FF8A00] hover:text-black",
-            "shadow-[0_8px_25px_rgba(0,0,0,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00]"
+            "bg-[#141519] text-white border-2 border-white/15 hover:border-[#C4D600] hover:bg-[#C4D600] hover:text-black",
+            "shadow-[0_8px_25px_rgba(0,0,0,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4D600]"
           )}
           aria-label="Previous testimonial"
         >
@@ -384,8 +384,8 @@ export const StaggerTestimonials: React.FC = () => {
           onClick={() => handleMove(1)}
           className={cn(
             "flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full text-2xl transition-colors duration-200 cursor-pointer",
-            "bg-[#141519] text-white border-2 border-white/15 hover:border-[#FF8A00] hover:bg-[#FF8A00] hover:text-black",
-            "shadow-[0_8px_25px_rgba(0,0,0,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00]"
+            "bg-[#141519] text-white border-2 border-white/15 hover:border-[#C4D600] hover:bg-[#C4D600] hover:text-black",
+            "shadow-[0_8px_25px_rgba(0,0,0,0.8)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4D600]"
           )}
           aria-label="Next testimonial"
         >

@@ -56,7 +56,7 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {capabilities.map((item) => (
               <div key={item.title} className="p-6 rounded-2xl bg-[#141519] border border-white/10 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#FF8A00]/10 text-[#FF8A00] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#C4D600]/10 text-[#C4D600] flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
@@ -81,7 +81,7 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
               <div
                 key={project.id}
                 onClick={() => onSelectProject(project)}
-                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#FF8A00] transition-all duration-300 cursor-pointer shadow-xl"
+                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#C4D600] transition-all duration-300 cursor-pointer shadow-xl"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-black/50 relative">
                   <img
@@ -91,17 +91,17 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-black/80 text-[#FF8A00] font-bold text-xs">
+                    <span className="px-3 py-1 rounded-full bg-black/80 text-[#C4D600] font-bold text-xs">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 <div className="p-6 space-y-2">
-                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#FF8A00] transition-colors">
+                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#C4D600] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-gray-400">{project.description}</p>
-                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#FF8A00]">
+                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#C4D600]">
                     <span>View Case Study</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
@@ -121,10 +121,10 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
           </p>
           <button
             onClick={onOpenContact}
-            className="px-8 py-3.5 rounded-full bg-[#FF8A00] text-black font-extrabold text-sm hover:bg-[#ffa026] transition-all cursor-pointer inline-flex items-center gap-2 shadow-xl"
+            className="btn-liquid-fill px-8 py-3.5 rounded-full font-extrabold text-sm cursor-pointer inline-flex items-center gap-2 shadow-xl group"
           >
             <span>Start Your Web Project</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:rotate-45" />
           </button>
         </div>
 
