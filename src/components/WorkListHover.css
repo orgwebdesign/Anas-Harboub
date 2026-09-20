@@ -1,0 +1,281 @@
+.work-list-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #141414;
+}
+
+.work-list-panel {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #141414;
+  padding: 6em 4em;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Background pastel classes */
+.work-list-panel.bg-color-red {
+  background-color: rgb(164, 250, 249); /* pale aqua / cyan */
+}
+.work-list-panel.bg-color-blue {
+  background-color: rgb(246, 250, 164); /* pale yellow */
+}
+.work-list-panel.bg-color-green {
+  background-color: rgb(250, 164, 164); /* pale pink/salmon */
+}
+
+/* Overlay preview cards strip */
+.work-list-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+  opacity: 0.5;
+  transition: top 1s cubic-bezier(0.25, 1, 0.5, 1), left 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.work-list-prev {
+  position: relative;
+  width: 500px;
+  height: 600px;
+  background: #202020;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transform: rotate(10deg) scale(1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  flex-shrink: 0;
+}
+
+.work-list-prev img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work-list-prev.active {
+  transform: rotate(12.5deg) scale(1.02);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* Diagonal staircase layout offsets */
+#work-prev-1 {
+  top: -500px;
+}
+#work-prev-2 {
+  top: 0;
+}
+#work-prev-3 {
+  top: 500px;
+}
+
+/* Intro line */
+.work-list-intro {
+  position: relative;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+  z-index: 2;
+  transition: color 0.5s ease;
+  letter-spacing: -0.01em;
+}
+
+/* Work item row */
+.work-list-item {
+  position: relative;
+  width: 100%;
+  padding: 2.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  z-index: 2;
+  transition: border-color 0.5s ease;
+}
+
+.work-list-item#work-item-3 {
+  border-bottom: none;
+}
+
+.work-list-name {
+  flex: 1;
+}
+
+.work-list-name h1 {
+  color: #ffffff;
+  opacity: 0.5;
+  font-size: clamp(32px, 5.5vw, 80px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  transition: color 0.5s ease, opacity 0.5s ease, transform 0.3s ease;
+}
+
+/* Round arrow pill */
+.work-list-icon {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  border-radius: 100%;
+  background: #0b1925;
+  color: #ffffff;
+  overflow: hidden;
+  left: -20px;
+  opacity: 0;
+  transition: opacity 0.2s ease, left 0.2s ease;
+}
+
+/* Conveyor swap arrow holders */
+.work-list-icon-holder {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: left 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.work-list-icon-holder.i-1 {
+  left: -70px;
+  transition-delay: 0.2s;
+}
+
+.work-list-icon-holder.i-2 {
+  left: 0px;
+}
+
+/* Row Hover triggers for arrow-pill & conveyor */
+.work-list-item:hover .work-list-icon {
+  opacity: 1;
+  left: 0px;
+}
+
+.work-list-item:hover .work-list-icon-holder.i-1 {
+  left: 0px;
+}
+
+.work-list-item:hover .work-list-icon-holder.i-2 {
+  left: 70px;
+}
+
+.work-list-item:hover .work-list-name h1 {
+  transform: translateX(10px);
+}
+
+/* CTA Button */
+.work-list-cta {
+  position: relative;
+  z-index: 2;
+  margin-top: 2em;
+}
+
+.work-list-btn {
+  position: relative;
+  background: #ffffff;
+  color: #0b1925;
+  border: none;
+  padding: 1.4em 3.2em;
+  font-size: 15px;
+  border-radius: 100px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.work-list-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Hovered-panel inversions (when any row is hovered) */
+.work-list-panel.hovered .work-list-btn {
+  background: #0b1925;
+  color: #ffffff;
+}
+
+.work-list-panel.hovered .work-list-name h1 {
+  color: #0b1925;
+  opacity: 1;
+}
+
+.work-list-panel.hovered .work-list-intro {
+  color: #0b1925;
+}
+
+.work-list-panel.hovered .work-list-item {
+  border-bottom: 1px solid #0b1925;
+}
+
+.work-list-panel.hovered .work-list-item#work-item-3 {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .work-list-panel {
+    padding: 4em 1.5em;
+    min-height: auto;
+  }
+  .work-list-item {
+    gap: 1em;
+    padding: 1.8em 0;
+  }
+  .work-list-intro {
+    font-size: 18px;
+    margin-bottom: 1em;
+  }
+  .work-list-name h1 {
+    font-size: 30px;
+  }
+  .work-list-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+  .work-list-icon-holder {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+  .work-list-icon-holder.i-1 {
+    left: -50px;
+  }
+  .work-list-item:hover .work-list-icon-holder.i-2 {
+    left: 50px;
+  }
+  .work-list-btn {
+    padding: 1em 2em;
+    font-size: 14px;
+  }
+  .work-list-prev {
+    width: 320px;
+    height: 400px;
+  }
+  #work-prev-1 {
+    top: -300px;
+  }
+  #work-prev-3 {
+    top: 300px;
+  }
+}

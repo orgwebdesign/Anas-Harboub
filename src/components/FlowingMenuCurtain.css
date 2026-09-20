@@ -1,0 +1,214 @@
+/* Flowing Menu Curtain (closest-edge marquee sheet) - Inverted / Dark Theme */
+:root {
+  --flow-paper: #0B0C0E;        /* Dark background matching portfolio */
+  --flow-paper-dark: #141519;   /* Slightly elevated dark */
+  --flow-ink: #F3F4F6;          /* Crisp light text & foreground */
+  --flow-ink-muted: #9CA3AF;    /* Muted gray for counts and labels */
+  --flow-accent: #C4D600;       /* Portfolio signature lime accent (or #e0521f) */
+  --flow-curtain-bg: #FFFFFF;   /* Inverted light paper sheet on hover */
+  --flow-curtain-text: #0B0C0E; /* Dark text on the inverted curtain */
+  --flow-row: clamp(3.6rem, 7.5vw, 6.6rem);
+}
+
+.flowing-menu-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--flow-paper);
+  color: var(--flow-ink);
+  overflow: hidden;
+  padding: 6rem 0 6.5rem 0;
+  font-family: 'Funnel Display', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.flowing-menu-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .flowing-menu-container {
+    padding: 0 2rem;
+  }
+}
+
+.flowing-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 0;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--flow-ink-muted);
+}
+
+.flowing-menu-header span:first-child {
+  color: var(--flow-ink);
+  font-weight: 600;
+}
+
+.flowing-menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row element */
+.flowing-row {
+  position: relative; /* the panel's frame */
+  overflow: hidden;   /* or the sheet paints over rows above and below */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  height: var(--flow-row);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: var(--flow-ink);
+  padding: 0 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.3s ease;
+}
+
+.flowing-row:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.flowing-row-no {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--flow-accent);
+  letter-spacing: 0.08em;
+}
+
+.flowing-row-name {
+  font-family: 'Funnel Display', sans-serif;
+  font-size: clamp(1.5rem, 3.8vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--flow-ink);
+  line-height: 1;
+}
+
+.flowing-row-count {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--flow-ink-muted);
+}
+
+/* Curtain Sheet (The inverted panel: white/light sheet wiping across dark row) */
+.flowing-curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+  overflow: hidden;
+  pointer-events: none; /* CRITICAL: so pointer does not register leaving row */
+  background-color: var(--flow-curtain-bg);
+  transform: translate3d(0, 101%, 0);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Moving strip containing cloned marquee parts */
+.flowing-curtain-strip {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: max-content; /* CRITICAL: keeps copies from squashing */
+  will-change: transform;
+}
+
+/* Single repeated marquee part */
+.flowing-curtain-part {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%; /* CRITICAL: lets child percentage height resolve */
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-right: clamp(1.5rem, 3vw, 3rem);
+}
+
+.flowing-curtain-word {
+  font-family: 'Funnel Display', sans-serif;
+  font-size: clamp(1.5rem, 3.8vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--flow-curtain-text);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Photographic still pill */
+.flowing-curtain-still {
+  display: block;
+  width: clamp(100px, 14vw, 190px);
+  height: 60%;
+  border-radius: 999px;
+  background-image: var(--still);
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Footer / CTA row below list */
+.flowing-menu-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.flowing-menu-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.flowing-menu-cta {
+  font-family: 'Funnel Display', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border-radius: 999px;
+  background-color: var(--flow-accent);
+  color: #000000;
+  border: 1px solid var(--flow-accent);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.flowing-menu-cta:hover {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 214, 0, 0.4);
+}
+
+@media (max-width: 640px) {
+  .flowing-row {
+    grid-template-columns: 2.8rem 1fr auto;
+    padding: 0;
+  }
+  .flowing-row-count {
+    font-size: 0.65rem;
+  }
+  .flowing-curtain-still {
+    width: 80px;
+  }
+  .flowing-menu-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

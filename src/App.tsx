@@ -7,6 +7,7 @@ import { MarqueeTicker } from './components/MarqueeTicker';
 import { ServicesSection } from './components/ServicesSection';
 import { TechLogosSection } from './components/TechLogosSection';
 import { AboutSection } from './components/AboutSection';
+import { FlowingMenuCurtain } from './components/FlowingMenuCurtain';
 import { WebDesignPage } from './components/WebDesignPage';
 import { VibeNoCodePage } from './components/VibeNoCodePage';
 import { DesignerPage } from './components/DesignerPage';
@@ -15,9 +16,11 @@ import { ProjectModal } from './components/ProjectModal';
 import { Footer } from './components/Footer';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { RightFixedToggle } from './components/RightFixedToggle';
+import { Preloader } from './components/Preloader';
 import { AnimatePresence, motion } from 'motion/react';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<PageTab>('all');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [selectedServiceForInquiry, setSelectedServiceForInquiry] = useState<string>('');
@@ -39,6 +42,11 @@ export default function App() {
 
   return (
     <PortfolioProvider>
+      {/* 4-Second Multilingual Preloader with Fluid Water Wave Slide-up Reveal */}
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+
       <div className="min-h-screen bg-[#0B0C0E] text-[#F3F4F6] font-sans selection:bg-[#C4D600] selection:text-black">
         {/* Top Navbar */}
         <Navbar
@@ -92,6 +100,14 @@ export default function App() {
                 {/* About Section */}
                 <AboutSection
                   onHireClick={() => setIsContactOpen(true)}
+                />
+
+                {/* Flowing Menu Curtain (closest-edge marquee sheet) */}
+                <FlowingMenuCurtain
+                  onExploreMore={() => {
+                    setActiveTab('web-design');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 />
               </motion.div>
             )}

@@ -68,49 +68,6 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
           </div>
         </div>
 
-        {/* Selected Web Design Projects */}
-        <div>
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-white font-heading">
-              Featured Web Design Works
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {webProjects.map((project) => (
-              <div
-                key={project.id}
-                onClick={() => onSelectProject(project)}
-                className="group rounded-[24px] bg-[#141519] border border-white/10 overflow-hidden hover:border-[#C4D600] transition-all duration-300 cursor-pointer shadow-xl"
-              >
-                <div className="aspect-[16/10] overflow-hidden bg-black/50 relative">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-black/80 text-[#C4D600] font-bold text-xs">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6 space-y-2">
-                  <h3 className="text-xl font-bold text-white font-heading group-hover:text-[#C4D600] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-400">{project.description}</p>
-                  <div className="pt-3 flex items-center gap-2 text-xs font-bold text-[#C4D600]">
-                    <span>View Case Study</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Bottom Call to Action */}
         <div className="p-10 rounded-[32px] bg-gradient-to-r from-[#1E1F26] to-[#141519] border border-white/10 text-center space-y-4">
           <h2 className="text-3xl font-extrabold text-white font-heading">

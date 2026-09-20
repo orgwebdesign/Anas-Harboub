@@ -22,7 +22,7 @@ export const ANASS_BIO = {
   name: "Anass Harboub",
   role: "UI/UX Designer, Web Designer & Infographiste",
   location: "Morocco",
-  tagline: "I design digital experiences people remember.\nFrom intuitive products to immersive websites, I blend UI/UX, motion and AI to turn ideas into experiences.",
+  tagline: "I create digital experiences that leave an impression.\nFrom intuitive interfaces to immersive websites, I blend UI/UX, motion, and AI to turn complex ideas into seamless reality.",
   heroQuote: "Designing clear, modern and memorable digital experiences with strong visual direction.",
   heroBadge: "✦ UI/UX • Web Designer • Infographiste",
   aboutHeadline: "Who is Anass Harboub?",

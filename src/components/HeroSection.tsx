@@ -33,8 +33,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
           </h1>
           <div className="max-w-3xl mx-auto my-2 min-h-[140px]">
             <FallingText
-              text={homeConfig.tagline || "I design digital experiences people remember.\nFrom intuitive products to immersive websites, I blend UI/UX, motion and AI to turn ideas into experiences."}
-              highlightWords={["digital", "experiences", "UI/UX", "motion", "AI", "remember", "ideas", "products", "websites", "intuitive", "immersive"]}
+              text={homeConfig.tagline || "I create digital experiences that leave an impression.\nFrom intuitive interfaces to immersive websites, I blend UI/UX, motion, and AI to turn complex ideas into seamless reality."}
+              highlightWords={["digital", "experiences", "UI/UX", "motion", "AI", "impression", "ideas", "interfaces", "websites", "intuitive", "immersive", "seamless"]}
               highlightClass="highlighted"
               trigger="hover"
               backgroundColor="transparent"

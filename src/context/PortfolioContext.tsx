@@ -113,7 +113,7 @@ interface PortfolioContextType {
 const STORAGE_PROJECTS_KEY = 'anass_harboub_projects_v3';
 const STORAGE_SERVICES_KEY = 'anass_harboub_services_v3';
 const STORAGE_PAGES_KEY = 'anass_harboub_pages_v4';
-const STORAGE_HOME_KEY = 'anass_harboub_home_v3';
+const STORAGE_HOME_KEY = 'anass_harboub_home_v4';
 
 const PortfolioContext = createContext<PortfolioContextType | undefined>(undefined);
 
