@@ -81,17 +81,32 @@ export const SERVICES_DATA: Service[] = [
   {
     id: "s3",
     number: "03.",
-    title: "Vibe No Code",
-    shortDesc: "Rapid production-ready websites and AI prototypes built at lightning speed.",
-    fullDesc: "Transforming complex concepts into fully functional, high-performance web products using modern no-code engines, Framer, Webflow, and AI workflows.",
+    title: "Web Development",
+    shortDesc: "High-performance frontend & full-stack development with modern frameworks.",
+    fullDesc: "Crafting scalable, high-performance web applications and responsive web experiences using React, TypeScript, Next.js, Tailwind CSS, and headless architectures.",
     tags: [
-      "Framer & Webflow",
-      "AI-Assisted Prototyping",
-      "Cursor & v0 Integration",
-      "Interactive Web Apps",
-      "Custom Animations"
+      "React & TypeScript",
+      "Next.js & Modern Stacks",
+      "Tailwind CSS & Animations",
+      "API Integrations",
+      "Responsive & SEO Architecture"
     ],
-    categoryTab: "vibe-nocode"
+    categoryTab: "web-development"
+  },
+  {
+    id: "s3_motion",
+    number: "03b.",
+    title: "Motion Graphics",
+    shortDesc: "Captivating kinetic animations, visual effects & micro-interactions.",
+    fullDesc: "Elevating brands with dynamic 2D/3D motion graphics, kinetic typography, promotional video animations, and engaging interactive UI motion design.",
+    tags: [
+      "Motion Design",
+      "Kinetic Typography",
+      "After Effects & Premiere",
+      "Interactive Web Animations",
+      "Visual Storytelling"
+    ],
+    categoryTab: "motion-graphics"
   },
   {
     id: "s4",

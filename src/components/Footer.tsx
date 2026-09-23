@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ activeTab, setActiveTab, onOpenC
             </div>
           </div>
 
-          {/* Nav Links (3 Pages) */}
+          {/* Nav Links */}
           <div className="flex flex-wrap items-center gap-6">
             <button
               onClick={() => setActiveTab('web-design')}
@@ -49,12 +49,12 @@ export const Footer: React.FC<FooterProps> = ({ activeTab, setActiveTab, onOpenC
               Web Design
             </button>
             <button
-              onClick={() => setActiveTab('vibe-nocode')}
+              onClick={() => setActiveTab('web-development')}
               className={`text-sm font-semibold transition-colors cursor-pointer ${
-                activeTab === 'vibe-nocode' ? 'text-[#C4D600]' : 'text-gray-300 hover:text-white'
+                activeTab === 'web-development' ? 'text-[#C4D600]' : 'text-gray-300 hover:text-white'
               }`}
             >
-              Vibe No Code
+              Web Development
             </button>
             <button
               onClick={() => setActiveTab('designer')}
@@ -63,6 +63,14 @@ export const Footer: React.FC<FooterProps> = ({ activeTab, setActiveTab, onOpenC
               }`}
             >
               Graphics Designer
+            </button>
+            <button
+              onClick={() => setActiveTab('motion-graphics')}
+              className={`text-sm font-semibold transition-colors cursor-pointer ${
+                activeTab === 'motion-graphics' ? 'text-[#C4D600]' : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              Motion Graphics
             </button>
           </div>
 

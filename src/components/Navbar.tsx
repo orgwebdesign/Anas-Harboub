@@ -24,8 +24,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
 
   const navLinks: { label: string; tab: PageTab }[] = [
     { label: 'Web Design', tab: 'web-design' },
-    { label: 'Vibe No Code', tab: 'vibe-nocode' },
+    { label: 'Web Development', tab: 'web-development' },
     { label: 'Graphics Designer', tab: 'designer' },
+    { label: 'Motion Graphics', tab: 'motion-graphics' },
   ];
 
   // Compact state is active only when scrolled down AND user is not hovering over the navbar

@@ -9,8 +9,9 @@ import { TechLogosSection } from './components/TechLogosSection';
 import { AboutSection } from './components/AboutSection';
 import { FlowingMenuCurtain } from './components/FlowingMenuCurtain';
 import { WebDesignPage } from './components/WebDesignPage';
-import { VibeNoCodePage } from './components/VibeNoCodePage';
+import { WebDevelopmentPage } from './components/WebDevelopmentPage';
 import { DesignerPage } from './components/DesignerPage';
+import { MotionGraphicsPage } from './components/MotionGraphicsPage';
 import { ContactModal } from './components/ContactModal';
 import { ProjectModal } from './components/ProjectModal';
 import { Footer } from './components/Footer';
@@ -127,15 +128,15 @@ export default function App() {
               </motion.div>
             )}
 
-            {activeTab === 'vibe-nocode' && (
+            {activeTab === 'web-development' && (
               <motion.div
-                key="vibe-nocode"
+                key="web-development"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
               >
-                <VibeNoCodePage
+                <WebDevelopmentPage
                   onSelectProject={(project) => setSelectedProject(project)}
                   onOpenContact={() => setIsContactOpen(true)}
                 />
@@ -151,6 +152,21 @@ export default function App() {
                 transition={{ duration: 0.3 }}
               >
                 <DesignerPage
+                  onSelectProject={(project) => setSelectedProject(project)}
+                  onOpenContact={() => setIsContactOpen(true)}
+                />
+              </motion.div>
+            )}
+
+            {activeTab === 'motion-graphics' && (
+              <motion.div
+                key="motion-graphics"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+              >
+                <MotionGraphicsPage
                   onSelectProject={(project) => setSelectedProject(project)}
                   onOpenContact={() => setIsContactOpen(true)}
                 />

@@ -16,12 +16,13 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
 }) => {
   // Desktop state:
   // In normal stage ('all'), ALL buttons are gray (#b2b2b2).
-  // Clicking any button switches its color to orange (#c4d600).
+  // Clicking any button switches its color to lime/orange (#c4d600).
   const isDot1Active = activeTab === 'web-design';
-  const isDot2Active = activeTab === 'vibe-nocode';
+  const isDot2Active = activeTab === 'web-development';
   const isDot3Active = activeTab === 'designer';
+  const isDot4Active = activeTab === 'motion-graphics';
 
-  const [hoveredItem, setHoveredItem] = useState<'web-design' | 'vibe-nocode' | 'designer' | 'contact' | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<'web-design' | 'web-development' | 'designer' | 'motion-graphics' | 'contact' | null>(null);
 
   const handleDotClick = (tab: PageTab) => {
     if (activeTab === tab) {
@@ -38,15 +39,15 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
       aria-label="Page navigation"
       className="fixed z-50 flex flex-col items-center select-none pointer-events-auto bottom-6 right-5 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:right-7"
     >
-      {/* 3-Dot Vertical White Pill Capsule Container: HIDDEN ON MOBILE (hidden md:flex) */}
+      {/* 4-Dot Vertical White Pill Capsule Container: HIDDEN ON MOBILE (hidden md:flex) */}
       <div className="relative hidden md:flex items-center justify-center">
         
-        {/* "Clic her" Arrow: Desktop-only, animates by opacity & soft glow without changing size */}
+        {/* "Click here" Arrow: Desktop-only, animates by opacity & soft glow without changing size */}
         <div className="hidden md:block absolute bottom-[calc(100%+7px)] right-[15px] w-[115px] sm:w-[125px] pointer-events-none select-none animate-text-arrow-pulse">
           <svg viewBox="0 0 100.46 64.8" className="w-full h-auto overflow-visible">
             <text
               fill="#fefefe"
-              transform="translate(6 17.35) rotate(3.73)"
+              transform="translate(-6 16.5) rotate(3.73)"
               className="font-ananda text-[15.5px] sm:text-[16.5px] font-bold select-none drop-shadow-[0_2px_8px_rgba(255,255,255,0.45)]"
             >
               Click here
@@ -60,38 +61,52 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
 
         {/* Tooltip for Dot 1 (Web Design) */}
         {hoveredItem === 'web-design' && (
-          <div className="absolute right-full top-[21.5%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
+          <div className="absolute right-full top-[13%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
             <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
               Web Design
             </span>
           </div>
         )}
 
-        {/* Tooltip for Dot 2 (Vibe no Code) */}
-        {hoveredItem === 'vibe-nocode' && (
-          <div className="absolute right-full top-[50.3%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
+        {/* Tooltip for Dot 2 (Web Development) */}
+        {hoveredItem === 'web-development' && (
+          <div className="absolute right-full top-[37.5%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
             <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
-              Vibe no Code
+              Web Development
             </span>
           </div>
         )}
 
         {/* Tooltip for Dot 3 (Graphics Designer) */}
         {hoveredItem === 'designer' && (
-          <div className="absolute right-full top-[79.1%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
+          <div className="absolute right-full top-[62.5%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
             <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
               Graphics Designer
             </span>
           </div>
         )}
 
-        {/* 3-Dot Vertical White Pill Capsule Container (Strictly constant size) */}
+        {/* Tooltip for Dot 4 (Motion Graphics) */}
+        {hoveredItem === 'motion-graphics' && (
+          <div className="absolute right-full top-[87%] -translate-y-1/2 mr-4 pointer-events-none font-ananda whitespace-nowrap z-50 animate-in fade-in slide-in-from-right-2 duration-150">
+            <span className="text-[#c4d600] text-2xl sm:text-3xl font-bold drop-shadow-[0_0_15px_rgba(196, 214, 0,0.85)]">
+              Motion Graphics
+            </span>
+          </div>
+        )}
+
+        {/* 4-Dot Vertical White Pill Capsule Container */}
         <div className="w-[50px] sm:w-[56px] drop-shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
-          <svg viewBox="0 0 32.57 75.09" className="w-full h-auto overflow-visible block">
-            {/* White Pill Capsule Container from SVG */}
-            <path
+          <svg viewBox="0 0 32.57 97" className="w-full h-auto overflow-visible block">
+            {/* White Pill Capsule Container extended smoothly for 4 dots */}
+            <rect
+              x="2.65"
+              y="2.5"
+              width="27.27"
+              height="92"
+              rx="13.63"
+              ry="13.63"
               fill="#fefefe"
-              d="M2.65,15.75v44.03c0,2.87.95,5.48,2.51,7.61,2.54,3.46,6.74,5.65,11.22,5.59,4.65-.07,8.85-2.52,11.25-6.24,1.32-2.05,2.1-4.5,2.1-7.14V16c0-7.59-6.25-13.42-13.53-13.45-7.18-.02-13.56,5.74-13.56,13.2ZM16.18,68.37c-4.96,0-8.98-4.02-8.98-8.98s4.02-8.97,8.98-8.97,8.97,4.02,8.97,8.97-4.02,8.98-8.97,8.98Z"
             />
 
             {/* Dot 1 (Web Design) - Interactive Group */}
@@ -101,105 +116,111 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
               onMouseLeave={() => setHoveredItem(null)}
               onClick={() => handleDotClick('web-design')}
             >
-              {/* Generous hit target area */}
-              <rect x="0" y="0" width="32.57" height="26" fill="transparent" />
-              
-              {/* Base circle: gray (#b2b2b2) when inactive, orange (#c4d600) when active */}
+              <rect x="0" y="0" width="32.57" height="24" fill="transparent" />
               <circle
-                cx="16.19"
-                cy="16.13"
-                r="8.97"
+                cx="16.28"
+                cy="14.5"
+                r="8.5"
                 fill={isDot1Active ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-
-              {/* Orange beacon pulse overlay: strictly animates opacity, NO size change */}
               {!isDot1Active && (
                 <circle
-                  cx="16.19"
-                  cy="16.13"
-                  r="8.97"
+                  cx="16.28"
+                  cy="14.5"
+                  r="8.5"
                   fill="#c4d600"
                   className="animate-orange-pulse pointer-events-none"
                 />
               )}
-
-              {/* White dot indicator when active */}
-              {isDot1Active && <circle cx="16.19" cy="16.13" r="2.61" fill="#fefefe" />}
+              {isDot1Active && <circle cx="16.28" cy="14.5" r="2.5" fill="#fefefe" />}
             </g>
 
-            {/* Dot 2 (Vibe no Code) - Interactive Group */}
+            {/* Dot 2 (Web Development) - Interactive Group */}
             <g
               className="cursor-pointer group"
-              onMouseEnter={() => setHoveredItem('vibe-nocode')}
+              onMouseEnter={() => setHoveredItem('web-development')}
               onMouseLeave={() => setHoveredItem(null)}
-              onClick={() => handleDotClick('vibe-nocode')}
+              onClick={() => handleDotClick('web-development')}
             >
-              {/* Generous hit target area */}
-              <rect x="0" y="26" width="32.57" height="22" fill="transparent" />
-              
-              {/* Base circle */}
+              <rect x="0" y="24" width="32.57" height="24" fill="transparent" />
               <circle
-                cx="16.19"
-                cy="37.77"
-                r="8.97"
+                cx="16.28"
+                cy="37"
+                r="8.5"
                 fill={isDot2Active ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-
-              {/* Orange beacon pulse overlay: strictly animates opacity, NO size change */}
               {!isDot2Active && (
                 <circle
-                  cx="16.19"
-                  cy="37.77"
-                  r="8.97"
+                  cx="16.28"
+                  cy="37"
+                  r="8.5"
                   fill="#c4d600"
                   className="animate-orange-pulse pointer-events-none"
                 />
               )}
-
-              {/* White dot indicator when active */}
-              {isDot2Active && <circle cx="16.19" cy="37.77" r="2.61" fill="#fefefe" />}
+              {isDot2Active && <circle cx="16.28" cy="37" r="2.5" fill="#fefefe" />}
             </g>
 
-            {/* Dot 3 (Graphiste) - Interactive Group */}
+            {/* Dot 3 (Graphics Designer) - Interactive Group */}
             <g
               className="cursor-pointer group"
               onMouseEnter={() => setHoveredItem('designer')}
               onMouseLeave={() => setHoveredItem(null)}
               onClick={() => handleDotClick('designer')}
             >
-              {/* Generous hit target area */}
-              <rect x="0" y="48" width="32.57" height="27" fill="transparent" />
-              
-              {/* Base circle */}
+              <rect x="0" y="48" width="32.57" height="24" fill="transparent" />
               <circle
-                cx="16.19"
-                cy="59.40"
-                r="8.97"
+                cx="16.28"
+                cy="59.5"
+                r="8.5"
                 fill={isDot3Active ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-
-              {/* Orange beacon pulse overlay: strictly animates opacity, NO size change */}
               {!isDot3Active && (
                 <circle
-                  cx="16.19"
-                  cy="59.40"
-                  r="8.97"
+                  cx="16.28"
+                  cy="59.5"
+                  r="8.5"
                   fill="#c4d600"
                   className="animate-orange-pulse pointer-events-none"
                 />
               )}
+              {isDot3Active && <circle cx="16.28" cy="59.5" r="2.5" fill="#fefefe" />}
+            </g>
 
-              {/* White dot indicator when active */}
-              {isDot3Active && <circle cx="16.19" cy="59.40" r="2.61" fill="#fefefe" />}
+            {/* Dot 4 (Motion Graphics) - Interactive Group */}
+            <g
+              className="cursor-pointer group"
+              onMouseEnter={() => setHoveredItem('motion-graphics')}
+              onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => handleDotClick('motion-graphics')}
+            >
+              <rect x="0" y="72" width="32.57" height="25" fill="transparent" />
+              <circle
+                cx="16.28"
+                cy="82"
+                r="8.5"
+                fill={isDot4Active ? '#c4d600' : '#b2b2b2'}
+                className="transition-colors duration-300 transform origin-center"
+              />
+              {!isDot4Active && (
+                <circle
+                  cx="16.28"
+                  cy="82"
+                  r="8.5"
+                  fill="#c4d600"
+                  className="animate-orange-pulse pointer-events-none"
+                />
+              )}
+              {isDot4Active && <circle cx="16.28" cy="82" r="2.5" fill="#fefefe" />}
             </g>
           </svg>
         </div>
       </div>
 
-      {/* Contact Me Button (4th Button):
+      {/* Contact Me Button (Bottom Button):
           - On Mobile: Placed at bottom right ("on bas") and colored ORANGE (#c4d600).
           - On Desktop: Base gray (#b2b2b2) with slow orange opacity beacon overlay. NO size change! */}
       <div className="relative flex items-center justify-center mt-2 md:mt-2">
@@ -254,3 +275,4 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
     </aside>
   );
 };
+

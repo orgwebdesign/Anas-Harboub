@@ -1,10 +1,10 @@
-export type PageTab = 'all' | 'web-design' | 'vibe-nocode' | 'designer';
+export type PageTab = 'all' | 'web-design' | 'web-development' | 'designer' | 'motion-graphics';
 
 export interface Project {
   id: string;
   title: string;
   client: string;
-  category: 'Web Design' | 'Vibe No Code' | 'Infographiste' | 'UI/UX' | 'AI Design';
+  category: 'Web Design' | 'Web Development' | 'Infographiste' | 'UI/UX' | 'AI Design' | 'Motion Graphics';
   year: string;
   description: string;
   longDescription: string;

@@ -48,8 +48,9 @@ export interface PageConfig {
 
 export interface PagesConfig {
   webDesign: PageConfig;
-  vibeNoCode: PageConfig;
+  webDevelopment: PageConfig;
   infographiste: PageConfig;
+  motionGraphics: PageConfig;
 }
 
 export const DEFAULT_PAGES_CONFIG: PagesConfig = {
@@ -66,18 +67,18 @@ export const DEFAULT_PAGES_CONFIG: PagesConfig = {
     feature3Title: 'Responsive & Accessibility First',
     feature3Desc: 'WCAG AAA contrast ratios, fluid rem layouts, and sub-second page loading speeds.'
   },
-  vibeNoCode: {
-    badge: 'Vibe No Code & AI Speed',
-    title: 'Build & Launch at the Speed of Thought',
-    subtitle: 'Next-Gen AI Workflows & Rapid No-Code Deployment',
-    heroImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-    description: 'Leveraging Cursor, v0, Framer, Webflow and AI models to design, iterate, and deploy production-ready web products in record time.',
-    feature1Title: '10x Rapid Prototyping',
-    feature1Desc: 'Transforming natural language prompts and sketch wireframes into live interactive interfaces instantly.',
-    feature2Title: 'AI-Assisted Workflows',
-    feature2Desc: 'Automating code generation, design token sync, and smart responsive layout adjustments.',
-    feature3Title: 'Full Client Autonomy',
-    feature3Desc: 'Empowering clients to edit text, update media, and manage content effortlessly post-launch.'
+  webDevelopment: {
+    badge: 'Web Development & Modern Tech',
+    title: 'Clean Code, Modern Stacks & Scalable Web Solutions',
+    subtitle: 'Full-Stack & Frontend Engineering with Speed & Precision',
+    heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
+    description: 'Transforming designs into performant, responsive, and robust digital products with React, TypeScript, Tailwind CSS, Next.js, and modern APIs.',
+    feature1Title: 'Modern Frontend Architecture',
+    feature1Desc: 'Component-driven development with React, TypeScript, and fluid GSAP/Framer animations.',
+    feature2Title: 'Full-Stack & Headless CMS',
+    feature2Desc: 'Connecting headless platforms, WordPress REST APIs, and modern databases for seamless data handling.',
+    feature3Title: 'Performance & SEO First',
+    feature3Desc: 'Lightning-fast load times, semantic HTML5, perfect Core Web Vitals, and responsive cross-browser precision.'
   },
   infographiste: {
     badge: 'Infographiste & Visual Designer',
@@ -91,6 +92,19 @@ export const DEFAULT_PAGES_CONFIG: PagesConfig = {
     feature2Desc: 'Scalable Figma component libraries with tokenized variables and developer handoffs.',
     feature3Title: 'Infographie & Supports Print/Web',
     feature3Desc: 'Visual storytelling, print materials, social media kits, and high-impact graphic design.'
+  },
+  motionGraphics: {
+    badge: 'Motion Graphics & Dynamic Visuals',
+    title: 'Bringing Brands to Life Through Motion',
+    subtitle: 'Kinetic Typography, 3D Renders & Visual Storytelling',
+    heroImage: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80',
+    description: 'High-end motion design, micro-interactions, promotional videos, and animated UI elements that captivate audiences and boost engagement.',
+    feature1Title: 'Kinetic Typography & Branding',
+    feature1Desc: 'Engaging title sequences, brand reveal animations, and social video creative.',
+    feature2Title: 'Interactive UI Animations',
+    feature2Desc: 'Fluid micro-animations, GSAP transitions, and interactive physics that elevate digital interfaces.',
+    feature3Title: 'Video Production & VFX',
+    feature3Desc: 'After Effects, Premiere Pro, and Blender visual effects tailored for high-converting ads and showreels.'
   }
 };
 
@@ -111,8 +125,8 @@ interface PortfolioContextType {
 }
 
 const STORAGE_PROJECTS_KEY = 'anass_harboub_projects_v3';
-const STORAGE_SERVICES_KEY = 'anass_harboub_services_v3';
-const STORAGE_PAGES_KEY = 'anass_harboub_pages_v4';
+const STORAGE_SERVICES_KEY = 'anass_harboub_services_v4';
+const STORAGE_PAGES_KEY = 'anass_harboub_pages_v5';
 const STORAGE_HOME_KEY = 'anass_harboub_home_v4';
 
 const PortfolioContext = createContext<PortfolioContextType | undefined>(undefined);
