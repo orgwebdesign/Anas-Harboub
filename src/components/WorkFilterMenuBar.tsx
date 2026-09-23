@@ -5,10 +5,11 @@ import {
   Video, 
   ShoppingBag, 
   Smartphone,
+  Film,
   Sparkles
 } from 'lucide-react';
 
-export type WorkFilterCategory = 'all' | 'landing-page' | 'dashboard' | 'vsl' | 'ecommerce' | 'mobile-app';
+export type WorkFilterCategory = 'all' | 'landing-page' | 'dashboard' | 'vsl' | 'ecommerce' | 'mobile-app' | 'motion-graphics';
 
 interface FilterItem {
   id: WorkFilterCategory;
@@ -24,6 +25,7 @@ const FILTER_ITEMS: FilterItem[] = [
   { id: 'vsl', label: 'Page VSL', icon: Video },
   { id: 'ecommerce', label: 'E-Commerce', icon: ShoppingBag },
   { id: 'mobile-app', label: 'App Mobile', icon: Smartphone },
+  { id: 'motion-graphics', label: 'Motion Graphics', icon: Film },
 ];
 
 interface WorkFilterMenuBarProps {

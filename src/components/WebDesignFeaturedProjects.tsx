@@ -518,6 +518,19 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
       );
     }
 
+    if (activeFilter === 'motion-graphics') {
+      return (
+        catUpper.includes('MOTION') ||
+        catUpper.includes('VIDEO') ||
+        descUpper.includes('MOTION') ||
+        descUpper.includes('ANIMATION') ||
+        titleUpper.includes('MOTION') ||
+        hasTag('Motion') ||
+        hasTag('After Effects') ||
+        hasTag('VSL')
+      );
+    }
+
     return true;
   });
 
