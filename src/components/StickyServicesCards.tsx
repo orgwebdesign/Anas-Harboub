@@ -231,9 +231,6 @@ export const StickyServicesCards: React.FC<StickyServicesCardsProps> = ({ onInqu
             </motion.span>{' '}
             to polished digital experiences.
           </h2>
-          <p className="text-xs sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto font-medium px-4">
-            {webConfig.description || "Explore the web experiences I design — from landing pages and SaaS platforms to dashboards and complete digital products."}
-          </p>
         </div>
 
         {/* Sticky Cards Container (Preserves 3D Perspective) */}

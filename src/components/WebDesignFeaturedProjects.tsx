@@ -14,14 +14,18 @@ import yachtsHero from '../assets/images/lm_luxe_yachts_hero.png';
 import havetHero from '../assets/images/gonzague_havet_hero.png';
 import mooineHero from '../assets/images/institut_mooine_hero.png';
 
+import { WorkFilterCategory } from './WorkFilterMenuBar';
+
 interface WebDesignFeaturedProjectsProps {
   onSelectProject: (project: Project) => void;
   onOpenContact: () => void;
+  activeFilter?: WorkFilterCategory;
 }
 
 export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps> = ({
   onSelectProject,
   onOpenContact,
+  activeFilter = 'all',
 }) => {
   const [figmaModal, setFigmaModal] = useState<{ url: string; title: string } | null>(null);
 
@@ -455,13 +459,86 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     }
   ];
 
+  const filteredProjects = projectsData.filter((p) => {
+    if (activeFilter === 'all') return true;
+
+    const catUpper = p.category.toUpperCase();
+    const titleUpper = p.title.toUpperCase();
+    const descUpper = p.description.toUpperCase();
+    const tagsUpper = p.tags.map((t) => t.toUpperCase());
+    const hasTag = (tag: string) => tagsUpper.some((t) => t.includes(tag.toUpperCase()));
+
+    if (activeFilter === 'landing-page') {
+      return (
+        catUpper.includes('LANDING PAGE') ||
+        hasTag('LANDING PAGE') ||
+        titleUpper.includes('LANDING PAGE')
+      );
+    }
+
+    if (activeFilter === 'dashboard') {
+      return (
+        catUpper.includes('CRM') ||
+        catUpper.includes('SAAS') ||
+        catUpper.includes('DASHBOARD') ||
+        titleUpper.includes('CRM') ||
+        descUpper.includes('CRM') ||
+        descUpper.includes('DASHBOARD') ||
+        hasTag('SAAS') ||
+        hasTag('CRM')
+      );
+    }
+
+    if (activeFilter === 'vsl') {
+      return (
+        catUpper.includes('VSL') ||
+        titleUpper.includes('VSL') ||
+        descUpper.includes('VSL') ||
+        descUpper.includes('VIDEO SALES LETTER') ||
+        hasTag('VSL')
+      );
+    }
+
+    if (activeFilter === 'ecommerce') {
+      return (
+        catUpper.includes('E-COMMERCE') ||
+        catUpper.includes('COMMERCE') ||
+        descUpper.includes('E-COMMERCE') ||
+        descUpper.includes('SHOPPING') ||
+        titleUpper.includes('DISTRIBUTION') ||
+        titleUpper.includes('E-COMMERCE')
+      );
+    }
+
+    if (activeFilter === 'mobile-app') {
+      return (
+        p.previewButtons.some((b) => b.label.toLowerCase().includes('mobile')) ||
+        descUpper.includes('MOBILE') ||
+        titleUpper.includes('MOBILE')
+      );
+    }
+
+    return true;
+  });
+
   return (
     <section className="w-full space-y-24 py-8 relative">
-      {projectsData.map((project) => (
-        <div
-          key={project.id}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-white/10 pb-20 last:border-b-0"
-        >
+      {filteredProjects.length === 0 ? (
+        <div className="py-20 text-center rounded-3xl bg-[#141519] border border-white/10 p-8 space-y-4">
+          <p className="text-gray-400 text-base">Aucun projet trouvé dans cette catégorie pour le moment.</p>
+          <button
+            onClick={() => onOpenContact()}
+            className="px-6 py-2.5 rounded-full bg-[#C4D600] text-black font-bold text-sm hover:scale-105 transition-transform"
+          >
+            Discuter d'un projet sur-mesure
+          </button>
+        </div>
+      ) : (
+        filteredProjects.map((project) => (
+          <div
+            key={project.id}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-white/10 pb-20 last:border-b-0"
+          >
           {/* Left Project Info (5 Columns on Desktop) */}
           <div className="lg:col-span-5 space-y-6 text-left">
             {/* Category Tag */}
@@ -843,7 +920,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
             )}
           </div>
         </div>
-      ))}
+      )))}
 
       {/* FIGMA PRESENTATION PROTOTYPE POPUP MODAL */}
       <AnimatePresence>
