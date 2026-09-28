@@ -29,6 +29,23 @@
   }
 }
 
+/* Animated Signature Green Glow Effect (Portfolio Accent #C4D600) */
+@keyframes greenSignatureGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 16px rgba(196, 214, 0, 0.65));
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 28px rgba(196, 214, 0, 0.95)) drop-shadow(0 0 45px rgba(196, 214, 0, 0.45));
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+.animate-signature-green {
+  display: inline-block;
+  animation: greenSignatureGlow 2.8s ease-in-out infinite;
+}
+
 /* Custom Orange Theme Accents & Shadows */
 .bg-orange-accent {
   background-color: #C4D600;
@@ -180,6 +197,7 @@
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -189,6 +207,18 @@
 ::-webkit-scrollbar-thumb {
   background: #23252D;
   border-radius: 4px;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
 }
 
 /* Slow Orange Opacity Pulse for Navigation Buttons & Arrow (Zero size change, purely opacity) */

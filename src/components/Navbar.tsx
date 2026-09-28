@@ -16,11 +16,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, onOpenC
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      const heroEl = document.getElementById('hero');
+      const heroBottom = heroEl ? heroEl.offsetTop + heroEl.offsetHeight : window.innerHeight;
+
+      const scrollY = window.scrollY;
+      const isPastHero = scrollY > heroBottom - 120;
+
+      setScrolled(isPastHero);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeTab]);
 
   const navLinks: { label: string; tab: PageTab }[] = [
     { label: 'Web Design', tab: 'web-design' },

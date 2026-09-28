@@ -51,6 +51,7 @@ export interface PagesConfig {
   webDevelopment: PageConfig;
   infographiste: PageConfig;
   motionGraphics: PageConfig;
+  vibeNoCode: PageConfig;
 }
 
 export const DEFAULT_PAGES_CONFIG: PagesConfig = {
@@ -105,6 +106,19 @@ export const DEFAULT_PAGES_CONFIG: PagesConfig = {
     feature2Desc: 'Fluid micro-animations, GSAP transitions, and interactive physics that elevate digital interfaces.',
     feature3Title: 'Video Production & VFX',
     feature3Desc: 'After Effects, Premiere Pro, and Blender visual effects tailored for high-converting ads and showreels.'
+  },
+  vibeNoCode: {
+    badge: 'AI & No-Code Workflows',
+    title: 'Vibe No-Code & AI Engineering',
+    subtitle: 'Next-Gen Rapid Prototyping & AI Workflows',
+    heroImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    description: 'Leveraging AI-powered tools, Lovable, v0, Relume, and Cursor to design, prototype, and ship web applications at 10x speed.',
+    feature1Title: '10x Rapid Prototyping',
+    feature1Desc: 'Transforming natural language prompts and sketch wireframes into live interactive interfaces instantly.',
+    feature2Title: 'AI-Assisted Workflows',
+    feature2Desc: 'Automating code generation, design token sync, and smart responsive layout adjustments.',
+    feature3Title: 'Full Client Autonomy',
+    feature3Desc: 'Empowering clients to edit text, update media, and manage content effortlessly post-launch.'
   }
 };
 

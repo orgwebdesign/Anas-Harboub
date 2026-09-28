@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Project } from '../types';
 import { ArrowUpRight } from 'lucide-react';
-import { motion } from 'motion/react';
-import { StickyServicesCards } from './StickyServicesCards';
+import { ScrollVideoHero } from './ScrollVideoHero';
 import { HeroWithMarquee } from './ui/cta-with-marquee';
 import { WorkFilterMenuBar, WorkFilterCategory } from './WorkFilterMenuBar';
 import { WebDesignFeaturedProjects } from './WebDesignFeaturedProjects';
@@ -15,13 +14,25 @@ interface WebDesignPageProps {
 export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, onOpenContact }) => {
   const [activeFilter, setActiveFilter] = useState<WorkFilterCategory>('all');
 
-  return (
-    <div className="pt-28 pb-20">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        
-        {/* Section 1: Sticky Pinned 3D Flip & Dismiss Services Cards */}
-        <StickyServicesCards onInquireService={() => onOpenContact()} />
+  const scrollToProjects = () => {
+    const el = document.getElementById('web-design-projects');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
+  return (
+    <div className="pb-20">
+      {/* Section 1: Fullscreen Canvas Frame Scrubbing Hero Section */}
+      <ScrollVideoHero
+        onScrollToProjects={scrollToProjects}
+      />
+
+      {/* Main Page Content */}
+      <div 
+        id="web-design-projects"
+        className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 mt-16"
+      >
         {/* Section 2: Selected Web Design Projects Header Banner */}
         <HeroWithMarquee onOpenContact={onOpenContact} />
 
@@ -59,3 +70,5 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
     </div>
   );
 };
+
+export default WebDesignPage;

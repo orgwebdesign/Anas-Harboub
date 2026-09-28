@@ -4,7 +4,7 @@ export interface Project {
   id: string;
   title: string;
   client: string;
-  category: 'Web Design' | 'Web Development' | 'Infographiste' | 'UI/UX' | 'AI Design' | 'Motion Graphics';
+  category: 'Web Design' | 'Web Development' | 'Infographiste' | 'UI/UX' | 'AI Design' | 'Motion Graphics' | 'Vibe No Code';
   year: string;
   description: string;
   longDescription: string;

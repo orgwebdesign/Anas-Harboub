@@ -16,7 +16,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
   const portraitUrl = homeConfig.portrait || ANASS_BIO.portrait;
 
   return (
-    <section className="relative pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
       {/* Ambient background glow shapes - Hardware accelerated radial gradient */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(196, 214, 0,0.12)_0%,transparent_70%)] pointer-events-none" />
 
