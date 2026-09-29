@@ -32,12 +32,42 @@ export default function App() {
     setIsContactOpen(true);
   };
 
+  const performCalmScroll = () => {
+    const el = document.getElementById('recent-work') || document.getElementById('flowing-menu') || document.getElementById('projects');
+    if (!el) return;
+
+    const navOffset = 60;
+    const targetY = el.getBoundingClientRect().top + window.pageYOffset - navOffset;
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    const duration = 1400; // Smooth and calm 1.4s transition
+    let startTimestamp: number | null = null;
+
+    const easeInOutCubic = (t: number) => {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    };
+
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      window.scrollTo(0, startY + distance * easedProgress);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
   const scrollToProjects = () => {
-    const el = document.getElementById('projects');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
+    if (activeTab !== 'all') {
       setActiveTab('all');
+      setTimeout(() => performCalmScroll(), 150);
+    } else {
+      performCalmScroll();
     }
   };
 

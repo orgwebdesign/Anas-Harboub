@@ -241,7 +241,7 @@ export const FlowingMenuCurtain: React.FC<FlowingMenuCurtainProps> = ({ onExplor
   }, []);
 
   return (
-    <section ref={rootRef} id="flowing-menu" className="flowing-menu-section">
+    <section ref={rootRef} id="recent-work" data-section="recent-work" className="flowing-menu-section">
       <div className="flowing-menu-container">
         {/* Header line */}
         <div className="flowing-menu-header">

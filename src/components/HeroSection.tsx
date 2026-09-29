@@ -176,12 +176,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onHire
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          {/* Primary CTA: View Portfolio */}
+          {/* Primary CTA: View Work */}
           <button
             onClick={onExploreClick}
             className="btn-liquid-fill w-full sm:w-[210px] h-[56px] rounded-full font-bold text-base flex items-center justify-center gap-2.5 cursor-pointer group"
           >
-            <span>View Portfolio</span>
+            <span>View Work</span>
             <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" />
           </button>
 

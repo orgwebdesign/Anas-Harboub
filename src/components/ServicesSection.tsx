@@ -33,14 +33,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onInquireServi
               </span>
             </h2>
           </div>
-
-          <button
-            onClick={() => onInquireService('General Services')}
-            className="btn-liquid-fill self-start md:self-auto px-6 py-3 rounded-full font-semibold text-sm flex items-center gap-2 cursor-pointer group"
-          >
-            <span>View All Services</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </button>
         </div>
 
         {/* Accordion Cards Stack */}

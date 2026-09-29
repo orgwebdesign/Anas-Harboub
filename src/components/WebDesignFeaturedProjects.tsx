@@ -577,11 +577,18 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     return true;
   });
 
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
+  // Sort projects: newest first (tartibe: li jdad ikouno homa lowlin)
+  const sortedProjects = [...filteredProjects].sort((a, b) => {
+    const yearA = parseInt(a.year || '0', 10);
+    const yearB = parseInt(b.year || '0', 10);
+    return yearB - yearA;
+  });
+
+  const displayedProjects = showAll ? sortedProjects : sortedProjects.slice(0, 4);
 
   return (
     <section className="w-full py-8 relative" style={{ perspective: 1800 }}>
-      {filteredProjects.length === 0 ? (
+      {sortedProjects.length === 0 ? (
         <div className="py-20 text-center rounded-3xl bg-[#141519] border border-white/10 p-8 space-y-4">
           <p className="text-gray-400 text-base">Aucun projet trouvé dans cette catégorie pour le moment.</p>
           <button
@@ -620,19 +627,9 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         loading="lazy"
                       />
 
-                      {/* Default State Bottom Gradient Overlay */}
-                      <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/60 to-transparent transition-opacity duration-300 group-hover:opacity-0 pointer-events-none space-y-1.5">
-                        <div className="flex items-center gap-2 font-mono text-[11px] font-bold tracking-widest uppercase text-white/70">
-                          <span className="truncate">{project.category}</span>
-                        </div>
-                        <h3 className="text-xl font-bold text-white font-heading tracking-tight leading-snug line-clamp-1">
-                          {project.title}
-                        </h3>
-                      </div>
-
-                      {/* Default State Top Year Badge */}
-                      <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
-                        <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-[11px] font-mono font-semibold">
+                      {/* Year badge in bottom right (jenb limen f te7t) */}
+                      <div className="absolute bottom-5 right-5 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none z-10">
+                        <span className="px-3.5 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white text-xs font-mono font-semibold tracking-wider shadow-lg">
                           {project.year}
                         </span>
                       </div>
@@ -673,14 +670,14 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
               </div>
 
               {/* View More / View All Button */}
-              {filteredProjects.length > 4 && (
+              {sortedProjects.length > 4 && (
                 <div className="pt-10 flex justify-center">
                   <button
                     type="button"
                     onClick={() => setShowAll(!showAll)}
                     className="group px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white font-bold text-sm transition-all duration-300 cursor-pointer inline-flex items-center gap-2.5 shadow-xl hover:scale-105"
                   >
-                    <span>{showAll ? 'Show Less' : `View More (${filteredProjects.length - 4})`}</span>
+                    <span>{showAll ? 'Show Less' : `View More (${sortedProjects.length - 4})`}</span>
                     <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${showAll ? '-rotate-90' : 'group-hover:rotate-45'}`} />
                   </button>
                 </div>
