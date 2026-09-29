@@ -14,8 +14,9 @@ import { DesignerPage } from './components/DesignerPage';
 import { MotionGraphicsPage } from './components/MotionGraphicsPage';
 import { ContactModal } from './components/ContactModal';
 import { ProjectModal } from './components/ProjectModal';
-import { Footer } from './components/Footer';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { ThanksForScrollingSection } from './components/ThanksForScrollingSection';
+import { Footer } from './components/Footer';
 import { RightFixedToggle } from './components/RightFixedToggle';
 import { Preloader } from './components/Preloader';
 import { AnimatePresence, motion } from 'motion/react';
@@ -205,8 +206,11 @@ export default function App() {
           </AnimatePresence>
         </main>
 
-        {/* Client Testimonials Section: Placed right before Footer */}
+        {/* Client Testimonials Section ("Ce Que Disent Mes Clients") */}
         <TestimonialsSection onOpenContact={() => setIsContactOpen(true)} />
+
+        {/* Thanks For Scrolling Section with Behance Like Counter & 3D Figma/Framer/XD Badges */}
+        <ThanksForScrollingSection onOpenContact={() => setIsContactOpen(true)} />
 
         {/* Footer */}
         <Footer
