@@ -42,8 +42,8 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
       {/* 4-Dot Vertical White Pill Capsule Container: HIDDEN ON MOBILE (hidden md:flex) */}
       <div className="relative hidden md:flex items-center justify-center">
 
-        {/* "Click here" Arrow: Desktop-only, animates by opacity & soft glow without changing size */}
-        <div className="hidden md:block absolute bottom-[calc(100%+7px)] right-[15px] w-[115px] sm:w-[125px] pointer-events-none select-none animate-text-arrow-pulse">
+        {/* "Click here" Arrow: Desktop-only, clean and static without distracting pulse */}
+        <div className="hidden md:block absolute bottom-[calc(100%+7px)] right-[15px] w-[115px] sm:w-[125px] pointer-events-none select-none">
           <svg viewBox="0 0 100.46 64.8" className="w-full h-auto overflow-visible">
             <text
               fill="#fefefe"
@@ -121,18 +121,9 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 cx="16.28"
                 cy="14.5"
                 r="8.5"
-                fill={isDot1Active ? '#c4d600' : '#b2b2b2'}
+                fill={isDot1Active || hoveredItem === 'web-design' ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-              {!isDot1Active && (
-                <circle
-                  cx="16.28"
-                  cy="14.5"
-                  r="8.5"
-                  fill="#c4d600"
-                  className="animate-orange-pulse pointer-events-none"
-                />
-              )}
               {isDot1Active && <circle cx="16.28" cy="14.5" r="2.5" fill="#fefefe" />}
             </g>
 
@@ -148,18 +139,9 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 cx="16.28"
                 cy="37"
                 r="8.5"
-                fill={isDot2Active ? '#c4d600' : '#b2b2b2'}
+                fill={isDot2Active || hoveredItem === 'web-development' ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-              {!isDot2Active && (
-                <circle
-                  cx="16.28"
-                  cy="37"
-                  r="8.5"
-                  fill="#c4d600"
-                  className="animate-orange-pulse pointer-events-none"
-                />
-              )}
               {isDot2Active && <circle cx="16.28" cy="37" r="2.5" fill="#fefefe" />}
             </g>
 
@@ -175,18 +157,9 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 cx="16.28"
                 cy="59.5"
                 r="8.5"
-                fill={isDot3Active ? '#c4d600' : '#b2b2b2'}
+                fill={isDot3Active || hoveredItem === 'designer' ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-              {!isDot3Active && (
-                <circle
-                  cx="16.28"
-                  cy="59.5"
-                  r="8.5"
-                  fill="#c4d600"
-                  className="animate-orange-pulse pointer-events-none"
-                />
-              )}
               {isDot3Active && <circle cx="16.28" cy="59.5" r="2.5" fill="#fefefe" />}
             </g>
 
@@ -202,18 +175,9 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
                 cx="16.28"
                 cy="82"
                 r="8.5"
-                fill={isDot4Active ? '#c4d600' : '#b2b2b2'}
+                fill={isDot4Active || hoveredItem === 'motion-graphics' ? '#c4d600' : '#b2b2b2'}
                 className="transition-colors duration-300 transform origin-center"
               />
-              {!isDot4Active && (
-                <circle
-                  cx="16.28"
-                  cy="82"
-                  r="8.5"
-                  fill="#c4d600"
-                  className="animate-orange-pulse pointer-events-none"
-                />
-              )}
               {isDot4Active && <circle cx="16.28" cy="82" r="2.5" fill="#fefefe" />}
             </g>
           </svg>
@@ -249,24 +213,15 @@ export const RightFixedToggle: React.FC<RightFixedToggleProps> = ({
               {/* White smile background */}
               <rect fill="#fefefe" x="7.18" y="15" width="17.81" height="8.9" />
 
-              {/* Base bubble body: Orange on mobile, dynamic (gray/orange) on desktop */}
+              {/* Base bubble body: Orange on mobile, dynamic (gray/orange) on desktop, orange on hover */}
               <path
                 fill="currentColor"
-                className={`transition-colors duration-300 ${isContactOpen
+                className={`transition-colors duration-300 ${isContactOpen || hoveredItem === 'contact'
                     ? 'text-[#c4d600]'
                     : 'text-[#c4d600] md:text-[#b2b2b2]'
                   }`}
                 d="M28.83,12.77c-1.51-6.04-6.91-10-13.01-9.65-5.85.34-11.07,4.77-11.74,10.87-.34,3.12-.44,11.41.12,14.5l12.9-.08c8.07-.05,13.64-8.03,11.73-15.65ZM15.83,23.05c-4.19-.2-7.66-4.07-5.86-4.76,1.36-.53,2.09,2.85,5.9,2.98,4.25.14,5.03-3.08,6.2-2.91,2.55.36-1.49,4.94-6.24,4.7Z"
               />
-
-              {/* Orange opacity beacon overlay on desktop (pure opacity animation, NO size change) */}
-              {!isContactOpen && (
-                <path
-                  fill="#c4d600"
-                  className="hidden md:block animate-orange-pulse pointer-events-none"
-                  d="M28.83,12.77c-1.51-6.04-6.91-10-13.01-9.65-5.85.34-11.07,4.77-11.74,10.87-.34,3.12-.44,11.41.12,14.5l12.9-.08c8.07-.05,13.64-8.03,11.73-15.65ZM15.83,23.05c-4.19-.2-7.66-4.07-5.86-4.76,1.36-.53,2.09,2.85,5.9,2.98,4.25.14,5.03-3.08,6.2-2.91,2.55.36-1.49,4.94-6.24,4.7Z"
-                />
-              )}
             </svg>
           </div>
         </button>

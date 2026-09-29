@@ -792,64 +792,114 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                   </div>
                 </div>
 
-                {/* RIGHT SIDE (7 Columns): GOOGLE CHROME BROWSER WINDOW MOCKUP */}
-                <div className="lg:col-span-7">
-                  <div className="rounded-[28px] bg-[#141519] border border-white/15 shadow-[0_30px_70px_rgba(0,0,0,0.95)] overflow-hidden flex flex-col">
-                    {/* Google Chrome Window Top Bar */}
-                    <div className="bg-[#18191D] px-4 py-3 border-b border-white/10 flex items-center gap-3 select-none">
-                      {/* Chrome Window Traffic Lights */}
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]" />
-                        <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]" />
-                        <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]" />
-                      </div>
+                {/* RIGHT SIDE (7 Columns): REALISTIC MACBOOK PRO LAPTOP MOCKUP ON WOODEN STAND */}
+                <div className="lg:col-span-7 flex justify-center items-center">
+                  <div className="relative w-full max-w-[660px] mx-auto select-none group/laptop cursor-pointer">
+                    {/* Ambient Glow */}
+                    <div className="absolute -inset-4 bg-[#C4D600]/10 blur-[80px] rounded-full pointer-events-none -z-10" />
 
-                      {/* Browser Navigation Arrows */}
-                      <div className="hidden sm:flex items-center gap-2 text-gray-400 pl-2">
-                        <ArrowLeft className="w-3.5 h-3.5 text-gray-500" />
-                        <ArrowRight className="w-3.5 h-3.5 text-gray-600" />
-                        <RotateCw className="w-3.5 h-3.5 text-gray-400" />
-                      </div>
-
-                      {/* Google Chrome URL Omnibox */}
-                      <div className="flex-1 max-w-lg mx-auto bg-[#0B0C0E] rounded-full px-4 py-1.5 border border-white/10 flex items-center justify-between text-xs text-gray-300 shadow-inner">
-                        <div className="flex items-center gap-2 truncate">
-                          <Lock className="w-3 h-3 text-[#27C93F] shrink-0" />
-                          <span className="text-gray-500 font-mono text-[11px] shrink-0">https://</span>
-                          <span className="font-mono text-white text-[11px] truncate">
-                            {getProjectUrl(selectedDetailProject.id, selectedDetailProject.liveUrl)}
-                          </span>
+                    {/* 1. MACBOOK SCREEN (LID) */}
+                    <div className="relative rounded-t-[20px] sm:rounded-t-[24px] bg-[#16171c] p-2.5 sm:p-3 pb-0 border-t border-x border-[#363842] shadow-[0_12px_45px_rgba(0,0,0,0.85)]">
+                      {/* Screen Outer Aluminum Lip */}
+                      <div className="relative rounded-t-[14px] sm:rounded-t-[16px] bg-black p-1 sm:p-1.5 pb-0 border border-black/90">
+                        {/* Top FaceTime Camera Dot */}
+                        <div className="absolute top-1.5 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center pointer-events-none">
+                          <div className="w-2 h-2 rounded-full bg-[#0a0a0d] border border-white/10 flex items-center justify-center">
+                            <div className="w-1 h-1 rounded-full bg-[#1e3a5f]" />
+                          </div>
                         </div>
-                        <Sparkles className="w-3 h-3 text-[#C4D600] shrink-0 ml-2" />
-                      </div>
 
-                      {/* User Profile Emblem */}
-                      <div className="hidden sm:flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[10px] font-bold text-white">
-                          AH
+                        {/* Screen Glass Display Frame: Shows the website screenshot */}
+                        <div 
+                          className="relative rounded-t-[10px] sm:rounded-t-[12px] overflow-hidden bg-[#0B0C0E] aspect-[16/10] w-full"
+                          onClick={() => selectedDetailProject.previewButtons?.[0] && setFigmaModal({ 
+                            url: selectedDetailProject.previewButtons[0].url, 
+                            title: `${selectedDetailProject.title} (${selectedDetailProject.previewButtons[0].label})` 
+                          })}
+                        >
+                          <img
+                            src={selectedDetailProject.projectRef.imageUrl}
+                            alt={selectedDetailProject.title}
+                            className="w-full h-full object-cover object-top block transition-transform duration-700 ease-out group-hover/laptop:scale-[1.02]"
+                          />
+
+                          {/* Realistic Screen Glass Sheen / Reflection */}
+                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.1] pointer-events-none" />
+
+                          {/* Hover Figma Preview Badge */}
+                          <div className="absolute inset-0 bg-black/45 opacity-0 group-hover/laptop:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white font-bold text-xs sm:text-sm backdrop-blur-[2px]">
+                            <Eye className="w-4 h-4 text-[#C4D600]" />
+                            <span>Click to Preview Figma Prototype</span>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Google Window Viewport: Cleanly frames the website screenshot without empty black space */}
-                    <div 
-                      className="relative bg-[#08080A] w-full overflow-hidden group/browser cursor-pointer"
-                      onClick={() => selectedDetailProject.previewButtons?.[0] && setFigmaModal({ 
-                        url: selectedDetailProject.previewButtons[0].url, 
-                        title: `${selectedDetailProject.title} (${selectedDetailProject.previewButtons[0].label})` 
-                      })}
-                    >
-                      <img
-                        src={selectedDetailProject.projectRef.imageUrl}
-                        alt={selectedDetailProject.title}
-                        className="w-full h-auto block select-none transition-transform duration-500 group-hover/browser:scale-[1.015]"
-                      />
+                    {/* 2. LAPTOP HINGE */}
+                    <div className="relative h-[8px] sm:h-[10px] bg-gradient-to-b from-[#0d0e11] via-[#14151a] to-[#1c1d24] border-x border-[#33353e] z-10">
+                      <div className="absolute inset-x-8 sm:inset-x-16 top-0 h-[2px] bg-black/90 rounded-full" />
+                    </div>
 
-                      {/* Subtle hover overlay to preview interactive prototype */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/browser:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                        <Eye className="w-5 h-5 text-white" />
-                        <span>Click to Preview Figma Prototype</span>
+                    {/* 3. LAPTOP LOWER CHASSIS (KEYBOARD DECK & TRACKPAD) */}
+                    <div className="relative rounded-b-[18px] sm:rounded-b-[22px] bg-gradient-to-b from-[#21232b] via-[#1b1c23] to-[#14151a] p-3 sm:p-4 pt-2 border border-[#363842] shadow-[0_20px_50px_rgba(0,0,0,0.95)] z-10">
+                      {/* Keyboard Deck Recess */}
+                      <div className="rounded-lg sm:rounded-xl bg-[#0f1014] p-2 sm:p-2.5 border border-black/70 shadow-inner max-w-[90%] mx-auto mb-2 sm:mb-3">
+                        {/* Keyboard Key Rows Simulation */}
+                        <div className="space-y-1 sm:space-y-1.5 opacity-70">
+                          {/* Function keys row */}
+                          <div className="flex gap-1 justify-between h-2 sm:h-2.5">
+                            {Array.from({ length: 14 }).map((_, i) => (
+                              <div key={i} className="flex-1 rounded-xs bg-[#1a1b20] border-t border-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" />
+                            ))}
+                          </div>
+                          {/* Number keys row */}
+                          <div className="flex gap-1 justify-between h-2.5 sm:h-3">
+                            {Array.from({ length: 14 }).map((_, i) => (
+                              <div key={i} className="flex-1 rounded-xs bg-[#1a1b20] border-t border-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" />
+                            ))}
+                          </div>
+                          {/* QWERTY row */}
+                          <div className="flex gap-1 justify-between h-2.5 sm:h-3">
+                            {Array.from({ length: 13 }).map((_, i) => (
+                              <div key={i} className="flex-1 rounded-xs bg-[#1a1b20] border-t border-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" />
+                            ))}
+                          </div>
+                          {/* ASDF row */}
+                          <div className="flex gap-1 justify-between h-2.5 sm:h-3">
+                            {Array.from({ length: 12 }).map((_, i) => (
+                              <div key={i} className="flex-1 rounded-xs bg-[#1a1b20] border-t border-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" />
+                            ))}
+                          </div>
+                          {/* Spacebar row */}
+                          <div className="flex gap-1 items-center justify-between h-2.5 sm:h-3">
+                            <div className="w-[12%] h-full rounded-xs bg-[#1a1b20] border-t border-white/10" />
+                            <div className="w-[12%] h-full rounded-xs bg-[#1a1b20] border-t border-white/10" />
+                            <div className="flex-1 h-full rounded-xs bg-[#1a1b20] border-t border-white/10 shadow-[0_1px_2px_rgba(0,0,0,0.8)]" />
+                            <div className="w-[12%] h-full rounded-xs bg-[#1a1b20] border-t border-white/10" />
+                            <div className="w-[12%] h-full rounded-xs bg-[#1a1b20] border-t border-white/10" />
+                          </div>
+                        </div>
                       </div>
+
+                      {/* Apple Glass Trackpad */}
+                      <div className="w-28 sm:w-36 h-12 sm:h-16 rounded-lg sm:rounded-xl bg-gradient-to-b from-[#1e1f26] to-[#18191f] border border-white/10 shadow-inner mx-auto relative">
+                        <div className="absolute inset-x-2 top-0 h-[1px] bg-white/10" />
+                      </div>
+
+                      {/* Front Edge Thumb Opening Notch */}
+                      <div className="absolute inset-x-0 bottom-0 flex justify-center">
+                        <div className="w-16 sm:w-24 h-1.5 sm:h-2 rounded-t-sm bg-[#0e0f13] border-t border-[#363842]" />
+                      </div>
+                    </div>
+
+                    {/* 4. REALISTIC WOODEN PEDESTAL / STAND (Matching reference photo) */}
+                    <div className="relative -mt-2 mx-auto w-[96%] sm:w-[94%] rounded-b-2xl sm:rounded-b-3xl bg-gradient-to-b from-[#8f6847] via-[#755235] to-[#593d25] pt-4 pb-6 sm:pb-8 px-6 border-t border-[#b88c62]/50 shadow-[0_35px_70px_rgba(0,0,0,0.95)]">
+                      {/* Wood grain highlight lines & soft reflections */}
+                      <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#f3c89c]/40 to-transparent" />
+                      <div className="absolute inset-0 rounded-b-2xl sm:rounded-b-3xl opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none" />
+                      
+                      {/* Laptop base shadow onto wood */}
+                      <div className="w-3/4 mx-auto h-3 rounded-full bg-black/60 blur-md -mt-2" />
                     </div>
                   </div>
                 </div>
