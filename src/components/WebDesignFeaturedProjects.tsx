@@ -612,9 +612,15 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
               className="w-full"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
-                {displayedProjects.map((project) => (
-                  <div
-                    key={project.id}
+                <AnimatePresence mode="popLayout">
+                  {displayedProjects.map((project) => (
+                    <motion.div
+                      layout
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.35, ease: 'easeOut' }}
+                      key={project.id}
                     onClick={() => handleCardClick(project)}
                     className="group relative rounded-3xl bg-[#121318] border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/30 hover:shadow-[0_20px_45px_rgba(0,0,0,0.85)] flex flex-col h-[480px] cursor-pointer"
                   >
@@ -665,8 +671,9 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                         </button>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
+              </AnimatePresence>
               </div>
 
               {/* View More / View All Button */}

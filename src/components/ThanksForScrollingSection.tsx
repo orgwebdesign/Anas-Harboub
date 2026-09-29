@@ -200,7 +200,7 @@ export const ThanksForScrollingSection: React.FC<ThanksForScrollingSectionProps>
 
           {/* Project Title */}
           <h3 className="text-white font-extrabold text-lg sm:text-2xl font-heading mt-6 tracking-tight">
-            Graphic Design Portfolio 2026
+            UX/UI Design Portfolio 2026
           </h3>
 
           {/* Stats Row: Likes, Views, Comments */}
@@ -224,10 +224,6 @@ export const ThanksForScrollingSection: React.FC<ThanksForScrollingSectionProps>
             </div>
           </div>
 
-          {/* Published Date */}
-          <div className="text-gray-500 font-mono text-[11px] sm:text-xs mt-3 tracking-wide">
-            Published: April 28th 2026
-          </div>
         </div>
 
       </div>

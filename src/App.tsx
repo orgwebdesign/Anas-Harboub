@@ -206,8 +206,10 @@ export default function App() {
           </AnimatePresence>
         </main>
 
-        {/* Client Testimonials Section ("Ce Que Disent Mes Clients") */}
-        <TestimonialsSection onOpenContact={() => setIsContactOpen(true)} />
+        {/* Client Testimonials Section ("Ce Que Disent Mes Clients"): Hidden on Web Design page */}
+        {activeTab !== 'web-design' && (
+          <TestimonialsSection onOpenContact={() => setIsContactOpen(true)} />
+        )}
 
         {/* Thanks For Scrolling Section with Behance Like Counter & 3D Figma/Framer/XD Badges */}
         <ThanksForScrollingSection onOpenContact={() => setIsContactOpen(true)} />

@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #0B0C0E;
+  --color-secondary: #141519;
+  --color-muted-foreground: #9CA3AF;
+  --color-primary: #C4D600;
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
 @layer base {
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;

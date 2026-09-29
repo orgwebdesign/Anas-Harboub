@@ -294,7 +294,7 @@ export const ScrollVideoHero: React.FC<ScrollVideoHeroProps> = ({
             <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[84px] font-black tracking-tight text-white max-w-4xl leading-[1.12] drop-shadow-2xl">
               <span className="block">What I</span>
               <span className="block my-0.5 sm:my-1">
-                <span className="font-signature text-[#C4D600] text-5xl sm:text-7xl md:text-8xl lg:text-[112px] font-normal tracking-wide animate-signature-green leading-none">
+                <span className="font-signature text-[#C4D600] text-5xl sm:text-7xl md:text-8xl lg:text-[112px] font-normal tracking-wide leading-none">
                   Design
                 </span>
               </span>
@@ -302,7 +302,7 @@ export const ScrollVideoHero: React.FC<ScrollVideoHeroProps> = ({
             </h2>
             <p className="mt-3 sm:mt-6 text-sm sm:text-xl md:text-2xl font-light text-white/85 max-w-2xl leading-relaxed drop-shadow-lg">
               From{' '}
-              <span className="font-signature text-[#C4D600] text-xl sm:text-3xl md:text-4xl font-normal animate-signature-green mx-1">
+              <span className="font-signature text-[#C4D600] text-xl sm:text-3xl md:text-4xl font-normal mx-1">
                 ideas
               </span>{' '}
               to polished digital experiences.
