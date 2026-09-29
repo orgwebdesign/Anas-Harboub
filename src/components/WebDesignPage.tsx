@@ -3,7 +3,7 @@ import { Project } from '../types';
 import { ArrowUpRight } from 'lucide-react';
 import { ScrollVideoHero } from './ScrollVideoHero';
 import { HeroWithMarquee } from './ui/cta-with-marquee';
-import { WorkFilterMenuBar, WorkFilterCategory } from './WorkFilterMenuBar';
+import type { WorkFilterCategory } from './WorkFilterMenuBar';
 import { WebDesignFeaturedProjects } from './WebDesignFeaturedProjects';
 
 interface WebDesignPageProps {
@@ -12,7 +12,7 @@ interface WebDesignPageProps {
 }
 
 export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, onOpenContact }) => {
-  const [activeFilter, setActiveFilter] = useState<WorkFilterCategory>('all');
+  const [activeFilter, setActiveFilter] = useState<WorkFilterCategory>('landing-page');
 
   const scrollToProjects = () => {
     const el = document.getElementById('web-design-projects');
@@ -31,13 +31,11 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
       {/* Main Page Content */}
       <div 
         id="web-design-projects"
-        className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 mt-16"
+        className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16 mt-8"
       >
-        {/* Section 2: Selected Web Design Projects Header Banner */}
-        <HeroWithMarquee onOpenContact={onOpenContact} />
-
-        {/* Section 2.5: Interactive Filter Menu Bar with Icons */}
-        <WorkFilterMenuBar
+        {/* Section 2: Selected Web Design Projects Header Banner with Glass Filter Cards */}
+        <HeroWithMarquee 
+          onOpenContact={onOpenContact} 
           activeFilter={activeFilter}
           onFilterChange={(filter) => setActiveFilter(filter)}
         />

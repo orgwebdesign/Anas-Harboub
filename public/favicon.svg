@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16181D" />
+      <stop offset="100%" stop-color="#0B0C0E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background squircle for clean contrast on both light and dark browser themes -->
+  <rect width="500" height="500" rx="110" fill="url(#bgGrad)" stroke="#262930" stroke-width="12" />
+
+  <!-- AH Monogram Emblem -->
+  <g transform="translate(40, 40) scale(0.84)">
+    <!-- Crisp White/Silver 'A' Monogram -->
+    <path
+      d="M 35 428 
+         L 122 75 
+         L 252 75 
+         L 280 215 
+         L 202 215 
+         L 152 335 
+         L 208 335 
+         L 146 428 
+         Z"
+      fill="#F3F4F6"
+    />
+
+    <!-- Signature Lime 'H' Monogram -->
+    <path
+      d="M 290 75 
+         L 380 75 
+         L 465 428 
+         L 375 428 
+         L 336 270 
+         L 300 270 
+         L 330 428 
+         L 242 428 
+         L 208 285 
+         C 215 255, 250 235, 290 235 
+         L 332 250 
+         L 310 152 
+         Z"
+      fill="#C4D600"
+    />
+  </g>
+</svg>

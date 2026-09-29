@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Project } from '../types';
-import { ArrowUpRight, Calendar, Layout, Search, Eye, X, ExternalLink, Monitor, Smartphone } from 'lucide-react';
+import { ArrowUpRight, ArrowLeft, ArrowRight, RotateCw, Lock, Sparkles, Calendar, Layout, Eye, X, ExternalLink, Monitor, Smartphone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import qualyxHero from '../assets/images/qualyx_hero.png';
 import qualyxSignup from '../assets/images/qualyx_signup.png';
@@ -28,6 +28,49 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
   activeFilter = 'all',
 }) => {
   const [figmaModal, setFigmaModal] = useState<{ url: string; title: string } | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const [selectedDetailProject, setSelectedDetailProject] = useState<typeof projectsData[0] | null>(null);
+
+  const handleCardClick = (project: typeof projectsData[0]) => {
+    setSelectedDetailProject(project);
+    const el = document.getElementById('web-design-projects');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleBackToGrid = () => {
+    setSelectedDetailProject(null);
+  };
+
+  const getProjectUrl = (id: string, liveUrl?: string) => {
+    if (liveUrl) {
+      try {
+        const u = new URL(liveUrl);
+        return u.hostname + (u.pathname === '/' ? '' : u.pathname);
+      } catch {
+        return liveUrl.replace(/^https?:\/\//, '');
+      }
+    }
+    const urls: Record<string, string> = {
+      'qualyx': 'qualyx.ai/en/platform',
+      'iacrm': 'iacrm.io/growth-intelligence',
+      'mtc-holistique': 'mtcholistique.ch/treatments',
+      'cars-and-co': 'carsandco-conciergerie.com',
+      'natulique-swiss': 'natuliqueswiss.ch/boutique',
+      'jeremie-boulaire': 'jeremieboulaire.fr/cabinet',
+      'mccp-natulique-vsl': 'natulique-headspa.com/vsl',
+      'lm-luxe-yachts': 'lmluxeyachts.com/fleet',
+      'gonzague-havet': 'gonzaguehavet.com/ecosystem',
+      'institut-mooine': 'mooine.com/center',
+    };
+    return urls[id] || 'project-preview.com';
+  };
+
+  useEffect(() => {
+    setShowAll(false);
+    setSelectedDetailProject(null);
+  }, [activeFilter]);
 
   const projectsData = [
     {
@@ -534,406 +577,290 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     return true;
   });
 
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
+
   return (
-    <section className="w-full space-y-24 py-8 relative">
+    <section className="w-full py-8 relative" style={{ perspective: 1800 }}>
       {filteredProjects.length === 0 ? (
         <div className="py-20 text-center rounded-3xl bg-[#141519] border border-white/10 p-8 space-y-4">
           <p className="text-gray-400 text-base">Aucun projet trouvé dans cette catégorie pour le moment.</p>
           <button
             onClick={() => onOpenContact()}
-            className="px-6 py-2.5 rounded-full bg-[#C4D600] text-black font-bold text-sm hover:scale-105 transition-transform"
+            className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-sm hover:bg-gray-200 transition-colors"
           >
             Discuter d'un projet sur-mesure
           </button>
         </div>
       ) : (
-        filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-white/10 pb-20 last:border-b-0"
-          >
-          {/* Left Project Info (5 Columns on Desktop) */}
-          <div className="lg:col-span-5 space-y-6 text-left">
-            {/* Category Tag */}
-            <div className="flex items-center gap-2 font-mono text-xs font-bold tracking-widest uppercase">
-              <span className="text-[#C4D600]">{project.number}</span>
-              <span className="text-gray-500">/</span>
-              <span className="text-gray-400">{project.category}</span>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading tracking-tight leading-tight">
-              {project.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md">
-              {project.description}
-            </p>
-
-            {/* Metadata Row */}
-            <div className="flex items-center gap-4 text-xs text-gray-400 font-medium">
-              <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-gray-500" />
-                <span>{project.year}</span>
-              </div>
-              <span className="text-gray-600">•</span>
-              <div className="flex items-center gap-1.5">
-                <Layout className="w-3.5 h-3.5 text-gray-500" />
-                <span>{project.type}</span>
-              </div>
-            </div>
-
-            {/* Tags Pills */}
-            <div className="flex flex-wrap items-center gap-2 pt-1">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1.5 rounded-full bg-[#141519] border border-white/10 text-gray-300 text-xs font-mono font-medium"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* Action Buttons Row (Voir en live / View Case Study & Preview Figma Popups) */}
-            <div className="pt-3 flex flex-wrap items-center gap-3">
-              {project.liveUrl ? (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-liquid-fill group px-6 py-3 rounded-full font-bold text-xs sm:text-sm cursor-pointer inline-flex items-center gap-2 shadow-lg"
-                >
-                  <span>{project.buttonText || "Voir en live"}</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              ) : (
-                <button
-                  onClick={() => onSelectProject(project.projectRef)}
-                  className="btn-liquid-fill group px-6 py-3 rounded-full font-bold text-xs sm:text-sm cursor-pointer inline-flex items-center gap-2 shadow-lg"
-                >
-                  <span>{project.buttonText || "View Case Study"}</span>
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </button>
-              )}
-
-              {project.previewButtons?.map((btn, idx) => {
-                const BtnIcon = btn.icon || Eye;
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                    className="group px-5 py-3 rounded-full bg-[#1A1B20] border border-white/20 text-white hover:border-[#C4D600] hover:text-[#C4D600] font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer inline-flex items-center gap-2 shadow-lg"
+        <AnimatePresence mode="wait">
+          {!selectedDetailProject ? (
+            /* VIEW 1: 2-CARDS-PER-ROW GRID WITH 3D FLIP TRANSITION */
+            <motion.div
+              key="cards-grid"
+              initial={{ opacity: 0, rotateY: -80, scale: 0.95 }}
+              animate={{ opacity: 1, rotateY: 0, scale: 1 }}
+              exit={{ opacity: 0, rotateY: 80, scale: 0.95 }}
+              transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformStyle: 'preserve-3d' }}
+              className="w-full"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
+                {displayedProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    onClick={() => handleCardClick(project)}
+                    className="group relative rounded-3xl bg-[#121318] border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/30 hover:shadow-[0_20px_45px_rgba(0,0,0,0.85)] flex flex-col h-[480px] cursor-pointer"
                   >
-                    <BtnIcon className="w-4 h-4 text-[#C4D600]" />
-                    <span>{btn.label}</span>
+                    {/* Card Image Showcase */}
+                    <div className="relative w-full h-full overflow-hidden bg-black">
+                      <img
+                        src={project.projectRef.imageUrl}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-108"
+                        loading="lazy"
+                      />
+
+                      {/* Default State Bottom Gradient Overlay */}
+                      <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/95 via-black/60 to-transparent transition-opacity duration-300 group-hover:opacity-0 pointer-events-none space-y-1.5">
+                        <div className="flex items-center gap-2 font-mono text-[11px] font-bold tracking-widest uppercase text-white/70">
+                          <span className="truncate">{project.category}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-white font-heading tracking-tight leading-snug line-clamp-1">
+                          {project.title}
+                        </h3>
+                      </div>
+
+                      {/* Default State Top Year Badge */}
+                      <div className="absolute top-4 left-4 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
+                        <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-[11px] font-mono font-semibold">
+                          {project.year}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* HOVER OVERLAY: Shows just Logo, Title, and Green View More Button */}
+                    <div className="absolute inset-0 bg-[#0B0C0E]/94 backdrop-blur-md p-7 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out pointer-events-none group-hover:pointer-events-auto z-10">
+                      {/* Logo and Title */}
+                      <div className="space-y-4">
+                        {/* Logo of site web */}
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 border border-white/20 flex items-center justify-center font-heading font-extrabold text-xl text-white shadow-xl">
+                          {project.title.slice(0, 2).toUpperCase()}
+                        </div>
+
+                        {/* Title of site web */}
+                        <h3 className="text-xl sm:text-2xl font-extrabold text-white font-heading leading-tight tracking-tight">
+                          {project.title}
+                        </h3>
+                      </div>
+
+                      {/* Green View More Button */}
+                      <div className="pt-4">
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleCardClick(project);
+                          }}
+                          className="w-full py-3.5 px-6 rounded-full bg-[#C4D600] text-black font-extrabold text-sm sm:text-base hover:bg-[#d2e500] hover:shadow-[0_0_25px_rgba(196,214,0,0.5)] transition-all cursor-pointer inline-flex items-center justify-center gap-2.5 shadow-xl hover:scale-102"
+                        >
+                          <span>View More</span>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* View More / View All Button */}
+              {filteredProjects.length > 4 && (
+                <div className="pt-10 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => setShowAll(!showAll)}
+                    className="group px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white font-bold text-sm transition-all duration-300 cursor-pointer inline-flex items-center gap-2.5 shadow-xl hover:scale-105"
+                  >
+                    <span>{showAll ? 'Show Less' : `View More (${filteredProjects.length - 4})`}</span>
+                    <ArrowUpRight className={`w-4 h-4 transition-transform duration-300 ${showAll ? '-rotate-90' : 'group-hover:rotate-45'}`} />
                   </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right Visual Showcase Mockups (7 Columns on Desktop) */}
-          <div className="lg:col-span-7">
-            {project.id === 'qualyx' && (
-              <div 
-                className="relative p-2 sm:p-4 rounded-[28px] bg-[#101115] border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
-                onClick={() => project.previewButtons?.[0] && setFigmaModal({ url: project.previewButtons[0].url, title: project.title })}
-              >
-                {/* Main Hero Screenshot */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-white/15 bg-black shadow-2xl">
-                  <img
-                    src={qualyxHero}
-                    alt="Qualyx AI Landing Page Hero"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#C4D600]" />
-                    <span>Click to Preview Figma Presentation</span>
+                </div>
+              )}
+            </motion.div>
+          ) : (
+            /* VIEW 2: DEDICATED GOOGLE BROWSER MOCKUP & LOGO DETAIL VIEW WITH 3D FLIP */
+            <motion.div
+              key="detail-view"
+              initial={{ opacity: 0, rotateY: 80, scale: 0.95 }}
+              animate={{ opacity: 1, rotateY: 0, scale: 1 }}
+              exit={{ opacity: 0, rotateY: -80, scale: 0.95 }}
+              transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformStyle: 'preserve-3d' }}
+              className="w-full"
+            >
+              {/* 2-Column Split: Left Side Logo & Info / Right Side Google Chrome Window Mockup */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                {/* LEFT SIDE (5 Columns): Logo, Project Info, Paragraph & Actions */}
+                <div className="lg:col-span-5 space-y-6 text-left">
+                  {/* Website Brand Logo & Category */}
+                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 border border-white/20 flex items-center justify-center font-heading font-extrabold text-xl text-white shadow-xl shrink-0">
+                      {selectedDetailProject.title.slice(0, 2).toUpperCase()}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-white font-extrabold text-lg sm:text-xl font-heading tracking-wide truncate">
+                        {selectedDetailProject.projectRef.client || selectedDetailProject.title.split('—')[0].trim()}
+                      </h4>
+                      <span className="text-xs text-[#C4D600] font-mono font-semibold uppercase tracking-wider block">
+                        {selectedDetailProject.category}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                {/* VIP Signup Overlaid Card */}
-                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-44 sm:w-60 aspect-[16/10] rounded-[18px] overflow-hidden border-2 border-[#D4E839]/60 bg-[#0B0C0E] shadow-[0_20px_50px_rgba(0,0,0,0.95)] group-hover:scale-105 transition-transform duration-500">
-                  <img
-                    src={qualyxSignup}
-                    alt="Qualyx VIP Funnel Interface"
-                    className="w-full h-full object-cover object-left-top"
-                  />
-                </div>
-              </div>
-            )}
+                  {/* Title */}
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-heading leading-tight tracking-tight">
+                    {selectedDetailProject.title}
+                  </h3>
 
-            {project.id === 'iacrm' && (
-              <div 
-                className="relative p-2 sm:p-4 rounded-[28px] bg-[#0A0D14] border border-cyan-500/20 shadow-2xl overflow-hidden group cursor-pointer"
-                onClick={() => project.previewButtons?.[0] && setFigmaModal({ url: project.previewButtons[0].url, title: project.title })}
-              >
-                {/* Ambient Blue Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,180,255,0.15),transparent_70%)] pointer-events-none" />
+                  {/* Description Paragraph */}
+                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                    {selectedDetailProject.projectRef.longDescription || selectedDetailProject.description}
+                  </p>
 
-                {/* IACRM Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-cyan-500/30 bg-black shadow-2xl">
-                  <img
-                    src={iacrmHero}
-                    alt="IACRM Artificial Intelligence Customer Growth Hero"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#C4D600]" />
-                    <span>Click to Preview Figma Presentation</span>
-                  </div>
-                </div>
-              </div>
-            )}
+                  {/* Deliverables / Metrics Row if available */}
+                  {selectedDetailProject.projectRef.metrics && (
+                    <div className="grid grid-cols-2 gap-3 pt-2">
+                      {selectedDetailProject.projectRef.metrics.map((m, idx) => (
+                        <div key={idx} className="p-3 rounded-xl bg-white/[0.04] border border-white/10">
+                          <div className="text-base sm:text-lg font-extrabold text-white font-heading">
+                            {m.value}
+                          </div>
+                          <div className="text-[11px] text-gray-400 font-mono">
+                            {m.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
 
-            {project.id === 'mtc-holistique' && (
-              <div className="relative p-2 sm:p-4 rounded-[28px] bg-[#0E1315] border border-teal-500/20 shadow-2xl overflow-hidden group">
-                {/* Soft Warm Teal Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.12),transparent_75%)] pointer-events-none" />
+                  {/* Action Buttons: Preview Figma & Back */}
+                  <div className="pt-4 space-y-3">
+                    {/* Preview Figma Prototype Buttons */}
+                    {selectedDetailProject.previewButtons && selectedDetailProject.previewButtons.length > 0 && (
+                      <div className="flex flex-wrap gap-3">
+                        {selectedDetailProject.previewButtons.map((btn, idx) => {
+                          const isDesktop = btn.label.toLowerCase().includes('desktop');
+                          const isMobile = btn.label.toLowerCase().includes('mobile');
+                          const BtnIcon = isDesktop ? Monitor : isMobile ? Smartphone : (btn.icon || Eye);
 
-                {/* MTC Holistique Hero Screenshot Card with Interactive Hover Buttons */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-teal-500/30 bg-black shadow-2xl">
-                  <img
-                    src={mtcHero}
-                    alt="MTC Holistique Center for Physiotherapy & Massage"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+                          return (
+                            <button
+                              key={idx}
+                              type="button"
+                              title={btn.label}
+                              onClick={() => setFigmaModal({ url: btn.url, title: `${selectedDetailProject.title} (${btn.label})` })}
+                              className="flex-1 min-w-[180px] py-3.5 px-6 rounded-full bg-white text-black font-extrabold text-sm hover:bg-gray-200 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-all cursor-pointer inline-flex items-center justify-center gap-2.5 shadow-xl hover:scale-102"
+                            >
+                              <BtnIcon className="w-5 h-5 text-black shrink-0" />
+                              <span>Preview Figma</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
 
-                  {/* Hover Buttons Bar */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-xs">
-                    {project.previewButtons?.map((btn, idx) => {
-                      const BtnIcon = btn.icon || Eye;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
+                    <div className="flex items-center gap-3">
+                      {/* Visit Live Website if liveUrl exists */}
+                      {selectedDetailProject.liveUrl && (
+                        <a
+                          href={selectedDetailProject.liveUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="flex-1 py-3 px-5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm transition-all cursor-pointer inline-flex items-center justify-center gap-2 hover:scale-102"
                         >
-                          <BtnIcon className="w-4 h-4" />
-                          <span>{btn.label}</span>
-                        </button>
-                      );
-                    })}
+                          <span>Visit Live Website</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+
+                      {/* Back Button */}
+                      <button
+                        type="button"
+                        onClick={handleBackToGrid}
+                        className="flex-1 py-3 px-5 rounded-full bg-transparent hover:bg-white/10 border border-white/20 text-gray-300 hover:text-white font-semibold text-xs sm:text-sm transition-all cursor-pointer inline-flex items-center justify-center gap-2"
+                      >
+                        <ArrowLeft className="w-4 h-4" />
+                        <span>Back</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT SIDE (7 Columns): GOOGLE CHROME BROWSER WINDOW MOCKUP */}
+                <div className="lg:col-span-7">
+                  <div className="rounded-[28px] bg-[#141519] border border-white/15 shadow-[0_30px_70px_rgba(0,0,0,0.95)] overflow-hidden flex flex-col">
+                    {/* Google Chrome Window Top Bar */}
+                    <div className="bg-[#18191D] px-4 py-3 border-b border-white/10 flex items-center gap-3 select-none">
+                      {/* Chrome Window Traffic Lights */}
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]" />
+                        <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]" />
+                        <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]" />
+                      </div>
+
+                      {/* Browser Navigation Arrows */}
+                      <div className="hidden sm:flex items-center gap-2 text-gray-400 pl-2">
+                        <ArrowLeft className="w-3.5 h-3.5 text-gray-500" />
+                        <ArrowRight className="w-3.5 h-3.5 text-gray-600" />
+                        <RotateCw className="w-3.5 h-3.5 text-gray-400" />
+                      </div>
+
+                      {/* Google Chrome URL Omnibox */}
+                      <div className="flex-1 max-w-lg mx-auto bg-[#0B0C0E] rounded-full px-4 py-1.5 border border-white/10 flex items-center justify-between text-xs text-gray-300 shadow-inner">
+                        <div className="flex items-center gap-2 truncate">
+                          <Lock className="w-3 h-3 text-[#27C93F] shrink-0" />
+                          <span className="text-gray-500 font-mono text-[11px] shrink-0">https://</span>
+                          <span className="font-mono text-white text-[11px] truncate">
+                            {getProjectUrl(selectedDetailProject.id, selectedDetailProject.liveUrl)}
+                          </span>
+                        </div>
+                        <Sparkles className="w-3 h-3 text-[#C4D600] shrink-0 ml-2" />
+                      </div>
+
+                      {/* User Profile Emblem */}
+                      <div className="hidden sm:flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[10px] font-bold text-white">
+                          AH
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Google Window Viewport: Cleanly frames the website screenshot without empty black space */}
+                    <div 
+                      className="relative bg-[#08080A] w-full overflow-hidden group/browser cursor-pointer"
+                      onClick={() => selectedDetailProject.previewButtons?.[0] && setFigmaModal({ 
+                        url: selectedDetailProject.previewButtons[0].url, 
+                        title: `${selectedDetailProject.title} (${selectedDetailProject.previewButtons[0].label})` 
+                      })}
+                    >
+                      <img
+                        src={selectedDetailProject.projectRef.imageUrl}
+                        alt={selectedDetailProject.title}
+                        className="w-full h-auto block select-none transition-transform duration-500 group-hover/browser:scale-[1.015]"
+                      />
+
+                      {/* Subtle hover overlay to preview interactive prototype */}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/browser:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
+                        <Eye className="w-5 h-5 text-white" />
+                        <span>Click to Preview Figma Prototype</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            )}
-
-            {project.id === 'cars-and-co' && (
-              <div className="relative p-2 sm:p-4 rounded-[28px] bg-[#14120D] border border-amber-500/20 shadow-2xl overflow-hidden group">
-                {/* Gold Ambient Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.15),transparent_75%)] pointer-events-none" />
-
-                {/* Cars & Co Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-amber-500/30 bg-black shadow-2xl">
-                  <img
-                    src={carsHero}
-                    alt="Cars & Co Premium Luxury Car Rental"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-
-                  {/* Hover Buttons Bar */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-xs">
-                    {project.previewButtons?.map((btn, idx) => {
-                      const BtnIcon = btn.icon || Eye;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
-                        >
-                          <BtnIcon className="w-4 h-4" />
-                          <span>{btn.label}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {project.id === 'natulique-swiss' && (
-              <div 
-                className="relative p-2 sm:p-4 rounded-[28px] bg-[#141311] border border-stone-500/20 shadow-2xl overflow-hidden group cursor-pointer"
-                onClick={() => project.previewButtons?.[0] && setFigmaModal({ url: project.previewButtons[0].url, title: project.title })}
-              >
-                {/* Warm Sand Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.12),transparent_75%)] pointer-events-none" />
-
-                {/* Natulique Swiss Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-stone-500/30 bg-black shadow-2xl">
-                  <img
-                    src={natuliqueHero}
-                    alt="Natulique Swiss Certified Organic Haircare Distribution"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#C4D600]" />
-                    <span>Click to Preview Figma Presentation</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {project.id === 'jeremie-boulaire' && (
-              <div 
-                className="relative p-2 sm:p-4 rounded-[28px] bg-[#121316] border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
-                onClick={() => project.previewButtons?.[0] && setFigmaModal({ url: project.previewButtons[0].url, title: project.title })}
-              >
-                {/* Monochrome Elegance Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.08),transparent_75%)] pointer-events-none" />
-
-                {/* Jérémie Boulaire Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-white/15 bg-black shadow-2xl">
-                  <img
-                    src={jeremieHero}
-                    alt="Maître Jérémie Boulaire Legal Counsel"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#C4D600]" />
-                    <span>Click to Preview Figma Presentation</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {project.id === 'mccp-natulique-vsl' && (
-              <div className="relative p-2 sm:p-4 rounded-[28px] bg-[#14100E] border border-amber-800/30 shadow-2xl overflow-hidden group">
-                {/* Warm Espresso Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(180,83,9,0.15),transparent_75%)] pointer-events-none" />
-
-                {/* MCCP Natulique VSL Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-amber-700/40 bg-black shadow-2xl">
-                  <img
-                    src={mccpVslHero}
-                    alt="MCCP Natulique Head Spa VSL & Giveaway Funnel"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-
-                  {/* Hover Buttons Bar */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-xs">
-                    {project.previewButtons?.map((btn, idx) => {
-                      const BtnIcon = btn.icon || Eye;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
-                        >
-                          <BtnIcon className="w-4 h-4" />
-                          <span>{btn.label}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {project.id === 'lm-luxe-yachts' && (
-              <div 
-                className="relative p-2 sm:p-4 rounded-[28px] bg-[#0B1216] border border-cyan-500/20 shadow-2xl overflow-hidden group cursor-pointer"
-                onClick={() => project.previewButtons?.[0] && setFigmaModal({ url: project.previewButtons[0].url, title: project.title })}
-              >
-                {/* Deep Cyan Ocean Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(6,182,212,0.15),transparent_75%)] pointer-events-none" />
-
-                {/* LM Luxe Yachts Ibiza Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-cyan-500/30 bg-black shadow-2xl">
-                  <img
-                    src={yachtsHero}
-                    alt="LM Luxe Yachts Ibiza Premium Yacht Brokerage"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-sm backdrop-blur-xs">
-                    <Eye className="w-5 h-5 text-[#C4D600]" />
-                    <span>Click to Preview Figma Presentation</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {project.id === 'gonzague-havet' && (
-              <div className="relative p-2 sm:p-4 rounded-[28px] bg-[#0A0D16] border border-blue-600/25 shadow-2xl overflow-hidden group">
-                {/* Deep Navy Corporate Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(37,99,235,0.15),transparent_75%)] pointer-events-none" />
-
-                {/* Gonzague Havet Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-blue-500/30 bg-black shadow-2xl">
-                  <img
-                    src={havetHero}
-                    alt="Gonzague Havet Digital Ecosystem & VSL"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-
-                  {/* Hover Buttons Bar */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-xs">
-                    {project.previewButtons?.map((btn, idx) => {
-                      const BtnIcon = btn.icon || Eye;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
-                        >
-                          <BtnIcon className="w-4 h-4" />
-                          <span>{btn.label}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {project.id === 'institut-mooine' && (
-              <div className="relative p-2 sm:p-4 rounded-[28px] bg-[#0D1515] border border-teal-500/20 shadow-2xl overflow-hidden group">
-                {/* Warm Turquoise Radial Glow */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(13,148,136,0.15),transparent_75%)] pointer-events-none" />
-
-                {/* Institut Mooine Hero Screenshot Card */}
-                <div className="relative aspect-[16/10] rounded-[20px] overflow-hidden border border-teal-500/30 bg-black shadow-2xl">
-                  <img
-                    src={mooineHero}
-                    alt="Institut Mooine Health & Wellness Center"
-                    className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
-
-                  {/* Hover Buttons Bar */}
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4 backdrop-blur-xs">
-                    {project.previewButtons?.map((btn, idx) => {
-                      const BtnIcon = btn.icon || Eye;
-                      return (
-                        <button
-                          key={idx}
-                          onClick={() => setFigmaModal({ url: btn.url, title: `${project.title} (${btn.label})` })}
-                          className="px-4 py-2.5 rounded-full bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-all flex items-center gap-2 shadow-xl cursor-pointer"
-                        >
-                          <BtnIcon className="w-4 h-4" />
-                          <span>{btn.label}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
 
       {/* FIGMA PRESENTATION PROTOTYPE POPUP MODAL */}
       <AnimatePresence>
