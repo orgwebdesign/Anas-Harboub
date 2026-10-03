@@ -589,7 +589,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
   return (
     <section className="w-full py-8 relative" style={{ perspective: 1800 }}>
       {sortedProjects.length === 0 ? (
-        <div className="py-20 text-center rounded-3xl bg-[#141519] border border-white/10 p-8 space-y-4">
+        <div className="py-20 text-center rounded-lg bg-[#141519] border border-white/10 p-8 space-y-4">
           <p className="text-gray-400 text-base">Aucun projet trouvé dans cette catégorie pour le moment.</p>
           <button
             onClick={() => onOpenContact()}
@@ -622,7 +622,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
                       transition={{ duration: 0.35, ease: 'easeOut' }}
                       key={project.id}
                     onClick={() => handleCardClick(project)}
-                    className="group relative rounded-3xl bg-[#121318] border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/30 hover:shadow-[0_20px_45px_rgba(0,0,0,0.85)] flex flex-col h-[480px] cursor-pointer"
+                    className="group relative rounded-lg bg-[#121318] border border-white/10 overflow-hidden shadow-2xl transition-all duration-500 hover:border-white/30 hover:shadow-[0_20px_45px_rgba(0,0,0,0.85)] flex flex-col h-[480px] cursor-pointer"
                   >
                     {/* Card Image Showcase */}
                     <div className="relative w-full h-full overflow-hidden bg-black">

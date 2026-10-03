@@ -38,7 +38,7 @@ export function HeroWithMarquee({
       <div className="container mx-auto relative z-10 text-center max-w-4xl">
         {/* Title with generous spacing below */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-white leading-tight mb-10 sm:mb-14 md:mb-16">
-          Selected Web Design <span className="text-[#C4D600]">Projects</span>
+          Featured Design <span className="text-[#C4D600]">Projects</span>
         </h2>
 
         {/* Square Glass Effect Category Cards */}
@@ -55,18 +55,18 @@ export function HeroWithMarquee({
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                className={`group relative flex flex-col items-center justify-center aspect-square w-24 sm:w-28 md:w-32 rounded-2xl sm:rounded-3xl p-3 sm:p-4 cursor-pointer select-none backdrop-blur-xl transition-all duration-300 ${
+                className={`group relative flex flex-col items-center justify-center aspect-square w-24 sm:w-28 md:w-32 rounded-lg p-3 sm:p-4 cursor-pointer select-none backdrop-blur-xl transition-all duration-300 ${
                   isSelected ? 'opacity-100' : 'opacity-45 hover:opacity-90'
                 }`}
               >
                 {/* Static Background Tile (constant border prevents any size shift) */}
-                <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-white/[0.04] border border-white/20 group-hover:border-white/40 transition-colors duration-300 pointer-events-none" />
+                <div className="absolute inset-0 rounded-lg bg-white/[0.04] border border-white/20 group-hover:border-white/40 transition-colors duration-300 pointer-events-none" />
 
                 {/* Smooth Animated Active Highlight Frame */}
                 {isSelected && (
                   <motion.div
                     layoutId="activeCategoryHighlight"
-                    className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 border-white bg-white/[0.12] shadow-[0_0_25px_rgba(255,255,255,0.28)] pointer-events-none z-0"
+                    className="absolute inset-0 rounded-lg border-2 border-white bg-white/[0.12] shadow-[0_0_20px_rgba(255,255,255,0.25)] pointer-events-none z-0"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
