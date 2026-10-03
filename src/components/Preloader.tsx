@@ -106,32 +106,14 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -35, filter: "blur(6px)" }}
                 transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center justify-center gap-3 sm:gap-4"
+                className="flex items-center justify-center"
               >
-                {/* Glowing Green Pulsing Beacon Dot */}
-                <span className="relative flex h-3 w-3 sm:h-4 sm:w-4 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C4D600] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 sm:h-4 sm:w-4 bg-[#C4D600]" />
-                </span>
-
                 <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-heading text-white tracking-tight">
                   {GREETINGS[index].text}
                 </h1>
               </motion.div>
             </AnimatePresence>
           </div>
-
-          {/* Language Tag Indicator */}
-          <motion.span
-            key={`lang-${index}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.6 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="text-xs uppercase tracking-widest text-[#C4D600] font-mono mt-3 font-semibold"
-          >
-            {GREETINGS[index].lang}
-          </motion.span>
         </div>
       )}
 

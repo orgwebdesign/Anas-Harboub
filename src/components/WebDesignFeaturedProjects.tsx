@@ -75,6 +75,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
   const projectsData = [
     {
       id: 'qualyx',
+      categoryFilter: 'landing-page' as WorkFilterCategory,
       number: '01',
       category: 'LANDING PAGE & SAAS',
       title: 'Qualyx — Native AI That Converts Leads into Clients',
@@ -114,6 +115,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'iacrm',
+      categoryFilter: 'landing-page' as WorkFilterCategory,
       number: '02',
       category: 'LANDING PAGE & CRM',
       title: 'IACRM — Artificial Intelligence at the Heart of Customer Growth',
@@ -153,6 +155,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'mtc-holistique',
+      categoryFilter: 'landing-page' as WorkFilterCategory,
       number: '03',
       category: 'LANDING PAGE & HEALTHCARE',
       title: 'MTC Holistique — Center for Physiotherapy & Therapeutic Massage',
@@ -197,8 +200,9 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'cars-and-co',
+      categoryFilter: 'ecommerce' as WorkFilterCategory,
       number: '04',
-      category: 'LANDING PAGE & AUTOMOTIVE',
+      category: 'E-COMMERCE & AUTOMOTIVE',
       title: 'Cars & Co — Premium Luxury Car Rental Experience',
       description: 'High-end car rental platform offering luxury, city, and professional chauffeur vehicles. Features interactive vehicle fleet search, instant online booking, and premium gold-accented dark UI.',
       year: '2025',
@@ -243,6 +247,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'natulique-swiss',
+      categoryFilter: 'ecommerce' as WorkFilterCategory,
       number: '05',
       category: 'E-COMMERCE & BEAUTY',
       title: 'Natulique Swiss — Certified Organic Haircare Distribution',
@@ -284,6 +289,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'jeremie-boulaire',
+      categoryFilter: 'landing-page' as WorkFilterCategory,
       number: '06',
       category: 'LANDING PAGE & LEGAL',
       title: 'Jérémie Boulaire — Legal Counsel & Doctor of Law',
@@ -325,6 +331,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'mccp-natulique-vsl',
+      categoryFilter: 'vsl' as WorkFilterCategory,
       number: '07',
       category: 'VSL & LANDING PAGE',
       title: 'MCCP Natulique — Head Spa Luxury VSL & Giveaway Page',
@@ -369,6 +376,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'lm-luxe-yachts',
+      categoryFilter: 'ecommerce' as WorkFilterCategory,
       number: '08',
       category: 'E-COMMERCE & LUXURY',
       title: 'LM Luxe Yachts Ibiza — Premium Luxury Yacht Brokerage & Sales',
@@ -410,6 +418,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'gonzague-havet',
+      categoryFilter: 'vsl' as WorkFilterCategory,
       number: '09',
       category: 'VSL & DIGITAL ECOSYSTEM',
       title: 'Gonzague Havet — Digital Ecosystem for HD Communication & IT Solutions',
@@ -456,6 +465,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     },
     {
       id: 'institut-mooine',
+      categoryFilter: 'landing-page' as WorkFilterCategory,
       number: '10',
       category: 'LANDING PAGE & HEALTHCARE',
       title: 'Institut Mooine — Health & Wellness Center',
@@ -504,77 +514,7 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
 
   const filteredProjects = projectsData.filter((p) => {
     if (activeFilter === 'all') return true;
-
-    const catUpper = p.category.toUpperCase();
-    const titleUpper = p.title.toUpperCase();
-    const descUpper = p.description.toUpperCase();
-    const tagsUpper = p.tags.map((t) => t.toUpperCase());
-    const hasTag = (tag: string) => tagsUpper.some((t) => t.includes(tag.toUpperCase()));
-
-    if (activeFilter === 'landing-page') {
-      return (
-        catUpper.includes('LANDING PAGE') ||
-        hasTag('LANDING PAGE') ||
-        titleUpper.includes('LANDING PAGE')
-      );
-    }
-
-    if (activeFilter === 'dashboard') {
-      return (
-        catUpper.includes('CRM') ||
-        catUpper.includes('SAAS') ||
-        catUpper.includes('DASHBOARD') ||
-        titleUpper.includes('CRM') ||
-        descUpper.includes('CRM') ||
-        descUpper.includes('DASHBOARD') ||
-        hasTag('SAAS') ||
-        hasTag('CRM')
-      );
-    }
-
-    if (activeFilter === 'vsl') {
-      return (
-        catUpper.includes('VSL') ||
-        titleUpper.includes('VSL') ||
-        descUpper.includes('VSL') ||
-        descUpper.includes('VIDEO SALES LETTER') ||
-        hasTag('VSL')
-      );
-    }
-
-    if (activeFilter === 'ecommerce') {
-      return (
-        catUpper.includes('E-COMMERCE') ||
-        catUpper.includes('COMMERCE') ||
-        descUpper.includes('E-COMMERCE') ||
-        descUpper.includes('SHOPPING') ||
-        titleUpper.includes('DISTRIBUTION') ||
-        titleUpper.includes('E-COMMERCE')
-      );
-    }
-
-    if (activeFilter === 'mobile-app') {
-      return (
-        p.previewButtons.some((b) => b.label.toLowerCase().includes('mobile')) ||
-        descUpper.includes('MOBILE') ||
-        titleUpper.includes('MOBILE')
-      );
-    }
-
-    if (activeFilter === 'motion-graphics') {
-      return (
-        catUpper.includes('MOTION') ||
-        catUpper.includes('VIDEO') ||
-        descUpper.includes('MOTION') ||
-        descUpper.includes('ANIMATION') ||
-        titleUpper.includes('MOTION') ||
-        hasTag('Motion') ||
-        hasTag('After Effects') ||
-        hasTag('VSL')
-      );
-    }
-
-    return true;
+    return p.categoryFilter === activeFilter;
   });
 
   // Sort projects: newest first (tartibe: li jdad ikouno homa lowlin)
