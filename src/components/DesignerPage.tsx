@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LogoCloud } from './ui/logo-cloud-2';
-import { GraphicScrollVideoHero } from './GraphicScrollVideoHero';
+import KineticGrid from './ui/kinetic-grid';
 
 // Import curated graphics assets
 import graphicBrandingMockup from '../assets/images/graphic_branding_mockup.jpg';
@@ -362,12 +362,54 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
     <div className="pb-20">
 
       {/* ========================================================================= */}
-      {/* SECTION 1: HERO GSAP SCROLLTRIGGER 3D VIDEO                               */}
+      {/* SECTION 1: HERO KINETIC GRID (INTERACTIVE CURSOR WARP & GREEN RIPPLE)    */}
       {/* ========================================================================= */}
-      <GraphicScrollVideoHero 
-        onScrollToProjects={scrollToProjects} 
-        onOpenContact={onOpenContact} 
-      />
+      <KineticGrid globalColor="green" className="min-h-screen">
+        <section className="relative flex flex-col items-center justify-center flex-1 w-full max-w-5xl px-4 sm:px-6 z-10 pt-40 sm:pt-48 md:pt-56 pb-28 sm:pb-36 text-center">
+          {/* Subtle Ambient Radial Lime Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] sm:w-[700px] h-[350px] bg-[#C4D600]/10 blur-[140px] rounded-full pointer-events-none -z-10" />
+
+          {/* Hero Content (No card container background) */}
+          <div className="w-full max-w-4xl mx-auto text-center px-4">
+            {/* Title */}
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading text-white/70 tracking-tight leading-[1.12] mb-6 sm:mb-8 max-w-4xl mx-auto">
+              Stop Losing High-Ticket{' '}
+              <span className="text-[#C4D600] drop-shadow-[0_0_25px_rgba(196,214,0,0.45)]">
+                Clients
+              </span>{' '}
+              to Mediocre Design.
+            </h1>
+
+            {/* Paragraph */}
+            <p className="text-base sm:text-lg md:text-xl text-white/40 font-sans leading-relaxed max-w-3xl mx-auto mb-10 sm:mb-12 font-normal">
+              Specialized in crafting brand systems that scale. Combining identity design, tactile packaging, social content, and precision print to make your brand impossible to ignore.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full">
+              {/* Primary CTA with Liquid Water Fill Effect */}
+              <button
+                type="button"
+                onClick={onOpenContact}
+                className="btn-liquid-fill w-full sm:w-auto px-9 py-4 rounded-full font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-3 cursor-pointer group shadow-xl"
+              >
+                <span>Start Your Brand Project</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+
+              {/* Secondary CTA with Liquid Water Fill Effect */}
+              <button
+                type="button"
+                onClick={scrollToProjects}
+                className="btn-liquid-fill w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 cursor-pointer group shadow-xl"
+              >
+                <Eye className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+                <span>Explore Past Work</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </KineticGrid>
 
       {/* ========================================================================= */}
       {/* SECTION 1.5: LOGO CLOUD (Selected brands I've designed for)              */}
