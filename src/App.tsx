@@ -9,9 +9,8 @@ import { TechLogosSection } from './components/TechLogosSection';
 import { AboutSection } from './components/AboutSection';
 import { FlowingMenuCurtain } from './components/FlowingMenuCurtain';
 import { WebDesignPage } from './components/WebDesignPage';
-import { WebDevelopmentPage } from './components/WebDevelopmentPage';
 import { DesignerPage } from './components/DesignerPage';
-import { MotionGraphicsPage } from './components/MotionGraphicsPage';
+import { ComingSoonPage } from './components/ComingSoonPage';
 import { ContactModal } from './components/ContactModal';
 import { ProjectModal } from './components/ProjectModal';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -167,9 +166,13 @@ export default function App() {
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
               >
-                <WebDevelopmentPage
-                  onSelectProject={(project) => setSelectedProject(project)}
+                <ComingSoonPage
+                  type="web-development"
                   onOpenContact={() => setIsContactOpen(true)}
+                  onNavigateTab={(tab) => {
+                    setActiveTab(tab);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 />
               </motion.div>
             )}
@@ -197,22 +200,28 @@ export default function App() {
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
               >
-                <MotionGraphicsPage
-                  onSelectProject={(project) => setSelectedProject(project)}
+                <ComingSoonPage
+                  type="motion-graphics"
                   onOpenContact={() => setIsContactOpen(true)}
+                  onNavigateTab={(tab) => {
+                    setActiveTab(tab);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 />
               </motion.div>
             )}
           </AnimatePresence>
         </main>
 
-        {/* Client Testimonials Section ("Ce Que Disent Mes Clients"): Hidden on Web Design page */}
-        {activeTab !== 'web-design' && (
+        {/* Client Testimonials Section: Hidden on Web Design & Coming Soon pages */}
+        {activeTab !== 'web-design' && activeTab !== 'web-development' && activeTab !== 'motion-graphics' && (
           <TestimonialsSection onOpenContact={() => setIsContactOpen(true)} />
         )}
 
-        {/* Thanks For Scrolling Section with Behance Like Counter & 3D Figma/Framer/XD Badges */}
-        <ThanksForScrollingSection onOpenContact={() => setIsContactOpen(true)} />
+        {/* Thanks For Scrolling Section: Hidden on Coming Soon pages */}
+        {activeTab !== 'web-development' && activeTab !== 'motion-graphics' && (
+          <ThanksForScrollingSection onOpenContact={() => setIsContactOpen(true)} />
+        )}
 
         {/* Footer */}
         <Footer
