@@ -39,7 +39,7 @@ export const ANASS_BIO = {
     dribbble: "https://dribbble.net",
     linkedin: "https://linkedin.com",
     instagram: "https://instagram.com",
-    whatsapp: "https://wa.me/212600000000",
+    whatsapp: "https://wa.me/212698855924",
     email: "anass.harboub.design@gmail.com"
   },
   portrait: anassPortraitImg
