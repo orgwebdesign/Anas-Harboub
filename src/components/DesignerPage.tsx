@@ -7,6 +7,7 @@ import {
   Share2,
   Sparkles,
   ArrowRight,
+  ArrowDown,
   ArrowUpRight,
   CheckCircle2,
   Printer,
@@ -21,6 +22,8 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { LogoCloud } from './ui/logo-cloud-2';
 import KineticGrid from './ui/kinetic-grid';
+import { SiFigma } from 'react-icons/si';
+import { TbBrandAdobeIllustrator, TbBrandAdobePhotoshop } from 'react-icons/tb';
 
 // Import curated graphics assets
 import graphicBrandingMockup from '../assets/images/graphic_branding_mockup.jpg';
@@ -64,6 +67,13 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
 
   const scrollToProjects = () => {
     const el = document.getElementById('graphic-design-projects');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToNextSection = () => {
+    const el = document.getElementById('graphic-brands') || document.getElementById('graphic-design-projects');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -386,25 +396,77 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
               {/* Primary CTA with Liquid Water Fill Effect */}
               <button
                 type="button"
                 onClick={onOpenContact}
-                className="btn-liquid-fill w-full sm:w-auto px-9 py-4 rounded-full font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-3 cursor-pointer group shadow-xl"
+                className="btn-liquid-fill px-7 sm:px-9 py-4 rounded-full font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-3 cursor-pointer group shadow-xl"
               >
                 <span>Start Your Brand Project</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
-              {/* Secondary CTA with Liquid Water Fill Effect */}
+              {/* Scroll Down CTA */}
               <button
                 type="button"
-                onClick={scrollToProjects}
-                className="btn-liquid-fill w-full sm:w-auto px-8 py-4 rounded-full font-bold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 cursor-pointer group shadow-xl"
+                onClick={scrollToNextSection}
+                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                title="Scroll to next section"
+                aria-label="Scroll to next section"
               >
-                <Eye className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
-                <span>Explore Past Work</span>
+                <ArrowDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
+              </button>
+
+              {/* Figma CTA */}
+              <button
+                type="button"
+                onClick={scrollToNextSection}
+                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                title="Figma"
+                aria-label="Figma"
+              >
+                <SiFigma className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+              </button>
+
+              {/* Illustrator CTA */}
+              <button
+                type="button"
+                onClick={scrollToNextSection}
+                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                title="Adobe Illustrator"
+                aria-label="Adobe Illustrator"
+              >
+                <TbBrandAdobeIllustrator className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+              </button>
+
+              {/* Canva CTA */}
+              <button
+                type="button"
+                onClick={scrollToNextSection}
+                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                title="Canva"
+                aria-label="Canva"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
+                  aria-hidden="true"
+                >
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.89 16.5c-1.34 0-2.31-.49-3.23-1.63-.73-.91-1.37-2.32-1.78-3.95l-.12-.48c-.28-1.12-.57-1.92-.88-2.42-.31-.5-.65-.75-1.04-.75-.41 0-.69.21-.86.63-.17.42-.23 1.15-.18 2.19.04.85.15 1.83.33 2.94.06.36.01.62-.15.78-.16.16-.38.24-.66.24-.31 0-.54-.1-.7-.3-.16-.2-.25-.53-.27-1-.05-1.09-.02-2.12.09-3.09.11-.97.35-1.76.72-2.37.47-.79 1.14-1.19 2.01-1.19.78 0 1.4.35 1.86 1.05.46.7.83 1.73 1.11 3.09l.11.53c.27 1.25.59 2.18.96 2.79.37.61.81.92 1.32.92.51 0 .91-.25 1.2-.75.29-.5.48-1.28.57-2.34.03-.35.12-.59.27-.72.15-.13.37-.19.66-.19.26 0 .47.08.63.24.16.16.2.39.12.69-.15 1.63-.52 2.87-1.11 3.72-.59.85-1.33 1.28-2.22 1.28z" />
+                </svg>
+              </button>
+
+              {/* Photoshop CTA */}
+              <button
+                type="button"
+                onClick={scrollToNextSection}
+                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                title="Adobe Photoshop"
+                aria-label="Adobe Photoshop"
+              >
+                <TbBrandAdobePhotoshop className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
               </button>
             </div>
           </div>
@@ -414,7 +476,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
       {/* ========================================================================= */}
       {/* SECTION 1.5: LOGO CLOUD (Selected brands I've designed for)              */}
       {/* ========================================================================= */}
-      <section className="relative w-full py-16 sm:py-20 px-4 overflow-hidden border-b border-white/10 bg-[#0B0C0E]">
+      <section id="graphic-brands" className="relative w-full py-16 sm:py-20 px-4 overflow-hidden border-b border-white/10 bg-[#0B0C0E]">
         <div className="relative mx-auto max-w-5xl text-center">
           <h2 className="mb-8 sm:mb-10 text-center font-medium text-base sm:text-lg md:text-xl text-gray-400 tracking-tight">
             Selected{' '}
