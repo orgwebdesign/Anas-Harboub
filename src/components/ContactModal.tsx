@@ -19,7 +19,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
     name: '',
     email: '',
     projectType: preselectedService || 'Web Design',
-    budget: '5,000 – 15,000 MAD',
+    budget: '3000 - 6000 MAD',
     message: '',
   });
 
@@ -39,7 +39,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          className="relative w-full max-w-2xl bg-[#141519] border border-white/10 rounded-[32px] p-6 sm:p-10 shadow-2xl overflow-hidden my-8"
+          className="relative w-full max-w-2xl bg-[#141519] border border-white/10 rounded-lg p-6 sm:p-10 shadow-2xl overflow-hidden my-8"
         >
           {/* Close button */}
           <button
@@ -94,7 +94,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Alex Morgan"
-                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
+                      className="w-full px-4 py-3 rounded-lg bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                     />
                   </div>
                   <div className="space-y-1.5">
@@ -105,7 +105,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="alex@company.com"
-                      className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
+                      className="w-full px-4 py-3 rounded-lg bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                     />
                   </div>
                 </div>
@@ -115,12 +115,12 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
+                    className="w-full px-4 py-3 rounded-lg bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                   >
-                    <option value="< 5,000 MAD">&lt; 5,000 MAD</option>
-                    <option value="5,000 – 15,000 MAD">5,000 – 15,000 MAD</option>
-                    <option value="15,000 – 30,000 MAD">15,000 – 30,000 MAD</option>
-                    <option value="30,000+ MAD">30,000+ MAD</option>
+                    <option value="< 3000 MAD">&lt; 3000 MAD</option>
+                    <option value="3000 - 6000 MAD">3000 - 6000 MAD</option>
+                    <option value="6000 - 10000 MAD">6000 - 10000 MAD</option>
+                    <option value="10000 + MAD">10000 + MAD</option>
                   </select>
                 </div>
 
@@ -132,7 +132,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell me about your goals, timeline, and vision..."
-                    className="w-full px-4 py-3 rounded-xl bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
+                    className="w-full px-4 py-3 rounded-lg bg-[#0B0C0E] border border-white/10 text-white text-sm focus:outline-none focus:border-[#C4D600]"
                   />
                 </div>
 
