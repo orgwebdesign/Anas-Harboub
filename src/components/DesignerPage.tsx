@@ -22,6 +22,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { LogoCloud } from './ui/logo-cloud-2';
 import KineticGrid from './ui/kinetic-grid';
+import { BrandCommercialVideoSection } from './BrandCommercialVideoSection';
 import { SiFigma } from 'react-icons/si';
 import { TbBrandAdobeIllustrator, TbBrandAdobePhotoshop } from 'react-icons/tb';
 
@@ -73,7 +74,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
   };
 
   const scrollToNextSection = () => {
-    const el = document.getElementById('graphic-brands') || document.getElementById('graphic-design-projects');
+    const el = document.getElementById('brand-commercial-section') || document.getElementById('graphic-brands') || document.getElementById('graphic-design-projects');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -472,6 +473,13 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
           </div>
         </section>
       </KineticGrid>
+
+      {/* ========================================================================= */}
+      {/* SECTION 1.2: COMMERCIAL VIDEO SHOWCASE (Full width with side gradients)  */}
+      {/* ========================================================================= */}
+      <div id="brand-commercial-section">
+        <BrandCommercialVideoSection />
+      </div>
 
       {/* ========================================================================= */}
       {/* SECTION 1.5: LOGO CLOUD (Selected brands I've designed for)              */}

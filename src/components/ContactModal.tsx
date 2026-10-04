@@ -140,7 +140,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="btn-liquid-fill w-14 h-14 rounded-full flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                    className="btn-liquid-fill-inverse w-14 h-14 rounded-full flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
                     title="Send Project Inquiry"
                     aria-label="Send Project Inquiry"
                   >

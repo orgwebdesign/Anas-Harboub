@@ -158,6 +158,79 @@
   transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s ease;
 }
 
+/* Inverted Liquid Water Fill Button (Resting: Lime Fill with Black Icon -> Hover: Dark Liquid Wave with Lime Icon) */
+.btn-liquid-fill-inverse {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid #C4D600;
+  background-color: #C4D600;
+  color: #000000;
+  z-index: 1;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease,
+              transform 0.15s ease;
+  box-shadow: 0 0 15px rgba(196, 214, 0, 0.25);
+}
+
+.btn-liquid-fill-inverse::before,
+.btn-liquid-fill-inverse::after {
+  content: '';
+  position: absolute;
+  left: -25%;
+  width: 150%;
+  height: 280%;
+  border-radius: 40%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Secondary dark wave */
+.btn-liquid-fill-inverse::after {
+  top: 105%;
+  background-color: rgba(20, 21, 25, 0.7);
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0) rotate(0deg);
+}
+
+/* Primary dark wave */
+.btn-liquid-fill-inverse::before {
+  top: 100%;
+  background-color: #141519;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(0) rotate(0deg);
+}
+
+.btn-liquid-fill-inverse:hover::after,
+.btn-liquid-fill-inverse:focus-visible::after,
+.btn-liquid-fill-inverse:active::after {
+  transform: translateY(-84%) rotate(240deg);
+}
+
+.btn-liquid-fill-inverse:hover::before,
+.btn-liquid-fill-inverse:focus-visible::before,
+.btn-liquid-fill-inverse:active::before {
+  transform: translateY(-84%) rotate(180deg);
+}
+
+.btn-liquid-fill-inverse:hover,
+.btn-liquid-fill-inverse:focus-visible,
+.btn-liquid-fill-inverse:active {
+  color: #C4D600;
+  box-shadow: 0 0 25px rgba(196, 214, 0, 0.4);
+  border-color: #C4D600;
+}
+
+.btn-liquid-fill-inverse:active {
+  transform: scale(0.96);
+}
+
+.btn-liquid-fill-inverse * {
+  position: relative;
+  z-index: 10;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s ease;
+}
+
 /* Marquee ticker animation */
 @keyframes marquee {
   0% {
