@@ -258,6 +258,7 @@ interface SocialBrandEcosystemProps {
 export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = ({ onOpenContact }) => {
   const [selectedClient, setSelectedClient] = useState<ClientEcosystem>(CLIENT_ECOSYSTEMS[0]);
   const [likedPosts, setLikedPosts] = useState<Record<string, boolean>>({});
+  const [activeMobileFormat, setActiveMobileFormat] = useState<'instagram' | 'linkedin' | 'meta'>('instagram');
 
   // Physics interaction constraints reference
   const containerRef = useRef<HTMLDivElement>(null);
@@ -366,8 +367,8 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
       {/* ========================================================================= */}
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
 
-        {/* Client Ecosystem Tabs Selector */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 pb-2">
+        {/* Client Ecosystem Tabs Selector with smooth horizontal scroll on mobile */}
+        <div className="flex items-center gap-2 sm:gap-3.5 pb-2 overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center w-full px-1">
           {CLIENT_ECOSYSTEMS.map((client) => {
             const isSelected = selectedClient.id === client.id;
             return (
@@ -375,7 +376,7 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
                 key={client.id}
                 type="button"
                 onClick={() => setSelectedClient(client)}
-                className={`group relative px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer select-none inline-flex items-center gap-2.5 border ${
+                className={`group relative px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer select-none inline-flex items-center gap-2.5 border shrink-0 ${
                   isSelected
                     ? 'bg-[#C4D600] text-black border-[#C4D600] shadow-[0_0_20px_rgba(196,214,0,0.4)] font-bold scale-102'
                     : 'bg-white/[0.03] text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
@@ -413,7 +414,7 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.35, ease: 'easeOut' }}
-                className="relative rounded-2xl bg-[#121317]/90 border border-white/10 p-7 sm:p-8 backdrop-blur-xl shadow-2xl flex flex-col justify-between space-y-6 hover:border-white/20 transition-colors"
+                className="relative rounded-2xl bg-[#121317]/90 border border-white/10 p-5 sm:p-7 md:p-8 backdrop-blur-xl shadow-2xl flex flex-col justify-between space-y-6 hover:border-white/20 transition-colors"
               >
                 {/* Brand Header */}
                 <div className="space-y-4">
@@ -496,17 +497,48 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
           {/* ===================================================================== */}
           {/* TIER 2: SOCIAL CREATIVE SHOWCASE & ANTIGRAVITY PHYSICS (Right - 7 cols)*/}
           {/* ===================================================================== */}
-          <div className="lg:col-span-7 relative min-h-[560px] sm:min-h-[640px] flex items-center justify-center">
+          <div className="lg:col-span-7 relative flex flex-col items-center justify-center w-full min-h-[500px] sm:min-h-[640px]">
+
+            {/* Mobile Format Switcher (< sm screens) */}
+            <div className="flex sm:hidden items-center justify-center gap-1.5 p-1 rounded-xl bg-white/[0.04] border border-white/10 mb-4 w-full max-w-[340px]">
+              <button
+                type="button"
+                onClick={() => setActiveMobileFormat('instagram')}
+                className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+                  activeMobileFormat === 'instagram' ? 'bg-[#C4D600] text-black font-bold shadow' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Instagram
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveMobileFormat('linkedin')}
+                className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+                  activeMobileFormat === 'linkedin' ? 'bg-[#C4D600] text-black font-bold shadow' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                LinkedIn
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveMobileFormat('meta')}
+                className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+                  activeMobileFormat === 'meta' ? 'bg-[#C4D600] text-black font-bold shadow' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                Meta Ad
+              </button>
+            </div>
 
             {/* Micro hint overlay */}
-            <div className="absolute top-0 right-2 z-20 hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] font-mono text-gray-400 backdrop-blur-md pointer-events-none select-none">
+            <div className="absolute top-0 right-2 z-20 hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] font-mono text-gray-400 backdrop-blur-md pointer-events-none select-none">
               <Move className="w-3 h-3 text-[#C4D600]" />
               <span>Interactive: Drag & Inspect Physics</span>
             </div>
 
             <motion.div
               style={{ rotateX: tiltX, rotateY: tiltY }}
-              className="relative w-full h-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-4 p-2"
+              className="relative w-full h-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-4 p-1 sm:p-2"
             >
 
               {/* --------------------------------------------------------------- */}
@@ -527,7 +559,9 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
                   duration: 6.8,
                   ease: 'easeInOut'
                 }}
-                className="w-full sm:w-[320px] rounded-2xl bg-[#141519]/90 backdrop-blur-xl border border-white/10 p-4 shadow-2xl hover:border-[#C4D600]/50 hover:shadow-[0_15px_35px_rgba(196,214,0,0.15)] transition-all cursor-grab select-none z-20 shrink-0"
+                className={`w-full max-w-[340px] sm:max-w-none sm:w-[310px] lg:w-[320px] rounded-2xl bg-[#141519]/95 backdrop-blur-xl border border-white/10 p-3.5 sm:p-4 shadow-2xl hover:border-[#C4D600]/50 hover:shadow-[0_15px_35px_rgba(196,214,0,0.15)] transition-all cursor-grab select-none z-20 shrink-0 touch-pan-y ${
+                  activeMobileFormat === 'instagram' ? 'block' : 'hidden sm:block'
+                }`}
               >
                 {/* Platform Chrome: Instagram Header */}
                 <div className="flex items-center justify-between pb-3 border-b border-white/5">
@@ -624,7 +658,9 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
                   duration: 8.2,
                   ease: 'easeInOut'
                 }}
-                className="w-full sm:w-[330px] rounded-2xl bg-[#141519]/90 backdrop-blur-xl border border-white/10 p-4 shadow-2xl hover:border-[#C4D600]/50 hover:shadow-[0_15px_35px_rgba(196,214,0,0.15)] transition-all cursor-grab select-none z-30 shrink-0 sm:-ml-8 sm:mt-12"
+                className={`w-full max-w-[340px] sm:max-w-none sm:w-[320px] lg:w-[330px] rounded-2xl bg-[#141519]/95 backdrop-blur-xl border border-white/10 p-3.5 sm:p-4 shadow-2xl hover:border-[#C4D600]/50 hover:shadow-[0_15px_35px_rgba(196,214,0,0.15)] transition-all cursor-grab select-none z-30 shrink-0 touch-pan-y sm:-ml-8 sm:mt-12 ${
+                  activeMobileFormat === 'linkedin' ? 'block' : 'hidden sm:block'
+                }`}
               >
                 {/* Platform Chrome: LinkedIn Header */}
                 <div className="flex items-center justify-between pb-2.5 border-b border-white/5">
@@ -723,7 +759,9 @@ export const SocialBrandEcosystemSection: React.FC<SocialBrandEcosystemProps> = 
                   duration: 7.4,
                   ease: 'easeInOut'
                 }}
-                className="w-full sm:w-[280px] rounded-2xl bg-[#141519]/90 backdrop-blur-xl border border-white/10 p-4 shadow-2xl hover:border-[#C4D600]/50 hover:shadow-[0_15px_35px_rgba(196,214,0,0.15)] transition-all cursor-grab select-none z-10 shrink-0 sm:-ml-10 sm:-mt-10 hidden md:block"
+                className={`w-full max-w-[340px] sm:max-w-none sm:w-[270px] lg:w-[280px] rounded-2xl bg-[#141519]/95 backdrop-blur-xl border border-white/10 p-3.5 sm:p-4 shadow-2xl hover:border-[#C4D600]/50 hover:shadow-[0_15px_35px_rgba(196,214,0,0.15)] transition-all cursor-grab select-none z-10 shrink-0 touch-pan-y sm:-ml-10 sm:-mt-10 ${
+                  activeMobileFormat === 'meta' ? 'block' : 'hidden sm:block'
+                }`}
               >
                 {/* Meta Header */}
                 <div className="flex items-center justify-between pb-2">

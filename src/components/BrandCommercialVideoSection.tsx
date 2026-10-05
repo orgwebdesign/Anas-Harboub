@@ -33,22 +33,29 @@ export const BrandCommercialVideoSection: React.FC<BrandCommercialVideoSectionPr
   };
 
   return (
-    <section className={`relative w-full py-16 sm:py-24 bg-[#0B0C0E] border-b border-white/10 overflow-hidden ${className}`}>
+    <section className={`relative w-full py-12 sm:py-20 md:py-24 bg-[#0B0C0E] border-b border-white/10 overflow-hidden ${className}`}>
       {/* Title with 50% opacity positioned at top of section */}
-      <div className="w-full px-4 sm:px-6 text-center mb-8 sm:mb-12 md:mb-14">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white/50 font-heading select-none">
-          Une Marque. Un Système. Un Impact Omniprésent.
+      <div className="w-full px-4 sm:px-6 text-center mb-6 sm:mb-10 md:mb-12">
+        <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white/50 font-heading select-none">
+          One Brand. One System. Omnipresent Impact.
         </h2>
       </div>
 
       {/* Video Container: Takes full screen width with black gradient on left and right */}
       <div className="relative w-full overflow-hidden flex items-center justify-center">
-        {/* Left and Right Black Gradient Overlays (Center stays completely clear) */}
+        {/* Left and Right Black Gradient Overlays (Center stays clear, adapted for mobile) */}
         <div
-          className="absolute inset-0 pointer-events-none z-10"
+          className="absolute inset-0 pointer-events-none z-10 hidden sm:block"
           style={{
             background:
               'linear-gradient(90deg, #0B0C0E 0%, #0B0C0E 6%, rgba(11, 12, 14, 0.98) 12%, rgba(11, 12, 14, 0.8) 20%, rgba(11, 12, 14, 0.4) 28%, transparent 36%, transparent 64%, rgba(11, 12, 14, 0.4) 72%, rgba(11, 12, 14, 0.8) 80%, rgba(11, 12, 14, 0.98) 88%, #0B0C0E 94%, #0B0C0E 100%)',
+          }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none z-10 sm:hidden"
+          style={{
+            background:
+              'linear-gradient(90deg, #0B0C0E 0%, transparent 12%, transparent 88%, #0B0C0E 100%)',
           }}
         />
 

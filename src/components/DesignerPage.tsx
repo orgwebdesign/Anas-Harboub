@@ -30,42 +30,42 @@ const graphicLogos: Logo[] = [
   {
     src: avidsLogo,
     alt: 'Avids Logo',
-    className: 'h-14 sm:h-17 md:h-20 max-w-[210px] sm:max-w-[245px] md:max-w-[275px]',
+    className: 'h-10 sm:h-16 md:h-20 max-w-[120px] sm:max-w-[210px] md:max-w-[275px]',
   },
   {
     src: bootvibLogo,
     alt: 'Boostvib Logo',
-    className: 'h-16 sm:h-20 md:h-24 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+    className: 'h-11 sm:h-18 md:h-24 max-w-[125px] sm:max-w-[210px] md:max-w-[280px]',
   },
   {
     src: natuliqueLogo,
     alt: 'Natulique Logo',
-    className: 'h-20 sm:h-24 md:h-28 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+    className: 'h-12 sm:h-20 md:h-28 max-w-[125px] sm:max-w-[210px] md:max-w-[280px]',
   },
   {
     src: jeremieBMonogramLogo,
     alt: 'Jérémie Boulaire Logo',
-    className: 'h-22 sm:h-28 md:h-32 max-w-[160px] sm:max-w-[190px] md:max-w-[220px]',
+    className: 'h-13 sm:h-22 md:h-32 max-w-[105px] sm:max-w-[160px] md:max-w-[220px]',
   },
   {
     src: csePaulLogo,
     alt: 'CSE Paul Logo',
-    className: 'h-18 sm:h-22 md:h-26 max-w-[220px] sm:max-w-[260px] md:max-w-[290px]',
+    className: 'h-11 sm:h-18 md:h-26 max-w-[125px] sm:max-w-[220px] md:max-w-[290px]',
   },
   {
     src: chronoMobileLogo,
     alt: 'Chrono Mobile Logo',
-    className: 'h-15 sm:h-18 md:h-21 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+    className: 'h-10 sm:h-16 md:h-21 max-w-[125px] sm:max-w-[210px] md:max-w-[280px]',
   },
   {
     src: designMeLogo,
     alt: 'Design Me Logo',
-    className: 'h-18 sm:h-22 md:h-26 max-w-[200px] sm:max-w-[240px] md:max-w-[270px]',
+    className: 'h-11 sm:h-18 md:h-26 max-w-[120px] sm:max-w-[200px] md:max-w-[270px]',
   },
   {
     src: kineGuelizLogo,
     alt: 'Kiné Guéliz Logo',
-    className: 'h-20 sm:h-24 md:h-28 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+    className: 'h-12 sm:h-20 md:h-28 max-w-[125px] sm:max-w-[210px] md:max-w-[280px]',
   },
 ];
 
@@ -158,78 +158,81 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xl mx-auto">
               {/* Primary CTA with Liquid Water Fill Effect */}
               <button
                 type="button"
                 onClick={onOpenContact}
-                className="btn-liquid-fill px-7 sm:px-9 py-4 rounded-full font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-3 cursor-pointer group shadow-xl"
+                className="w-full sm:w-auto btn-liquid-fill px-7 sm:px-9 py-4 rounded-full font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-3 cursor-pointer group shadow-xl shrink-0"
               >
                 <span>Start Your Brand Project</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
 
-              {/* Scroll Down CTA */}
-              <button
-                type="button"
-                onClick={scrollToNextSection}
-                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
-                title="Scroll to next section"
-                aria-label="Scroll to next section"
-              >
-                <ArrowDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
-              </button>
-
-              {/* Figma CTA */}
-              <button
-                type="button"
-                onClick={scrollToNextSection}
-                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
-                title="Figma"
-                aria-label="Figma"
-              >
-                {React.createElement(SiFigma as any, { className: "w-5 h-5 transition-transform duration-300 group-hover:scale-110" })}
-              </button>
-
-              {/* Illustrator CTA */}
-              <button
-                type="button"
-                onClick={scrollToNextSection}
-                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
-                title="Adobe Illustrator"
-                aria-label="Adobe Illustrator"
-              >
-                {React.createElement(TbBrandAdobeIllustrator as any, { className: "w-6 h-6 transition-transform duration-300 group-hover:scale-110" })}
-              </button>
-
-              {/* Canva CTA */}
-              <button
-                type="button"
-                onClick={scrollToNextSection}
-                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
-                title="Canva"
-                aria-label="Canva"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
-                  aria-hidden="true"
+              {/* Tool & Action Icons Row */}
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3 flex-wrap">
+                {/* Scroll Down CTA */}
+                <button
+                  type="button"
+                  onClick={scrollToNextSection}
+                  className="btn-liquid-fill w-12 h-12 sm:w-14 sm:h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                  title="Scroll to next section"
+                  aria-label="Scroll to next section"
                 >
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.89 16.5c-1.34 0-2.31-.49-3.23-1.63-.73-.91-1.37-2.32-1.78-3.95l-.12-.48c-.28-1.12-.57-1.92-.88-2.42-.31-.5-.65-.75-1.04-.75-.41 0-.69.21-.86.63-.17.42-.23 1.15-.18 2.19.04.85.15 1.83.33 2.94.06.36.01.62-.15.78-.16.16-.38.24-.66.24-.31 0-.54-.1-.7-.3-.16-.2-.25-.53-.27-1-.05-1.09-.02-2.12.09-3.09.11-.97.35-1.76.72-2.37.47-.79 1.14-1.19 2.01-1.19.78 0 1.4.35 1.86 1.05.46.7.83 1.73 1.11 3.09l.11.53c.27 1.25.59 2.18.96 2.79.37.61.81.92 1.32.92.51 0 .91-.25 1.2-.75.29-.5.48-1.28.57-2.34.03-.35.12-.59.27-.72.15-.13.37-.19.66-.19.26 0 .47.08.63.24.16.16.2.39.12.69-.15 1.63-.52 2.87-1.11 3.72-.59.85-1.33 1.28-2.22 1.28z" />
-                </svg>
-              </button>
+                  <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-y-1" />
+                </button>
 
-              {/* Photoshop CTA */}
-              <button
-                type="button"
-                onClick={scrollToNextSection}
-                className="btn-liquid-fill w-14 h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
-                title="Adobe Photoshop"
-                aria-label="Adobe Photoshop"
-              >
-                {React.createElement(TbBrandAdobePhotoshop as any, { className: "w-6 h-6 transition-transform duration-300 group-hover:scale-110" })}
-              </button>
+                {/* Figma CTA */}
+                <button
+                  type="button"
+                  onClick={scrollToNextSection}
+                  className="btn-liquid-fill w-12 h-12 sm:w-14 sm:h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                  title="Figma"
+                  aria-label="Figma"
+                >
+                  {React.createElement(SiFigma as any, { className: "w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110" })}
+                </button>
+
+                {/* Illustrator CTA */}
+                <button
+                  type="button"
+                  onClick={scrollToNextSection}
+                  className="btn-liquid-fill w-12 h-12 sm:w-14 sm:h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                  title="Adobe Illustrator"
+                  aria-label="Adobe Illustrator"
+                >
+                  {React.createElement(TbBrandAdobeIllustrator as any, { className: "w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:scale-110" })}
+                </button>
+
+                {/* Canva CTA */}
+                <button
+                  type="button"
+                  onClick={scrollToNextSection}
+                  className="btn-liquid-fill w-12 h-12 sm:w-14 sm:h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                  title="Canva"
+                  aria-label="Canva"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:scale-110"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.89 16.5c-1.34 0-2.31-.49-3.23-1.63-.73-.91-1.37-2.32-1.78-3.95l-.12-.48c-.28-1.12-.57-1.92-.88-2.42-.31-.5-.65-.75-1.04-.75-.41 0-.69.21-.86.63-.17.42-.23 1.15-.18 2.19.04.85.15 1.83.33 2.94.06.36.01.62-.15.78-.16.16-.38.24-.66.24-.31 0-.54-.1-.7-.3-.16-.2-.25-.53-.27-1-.05-1.09-.02-2.12.09-3.09.11-.97.35-1.76.72-2.37.47-.79 1.14-1.19 2.01-1.19.78 0 1.4.35 1.86 1.05.46.7.83 1.73 1.11 3.09l.11.53c.27 1.25.59 2.18.96 2.79.37.61.81.92 1.32.92.51 0 .91-.25 1.2-.75.29-.5.48-1.28.57-2.34.03-.35.12-.59.27-.72.15-.13.37-.19.66-.19.26 0 .47.08.63.24.16.16.2.39.12.69-.15 1.63-.52 2.87-1.11 3.72-.59.85-1.33 1.28-2.22 1.28z" />
+                  </svg>
+                </button>
+
+                {/* Photoshop CTA */}
+                <button
+                  type="button"
+                  onClick={scrollToNextSection}
+                  className="btn-liquid-fill w-12 h-12 sm:w-14 sm:h-14 rounded-full inline-flex items-center justify-center cursor-pointer group shadow-xl shrink-0"
+                  title="Adobe Photoshop"
+                  aria-label="Adobe Photoshop"
+                >
+                  {React.createElement(TbBrandAdobePhotoshop as any, { className: "w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:scale-110" })}
+                </button>
+              </div>
             </div>
           </div>
         </section>

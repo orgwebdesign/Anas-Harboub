@@ -159,7 +159,7 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[140px] sm:min-h-[165px] md:min-h-[185px] items-center justify-center bg-background px-4 py-5 sm:px-6 sm:py-6 md:px-7 md:py-7 transition-colors duration-300 hover:bg-white/[0.04]",
+        "group relative flex min-h-[110px] sm:min-h-[150px] md:min-h-[185px] items-center justify-center bg-background px-3 py-4 sm:px-6 sm:py-6 md:px-7 md:py-7 transition-colors duration-300 hover:bg-white/[0.04] overflow-hidden",
         className
       )}
       {...props}
