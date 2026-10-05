@@ -12,6 +12,7 @@ import {
 import { LogoCloud, Logo } from './ui/logo-cloud-2';
 import KineticGrid from './ui/kinetic-grid';
 import { BrandCommercialVideoSection } from './BrandCommercialVideoSection';
+import { SocialBrandEcosystemSection } from './SocialBrandEcosystemSection';
 import { SiFigma } from 'react-icons/si';
 import { TbBrandAdobeIllustrator, TbBrandAdobePhotoshop } from 'react-icons/tb';
 
@@ -254,6 +255,11 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
           <LogoCloud logos={graphicLogos} />
         </div>
       </section>
+
+      {/* ========================================================================= */}
+      {/* SECTION 1.7: SOCIAL MEDIA & BRAND ECOSYSTEM SECTION                       */}
+      {/* ========================================================================= */}
+      <SocialBrandEcosystemSection onOpenContact={onOpenContact} />
 
       {/* ========================================================================= */}
       {/* MAIN CONTAINER: PILLARS & CALL TO ACTION                                  */}
