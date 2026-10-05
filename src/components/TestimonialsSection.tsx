@@ -17,14 +17,14 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight mb-4">
-            Ce Que Disent <span className="text-[#C4D600] relative inline-block">
-              Mes Clients
+            What My Clients <span className="text-[#C4D600] relative inline-block">
+              Say
               <Sparkles className="w-5 h-5 text-[#C4D600] absolute -top-3 -right-6 animate-pulse" />
             </span>
           </h2>
 
           <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
-            Retours d'expérience et témoignages de fondateurs, directeurs et marques innovantes qui ont confié leurs projets digitaux à mon expertise.
+            Real feedback and reviews from founders, directors, and innovative brands who trusted me with their digital presence.
           </p>
         </div>
 
@@ -37,12 +37,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         {onOpenContact && (
           <div className="mt-10 text-center">
             <p className="text-gray-400 text-sm">
-              Prêt à concevoir une expérience mémorable pour votre projet ?{' '}
+              Ready to craft a memorable digital experience for your project?{' '}
               <button
                 onClick={onOpenContact}
                 className="text-[#C4D600] hover:underline font-semibold cursor-pointer transition-colors inline-flex items-center gap-1"
               >
-                Parlons-en dès aujourd'hui &rarr;
+                Let's talk today &rarr;
               </button>
             </p>
           </div>

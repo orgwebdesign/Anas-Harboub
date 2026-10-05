@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const GREETINGS = [
-  { text: "Bonjour", lang: "Français" },
   { text: "Hello", lang: "English" },
-  { text: "مرحباً", lang: "العربية" },
-  { text: "Azul · ⴰⵣⵓⵍ", lang: "Tamazight" },
-  { text: "Hallo", lang: "Deutsch" },
-  { text: "你好", lang: "中文" }
+  { text: "Bonjour", lang: "French" },
+  { text: "مرحباً", lang: "Arabic" },
+  { text: "Ciao", lang: "Italian" },
+  { text: "Hallo", lang: "German" }
 ];
 
 interface PreloaderProps {
@@ -41,22 +40,22 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     };
   }, []);
 
-  // Words rotation effect
+  // Words rotation effect across 5 languages (~680ms per language)
   useEffect(() => {
     if (index === GREETINGS.length - 1) return;
 
     const timeout = setTimeout(() => {
       setIndex((prev) => prev + 1);
-    }, 480);
+    }, 680);
 
     return () => clearTimeout(timeout);
   }, [index]);
 
-  // Overall preloader duration (around 3.6s - 3.8s total)
+  // Overall preloader duration (exactly 4s)
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
-    }, 3600);
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -105,7 +104,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
                 initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -35, filter: "blur(6px)" }}
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                 className="flex items-center justify-center"
               >
                 <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-heading text-white tracking-tight">

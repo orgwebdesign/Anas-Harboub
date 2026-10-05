@@ -166,7 +166,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
                     title="WhatsApp"
                     aria-label="WhatsApp"
                   >
-                    <SiWhatsapp className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    {React.createElement(SiWhatsapp as any, { className: "w-5 h-5 transition-transform duration-300 group-hover:scale-110" })}
                   </a>
 
                   {/* Phone Call Button */}

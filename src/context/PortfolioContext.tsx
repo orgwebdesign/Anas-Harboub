@@ -82,16 +82,16 @@ export const DEFAULT_PAGES_CONFIG: PagesConfig = {
     feature3Desc: 'Lightning-fast load times, semantic HTML5, perfect Core Web Vitals, and responsive cross-browser precision.'
   },
   infographiste: {
-    badge: 'Infographiste & Visual Designer',
+    badge: 'Graphic Designer & Visual Artist',
     title: 'Design Across Screens, Brands and Experiences',
-    subtitle: 'Création Graphique & Expériences Visuelles Impactantes',
+    subtitle: 'Brand Identity & High-Impact Visual Experiences',
     heroImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-    description: 'Conception graphique complète: identité visuelle, charte graphique, branding, supports de communication web et print, systèmes de design et direction artistique.',
+    description: 'Comprehensive graphic design: visual identity, brand guidelines, branding, web & print collateral, design systems, and art direction.',
     feature1Title: 'Brand & Visual Identity',
     feature1Desc: 'Logos, brand guidelines, color palettes, and editorial art direction.',
     feature2Title: 'Design Systems & Figma Tokens',
     feature2Desc: 'Scalable Figma component libraries with tokenized variables and developer handoffs.',
-    feature3Title: 'Infographie & Supports Print/Web',
+    feature3Title: 'Graphic Design & Print/Web Collateral',
     feature3Desc: 'Visual storytelling, print materials, social media kits, and high-impact graphic design.'
   },
   motionGraphics: {

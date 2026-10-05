@@ -25,45 +25,45 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
 
 export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
   const defaultLogos: Logo[] = [
-    { 
-      src: qualyxLogo, 
-      alt: "Qualyx AI Logo", 
-      className: "h-9 sm:h-11 md:h-12 max-w-[145px] sm:max-w-[170px]" 
+    {
+      src: qualyxLogo,
+      alt: "Qualyx AI Logo",
+      className: "h-9 sm:h-11 md:h-12 max-w-[145px] sm:max-w-[170px]"
     },
-    { 
-      src: gonzagueHavetLogo, 
-      alt: "Gonzague Havet Logo", 
-      className: "h-8 sm:h-9 md:h-11 max-w-[165px] sm:max-w-[195px]" 
+    {
+      src: gonzagueHavetLogo,
+      alt: "Gonzague Havet Logo",
+      className: "h-8 sm:h-9 md:h-11 max-w-[165px] sm:max-w-[195px]"
     },
-    { 
-      src: lmYachtsLogo, 
-      alt: "LM Luxe Yachts Ibiza Logo", 
-      className: "h-11 sm:h-13 md:h-15 max-w-[165px] sm:max-w-[195px]" 
+    {
+      src: lmYachtsLogo,
+      alt: "LM Luxe Yachts Ibiza Logo",
+      className: "h-11 sm:h-13 md:h-15 max-w-[165px] sm:max-w-[195px]"
     },
-    { 
-      src: mtcHolistiqueLogo, 
-      alt: "MTC Holistique Logo", 
-      className: "h-12 sm:h-14 md:h-16 max-w-[125px] sm:max-w-[145px]" 
+    {
+      src: mtcHolistiqueLogo,
+      alt: "MTC Holistique Logo",
+      className: "h-12 sm:h-14 md:h-16 max-w-[125px] sm:max-w-[145px]"
     },
-    { 
-      src: jeremieBLogo, 
-      alt: "Jérémie Boulaire Logo", 
-      className: "h-12 sm:h-14 md:h-16 max-w-[155px] sm:max-w-[185px]" 
+    {
+      src: jeremieBLogo,
+      alt: "Jérémie Boulaire Logo",
+      className: "h-12 sm:h-14 md:h-16 max-w-[155px] sm:max-w-[185px]"
     },
-    { 
-      src: minglerAiLogo, 
-      alt: "Mingler AI Logo", 
-      className: "h-9 sm:h-11 md:h-12 max-w-[145px] sm:max-w-[170px]" 
+    {
+      src: minglerAiLogo,
+      alt: "Mingler AI Logo",
+      className: "h-9 sm:h-11 md:h-12 max-w-[145px] sm:max-w-[170px]"
     },
-    { 
-      src: placesDesAvocatsLogo, 
-      alt: "Place des Avocats Logo", 
-      className: "h-12 sm:h-14 md:h-16 max-w-[145px] sm:max-w-[170px]" 
+    {
+      src: placesDesAvocatsLogo,
+      alt: "Place des Avocats Logo",
+      className: "h-12 sm:h-14 md:h-16 max-w-[145px] sm:max-w-[170px]"
     },
-    { 
-      src: coeurNanterreLogo, 
-      alt: "Coeur Nanterre Logo", 
-      className: "h-12 sm:h-14 md:h-16 max-w-[135px] sm:max-w-[160px]" 
+    {
+      src: coeurNanterreLogo,
+      alt: "Coeur Nanterre Logo",
+      className: "h-12 sm:h-14 md:h-16 max-w-[135px] sm:max-w-[160px]"
     },
   ];
 
@@ -159,7 +159,7 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[110px] sm:min-h-[130px] md:min-h-[145px] items-center justify-center bg-background px-4 py-8 md:p-8 transition-colors duration-300 hover:bg-white/[0.04]",
+        "group relative flex min-h-[140px] sm:min-h-[165px] md:min-h-[185px] items-center justify-center bg-background px-4 py-5 sm:px-6 sm:py-6 md:px-7 md:py-7 transition-colors duration-300 hover:bg-white/[0.04]",
         className
       )}
       {...props}
@@ -167,8 +167,8 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
       <img
         alt={logo.alt}
         className={cn(
-          "pointer-events-none h-10 sm:h-12 md:h-13 max-w-[150px] sm:max-w-[175px] md:max-w-[195px] w-auto object-contain select-none opacity-85 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 dark:brightness-0 dark:invert",
-          logo.className
+          "pointer-events-none w-auto object-contain select-none opacity-85 transition-all duration-300 group-hover:opacity-100 group-hover:scale-105 dark:brightness-0 dark:invert",
+          logo.className || "h-12 sm:h-14 md:h-16 max-w-[170px] sm:max-w-[200px] md:max-w-[230px]"
         )}
         height={logo.height || "auto"}
         src={logo.src}

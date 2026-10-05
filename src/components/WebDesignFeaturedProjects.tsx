@@ -530,12 +530,12 @@ export const WebDesignFeaturedProjects: React.FC<WebDesignFeaturedProjectsProps>
     <section className="w-full py-8 relative" style={{ perspective: 1800 }}>
       {sortedProjects.length === 0 ? (
         <div className="py-20 text-center rounded-lg bg-[#141519] border border-white/10 p-8 space-y-4">
-          <p className="text-gray-400 text-base">Aucun projet trouvé dans cette catégorie pour le moment.</p>
+          <p className="text-gray-400 text-base">No projects found in this category at the moment.</p>
           <button
             onClick={() => onOpenContact()}
             className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-sm hover:bg-gray-200 transition-colors"
           >
-            Discuter d'un projet sur-mesure
+            Discuss a custom project
           </button>
         </div>
       ) : (

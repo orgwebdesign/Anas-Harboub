@@ -20,7 +20,7 @@ import {
   Shapes
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { LogoCloud } from './ui/logo-cloud-2';
+import { LogoCloud, Logo } from './ui/logo-cloud-2';
 import KineticGrid from './ui/kinetic-grid';
 import { BrandCommercialVideoSection } from './BrandCommercialVideoSection';
 import { SiFigma } from 'react-icons/si';
@@ -37,6 +37,59 @@ import yachtsHero from '../assets/images/lm_luxe_yachts_hero.png';
 import jeremieHero from '../assets/images/jeremie_boulaire_hero.png';
 import mtcHero from '../assets/images/mtc_holistique_hero.png';
 import havetHero from '../assets/images/gonzague_havet_hero.png';
+
+// Brand logos for Graphic Design section
+import avidsLogo from '../assets/images/logo graphics design/logo avids.png';
+import bootvibLogo from '../assets/images/logo graphics design/bootvib.png';
+import natuliqueLogo from '../assets/images/logo graphics design/natulique.png';
+import jeremieBMonogramLogo from '../assets/images/logo graphics design/gerimi boulaire.png';
+import csePaulLogo from '../assets/images/logo graphics design/cse paule.png';
+import chronoMobileLogo from '../assets/images/logo graphics design/chrono mobile.png';
+import designMeLogo from '../assets/images/logo graphics design/design me.png';
+import kineGuelizLogo from '../assets/images/logo graphics design/logo kine gueliz.png';
+
+const graphicLogos: Logo[] = [
+  {
+    src: avidsLogo,
+    alt: 'Avids Logo',
+    className: 'h-14 sm:h-17 md:h-20 max-w-[210px] sm:max-w-[245px] md:max-w-[275px]',
+  },
+  {
+    src: bootvibLogo,
+    alt: 'Boostvib Logo',
+    className: 'h-16 sm:h-20 md:h-24 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+  },
+  {
+    src: natuliqueLogo,
+    alt: 'Natulique Logo',
+    className: 'h-20 sm:h-24 md:h-28 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+  },
+  {
+    src: jeremieBMonogramLogo,
+    alt: 'Jérémie Boulaire Logo',
+    className: 'h-22 sm:h-28 md:h-32 max-w-[160px] sm:max-w-[190px] md:max-w-[220px]',
+  },
+  {
+    src: csePaulLogo,
+    alt: 'CSE Paul Logo',
+    className: 'h-18 sm:h-22 md:h-26 max-w-[220px] sm:max-w-[260px] md:max-w-[290px]',
+  },
+  {
+    src: chronoMobileLogo,
+    alt: 'Chrono Mobile Logo',
+    className: 'h-15 sm:h-18 md:h-21 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+  },
+  {
+    src: designMeLogo,
+    alt: 'Design Me Logo',
+    className: 'h-18 sm:h-22 md:h-26 max-w-[200px] sm:max-w-[240px] md:max-w-[270px]',
+  },
+  {
+    src: kineGuelizLogo,
+    alt: 'Kiné Guéliz Logo',
+    className: 'h-20 sm:h-24 md:h-28 max-w-[210px] sm:max-w-[250px] md:max-w-[280px]',
+  },
+];
 
 export type GraphicDesignCategory = 'all' | 'branding' | 'print' | 'social';
 
@@ -86,23 +139,23 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
       id: 'g-elemental-branding',
       number: '01',
       categoryFilter: 'branding',
-      categoryLabel: 'Branding & Identité Visuelle',
+      categoryLabel: 'Branding & Visual Identity',
       title: 'Elemental Identity — Dark Luxury Brand & Design System',
       client: 'Elemental Tech Studio',
-      description: 'Charte graphique complète, logo vectoriel épuré, papeterie de prestige mate avec tranche fluo verte, et guide typographique exhaustif.',
+      description: 'Comprehensive brand identity guidelines, sleek minimalist vector logo, matte luxury stationery with electric lime edges, and full typographic system.',
       year: '2026',
       imageUrl: graphicBrandingMockup,
       tags: ['Branding', 'Logo Design', 'Brand Book', 'Illustrator', 'Figma'],
       deliverables: [
-        'Logo suite vectoriel complet (SVG, AI, EPS, PNG)',
-        'Brand Guidelines & Règles d\'usage typographique',
-        'Set de papeterie corporative haut de gamme & cartes de visite',
-        'Palette chromatique Obsidian & Electric Lime'
+        'Complete vector logo suite (SVG, AI, EPS, PNG)',
+        'Brand Guidelines & typographic usage hierarchy',
+        'Premium corporate stationery set & business cards',
+        'Obsidian & Electric Lime chromatic palette'
       ],
       colorPalette: ['#C4D600', '#0B0C0E', '#1F2026', '#E5E7EB'],
       highlights: [
-        { label: 'Supports créés', value: '25+ Assets' },
-        { label: 'Format export', value: 'Vector / Print' }
+        { label: 'Assets Created', value: '25+ Assets' },
+        { label: 'Export Format', value: 'Vector / Print' }
       ]
     },
     {
@@ -112,66 +165,66 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
       categoryLabel: 'Branding & Logo Suite',
       title: 'Qualyx AI — Modern SaaS Brandmark & Color Identity',
       client: 'Qualyx AI',
-      description: 'Conception de l\'emblème minimaliste, univers chromatique vert électrique et système d\'iconographie sur-mesure pour plateforme commerciale IA.',
+      description: 'Minimalist brand emblem, electric green color system, and custom iconography architecture for a native sales AI platform.',
       year: '2026',
       imageUrl: qualyxHero,
       tags: ['Branding', 'SaaS Identity', 'Logo Suite', 'Vector'],
       deliverables: [
-        'Logotype responsive & monogramme d\'application',
-        'Système d\'icônes vectorielles personnalisées',
-        'Guide d\'application digitale et déclinaisons dark mode',
-        'Bannières de marque et assets de lancement'
+        'Responsive logotype & application monogram',
+        'Custom vector iconography system',
+        'Digital application guide & dark mode styling',
+        'Brand banners and launch marketing assets'
       ],
       colorPalette: ['#C4D600', '#0B0C0E', '#FFFFFF'],
       highlights: [
-        { label: 'Adhésion marque', value: '100% Validé' },
-        { label: 'Déclinaisons', value: 'Dark / Light' }
+        { label: 'Brand Adoption', value: '100% Approved' },
+        { label: 'Variants', value: 'Dark / Light' }
       ]
     },
     {
       id: 'g-lm-yachts-brand',
       number: '03',
       categoryFilter: 'branding',
-      categoryLabel: 'Branding & Luxe Maritime',
-      title: 'LM Luxe Yachts Ibiza — Identité Visuelle Or & Prestige',
+      categoryLabel: 'Branding & Maritime Luxury',
+      title: 'LM Luxe Yachts Ibiza — Gold & Prestige Visual Identity',
       client: 'LM Luxe Yachts Ibiza',
-      description: 'Emblème nautique haut de gamme, signature typographique raffinée et déclinaisons luxueuses pour agence de yachting aux Baléares.',
+      description: 'High-end nautical emblem, refined typographic signature, and luxury brand assets for a premier Balearic yachting brokerage.',
       year: '2025',
       imageUrl: yachtsHero,
       tags: ['Branding', 'Luxury Emblem', 'Gold Accents', 'Stationery'],
       deliverables: [
-        'Emblème yachting & Logotype champagne gold',
-        'Badging de coque & signalétique pour yachts',
-        'Papeterie VIP avec marquage à chaud doré',
-        'Charte éditoriale maritime'
+        'Yachting emblem & champagne gold logotype',
+        'Hull badging & yacht signage guidelines',
+        'VIP stationery with gold foil hot-stamping',
+        'Maritime editorial style guide'
       ],
       colorPalette: ['#D4AF37', '#0A1118', '#FFFFFF'],
       highlights: [
-        { label: 'Secteur', value: 'Ultra Luxe' },
-        { label: 'Zone', value: 'Ibiza & France' }
+        { label: 'Industry', value: 'Ultra Luxury' },
+        { label: 'Region', value: 'Ibiza & France' }
       ]
     },
     {
       id: 'g-jeremie-brand',
       number: '04',
       categoryFilter: 'branding',
-      categoryLabel: 'Branding & Droit',
-      title: 'Cabinet Jérémie Boulaire — Monogramme Juridique & Papeterie',
+      categoryLabel: 'Branding & Legal Practice',
+      title: 'Cabinet Jérémie Boulaire — Legal Monogram & Stationery',
       client: 'Cabinet Jérémie Boulaire',
-      description: 'Création d\'un monogramme JB entrelacé à l\'élégance intemporelle, identité monochrome sobre et papeterie officielle pour docteur en droit.',
+      description: 'Timeless interlocking JB monogram, sober monochrome identity, and official legal stationery for a Doctor of Law.',
       year: '2026',
       imageUrl: jeremieHero,
       tags: ['Branding', 'Legal Identity', 'Monogram', 'Minimalist'],
       deliverables: [
-        'Monogramme typographique gravé "JB"',
-        'En-têtes de lettres officiels et cartes de correspondance',
-        'Sceau officiel pour dossiers contractuels',
-        'Direction artistique des portraits & photographie'
+        'Engraved typographic "JB" monogram',
+        'Official letterheads & executive correspondence cards',
+        'Official seal for contract documentation',
+        'Executive portrait & photography art direction'
       ],
       colorPalette: ['#FFFFFF', '#121316', '#C4D600'],
       highlights: [
-        { label: 'Style', value: 'Monochrome Élégant' },
-        { label: 'Usage', value: 'Print & Digital' }
+        { label: 'Style', value: 'Timeless Monochrome' },
+        { label: 'Application', value: 'Print & Digital' }
       ]
     },
 
@@ -181,68 +234,68 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
       number: '05',
       categoryFilter: 'print',
       categoryLabel: 'Print Media & Packaging',
-      title: 'Aurelia Haute Parfumerie — Packaging & Catalogue Éditorial',
+      title: 'Aurelia Haute Parfumerie — Packaging & Editorial Catalog',
       client: 'Aurelia Fragrances',
-      description: 'Packaging de boîte de parfum de luxe avec gaufrage à chaud et dorure, accompagné d\'un catalogue éditorial A4 relié pour boutiques exclusives.',
+      description: 'Luxury fragrance box packaging with gold foil embossing, accompanied by an exclusive bound A4 editorial catalog.',
       year: '2026',
       imageUrl: graphicPrintMockup,
-      tags: ['Print Media', 'Packaging Luxe', 'Catalogue A4', 'InDesign', 'Gaufrage'],
+      tags: ['Print Media', 'Luxury Packaging', 'A4 Catalog', 'InDesign', 'Embossing'],
       deliverables: [
-        'Gabarits de packaging boîte de parfum avec tracés de découpe (Dieline)',
-        'Catalogue éditorial 48 pages prêt à l\'impression (CMJN, 300 DPI)',
-        'Cartes de visite avec dorure à chaud & tranche teintée',
-        'Spécifications techniques d\'impression et nuancier Pantone'
+        'Fragrance box packaging dielines with cutting paths',
+        '48-page editorial catalog ready for print (CMYK, 300 DPI)',
+        'Business cards with hot foil stamping & gilded edges',
+        'Technical print specifications and Pantone color matching'
       ],
       colorPalette: ['#C5A059', '#151515', '#F5F2EB'],
       highlights: [
-        { label: 'Résolution', value: '300 DPI CMJN' },
-        { label: 'Finition', value: 'Dorure & Emboss' }
+        { label: 'Resolution', value: '300 DPI CMYK' },
+        { label: 'Finishing', value: 'Gold Foil & Emboss' }
       ]
     },
     {
       id: 'g-natulique-print',
       number: '06',
       categoryFilter: 'print',
-      categoryLabel: 'Print Media & Édition',
-      title: 'Natulique Swiss — Brochures Salons & Packaging Éco-Certifié',
+      categoryLabel: 'Print Media & Publishing',
+      title: 'Natulique Swiss — Salon Brochures & Eco-Certified Packaging',
       client: 'Natulique Switzerland',
-      description: 'Conception de brochures professionnelles B2B pour salons de coiffure suisses, étiquettes de flacons et guides de coloration capillaire bio.',
+      description: 'B2B professional brochures for Swiss hair salons, bottle labels, and certified organic hair color swatch guides.',
       year: '2025',
       imageUrl: natuliqueHero,
-      tags: ['Print Media', 'Brochures B2B', 'Packaging', 'Illustrator', 'InDesign'],
+      tags: ['Print Media', 'B2B Brochures', 'Packaging', 'Illustrator', 'InDesign'],
       deliverables: [
-        'Brochure de présentation partenaire B2B (3 volets)',
-        'Nuancier de coloration capillaire grand format',
-        'Étiquettes flacons conformes aux normes suisses',
-        'Fichiers d\'impression haute résolution certifiés PDF/X-1a'
+        'Tri-fold B2B partner presentation brochure',
+        'Large-format hair color swatch chart',
+        'Product bottle labels meeting Swiss regulatory standards',
+        'High-resolution print-ready certified PDF/X-1a files'
       ],
       colorPalette: ['#5C4033', '#E6D7C3', '#2D5A27'],
       highlights: [
-        { label: 'Partenaires', value: '120+ Salons' },
-        { label: 'Norme', value: 'Éco-responsable' }
+        { label: 'Partners', value: '120+ Salons' },
+        { label: 'Standard', value: 'Eco-Certified' }
       ]
     },
     {
       id: 'g-cars-print',
       number: '07',
       categoryFilter: 'print',
-      categoryLabel: 'Print Media & Luxe',
-      title: 'Cars & Co Marrakech — Brochure Flotte VIP & Dossiers Véhicules',
+      categoryLabel: 'Print Media & Luxury',
+      title: 'Cars & Co Marrakech — VIP Fleet Brochure & Vehicle Portfolios',
       client: 'Cars & Co Marrakech',
-      description: 'Brochure de présentation de la flotte de prestige (Porsche, Range Rover, Mercedes) avec vernis sélectif, porte-clés et pochettes VIP.',
+      description: 'Prestige fleet presentation brochure (Porsche, Range Rover, Mercedes) featuring spot UV varnish and VIP presentation folders.',
       year: '2025',
       imageUrl: carsHero,
-      tags: ['Print Media', 'Brochure Flotte', 'Vernis Sélectif', 'Papeterie VIP'],
+      tags: ['Print Media', 'Fleet Brochure', 'Spot UV', 'VIP Stationery'],
       deliverables: [
-        'Dossier de présentation flotte automobile premium',
-        'Pochettes de contrats de location avec dorure à chaud',
-        'Cartes de membre VIP Soft-Touch',
-        'Signalétique et drapeaux d\'agence Marrakech'
+        'Premium vehicle fleet presentation folder',
+        'Rental agreement folders with hot foil stamping',
+        'Soft-touch VIP membership cards',
+        'Marrakech agency exterior signage and flags'
       ],
       colorPalette: ['#C4D600', '#111215', '#FFFFFF'],
       highlights: [
-        { label: 'Finition', value: 'Pelliculage Soft-Touch' },
-        { label: 'Grammage', value: '350g Couché Mat' }
+        { label: 'Finishing', value: 'Soft-Touch Matte Lamination' },
+        { label: 'Paper Weight', value: '350g Matte Coated' }
       ]
     },
 
@@ -251,69 +304,69 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
       id: 'g-creative-social',
       number: '08',
       categoryFilter: 'social',
-      categoryLabel: 'Content Social Media',
-      title: 'Dark Mode Aesthetic — Suite de Carrousels & Posts Instagram',
+      categoryLabel: 'Social Media Content',
+      title: 'Dark Mode Aesthetic — Instagram Carousels & Post Suite',
       client: 'Growth Media Agency',
-      description: 'Série de 10 carrousels Instagram & LinkedIn axés sur le design, l\'UX et le marketing digital avec typographie impactante et hooks viraux.',
+      description: 'Series of 10 swipe-through Instagram & LinkedIn carousels focused on UX design and digital marketing with viral retention hooks.',
       year: '2026',
       imageUrl: graphicSocialMockup,
-      tags: ['Social Media', 'Carrousels 1080x1350', 'Instagram Growth', 'Photoshop'],
+      tags: ['Social Media', 'Carousels 1080x1350', 'Instagram Growth', 'Photoshop'],
       deliverables: [
-        '10 carrousels narratifs swipe-through (1080x1350px)',
-        'Pack de 25 templates de stories animées modifiables',
-        'Vignettes de couverture Reels & YouTube optimisées CTR',
-        'Grille Instagram harmonieuse avec fil conducteur visuel'
+        '10 narrative swipe-through carousels (1080x1350px)',
+        'Pack of 25 editable animated story templates',
+        'CTR-optimized Reels & YouTube video cover thumbnails',
+        'Harmonious Instagram feed grid with continuous visual flow'
       ],
       colorPalette: ['#C4D600', '#0B0C0E', '#FFFFFF'],
       highlights: [
         { label: 'Engagement', value: '+140%' },
-        { label: 'Format', value: '4:5 Carrousel HD' }
+        { label: 'Format', value: '4:5 HD Carousel' }
       ]
     },
     {
       id: 'g-mtc-social',
       number: '09',
       categoryFilter: 'social',
-      categoryLabel: 'Content Social Media',
-      title: 'MTC Holistique — Campagne Visuelle Bien-être & Story Ads',
+      categoryLabel: 'Social Media Content',
+      title: 'MTC Holistique — Wellness Visual Campaign & Story Ads',
       client: 'MTC Holistique',
-      description: 'Direction artistique des publications Instagram & Facebook : conseils kinésithérapie, posts éducatifs et bannières promotionnelles relaxantes.',
+      description: 'Art direction for Instagram & Facebook: physiotherapy guidance, educational posts, and calming promotional campaigns.',
       year: '2026',
       imageUrl: mtcHero,
       tags: ['Social Media', 'Instagram Kit', 'Meta Ads', 'Story Templates'],
       deliverables: [
-        'Kits de 30 visuels mensuels pour réseaux sociaux',
-        'Campagne publicitaire Meta Ads ciblée conversion',
-        'Visuels de mise en avant des soins et témoignages patients',
-        'Bannières de couverture Facebook & LinkedIn coordonnées'
+        'Monthly kits of 30 social media visuals',
+        'Conversion-targeted Meta Ads campaign creatives',
+        'Treatment spotlight graphics & patient testimonials',
+        'Coordinated Facebook & LinkedIn header cover banners'
       ],
       colorPalette: ['#17A2B8', '#F8F9FA', '#212529'],
       highlights: [
-        { label: 'Réservations via Insta', value: '+54%' },
-        { label: 'Cohérence visuelle', value: '100% Harmonisé' }
+        { label: 'Bookings via Social', value: '+54%' },
+        { label: 'Visual Cohesion', value: '100% Harmonized' }
       ]
     },
     {
       id: 'g-havet-social',
       number: '10',
       categoryFilter: 'social',
-      categoryLabel: 'Content Social Media',
-      title: 'Gonzague Havet — Personal Branding & Bannières LinkedIn',
+      categoryLabel: 'Social Media Content',
+      title: 'Gonzague Havet — Personal Branding & LinkedIn Banners',
       client: 'Gonzague Havet Consulting',
-      description: 'Kit de personal branding pour dirigeant tech : bannières LinkedIn haute autorité, carrousels de cas clients et infographies de transformation digitale.',
+      description: 'Executive personal branding kit: high-authority LinkedIn banners, client case study carousels, and digital transformation infographics.',
       year: '2025',
       imageUrl: havetHero,
-      tags: ['Personal Branding', 'LinkedIn Kit', 'Infographies', 'Carrousels B2B'],
+      tags: ['Personal Branding', 'LinkedIn Kit', 'Infographics', 'B2B Carousels'],
       deliverables: [
-        'Bannières de profil et page entreprise LinkedIn (1584x396px)',
-        'Templates d\'infographies stratégiques pour publications B2B',
-        'Visuels de citations d\'autorité et de podcasts',
-        'Kit complet de bannières web publicitaires'
+        'LinkedIn profile & company page header banners (1584x396px)',
+        'Strategic infographic templates for B2B posts',
+        'Authoritative quote cards and podcast highlight graphics',
+        'Complete multi-format digital advertising banner kit'
       ],
       colorPalette: ['#0A2540', '#635BFF', '#FFFFFF'],
       highlights: [
-        { label: 'Réseau', value: 'LinkedIn Leader' },
-        { label: 'Leads B2B', value: '+84%' }
+        { label: 'Network', value: 'LinkedIn Leader' },
+        { label: 'B2B Leads', value: '+84%' }
       ]
     }
   ];
@@ -324,47 +377,47 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
   });
 
   const FILTER_ITEMS = [
-    { id: 'all' as GraphicDesignCategory, label: 'Tous les projets', icon: LayoutGrid },
-    { id: 'branding' as GraphicDesignCategory, label: 'Branding & Identité', icon: Palette },
-    { id: 'print' as GraphicDesignCategory, label: 'Print & Édition', icon: Printer },
-    { id: 'social' as GraphicDesignCategory, label: 'Content Social Media', icon: Share2 },
+    { id: 'all' as GraphicDesignCategory, label: 'All Projects', icon: LayoutGrid },
+    { id: 'branding' as GraphicDesignCategory, label: 'Branding & Identity', icon: Palette },
+    { id: 'print' as GraphicDesignCategory, label: 'Print & Editorial', icon: Printer },
+    { id: 'social' as GraphicDesignCategory, label: 'Social Media Content', icon: Share2 },
   ];
 
   const CORE_PILLARS = [
     {
       number: '01',
       icon: Palette,
-      title: 'Branding & Identité Visuelle',
-      description: 'Création d\'identités de marque mémorables et durables qui positionnent votre entreprise en leader de son secteur.',
+      title: 'Branding & Visual Identity',
+      description: 'Creating memorable, lasting brand identities that position your business as an undeniable industry leader.',
       features: [
-        'Logo suite vectoriel sur-mesure (Monogrammes, Emblèmes, Wordmarks)',
-        'Chartes graphiques complètes & Brand Books détaillés',
-        'Systèmes typographiques et harmonies de couleurs chromatiques',
-        'Direction artistique globale et guide d\'application'
+        'Custom vector logo suite (Monograms, Emblems, Wordmarks)',
+        'Comprehensive brand guidelines & detailed brand books',
+        'Typographic hierarchies and harmonious color palettes',
+        'Global art direction and application blueprints'
       ]
     },
     {
       number: '02',
       icon: Printer,
-      title: 'Print Media & Supports Physiques',
-      description: 'Conception de supports imprimés haut de gamme avec finitions d\'exception, prêts pour les meilleures imprimeries.',
+      title: 'Print Media & Physical Collateral',
+      description: 'Designing high-end tactile print assets with bespoke finishes, engineered for premier print houses.',
       features: [
-        'Packaging produits, étiquettes luxe et boîtes personnalisées',
-        'Catalogues éditoriaux, brochures, magazines et menus de prestige',
-        'Papeterie de prestige (Cartes Soft-Touch, vernis sélectif, dorure)',
-        'Fichiers pré-presse certifiés CMJN 300 DPI avec traits de coupe'
+        'Product packaging, luxury labels, and bespoke boxes',
+        'Editorial catalogs, brochures, lookbooks, and luxury menus',
+        'Prestige stationery (Soft-touch cards, spot UV, gold foil)',
+        'Certified prepress files (CMYK 300 DPI with trim & bleed)'
       ]
     },
     {
       number: '03',
       icon: Share2,
-      title: 'Content Social Media & Digital',
-      description: 'Visuels à fort impact conçus pour capter l\'attention dans le feed, stimuler l\'engagement et convertir votre audience.',
+      title: 'Social Media Content & Digital Assets',
+      description: 'High-impact creatives engineered to stop the scroll, drive engagement, and convert your target audience.',
       features: [
-        'Carrousels éducatifs et narratifs LinkedIn & Instagram (1080x1350)',
-        'Visuels publicitaires à haute conversion pour campagnes Meta Ads',
-        'Templates de stories, bannières de couverture et vignettes Reels',
-        'Grilles de contenu harmonisées pour une identité visuelle cohérente'
+        'Educational & narrative LinkedIn & Instagram carousels (1080x1350)',
+        'High-converting ad creatives for Meta & LinkedIn campaigns',
+        'Story templates, cover banners, and Reels thumbnails',
+        'Harmonized content grids for cohesive visual branding'
       ]
     }
   ];
@@ -427,7 +480,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                 title="Figma"
                 aria-label="Figma"
               >
-                <SiFigma className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                {React.createElement(SiFigma as any, { className: "w-5 h-5 transition-transform duration-300 group-hover:scale-110" })}
               </button>
 
               {/* Illustrator CTA */}
@@ -438,7 +491,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                 title="Adobe Illustrator"
                 aria-label="Adobe Illustrator"
               >
-                <TbBrandAdobeIllustrator className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                {React.createElement(TbBrandAdobeIllustrator as any, { className: "w-6 h-6 transition-transform duration-300 group-hover:scale-110" })}
               </button>
 
               {/* Canva CTA */}
@@ -467,7 +520,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                 title="Adobe Photoshop"
                 aria-label="Adobe Photoshop"
               >
-                <TbBrandAdobePhotoshop className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                {React.createElement(TbBrandAdobePhotoshop as any, { className: "w-6 h-6 transition-transform duration-300 group-hover:scale-110" })}
               </button>
             </div>
           </div>
@@ -485,13 +538,13 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
       {/* SECTION 1.5: LOGO CLOUD (Selected brands I've designed for)              */}
       {/* ========================================================================= */}
       <section id="graphic-brands" className="relative w-full py-16 sm:py-20 px-4 overflow-hidden border-b border-white/10 bg-[#0B0C0E]">
-        <div className="relative mx-auto max-w-5xl text-center">
+        <div className="relative mx-auto max-w-6xl text-center">
           <h2 className="mb-8 sm:mb-10 text-center font-medium text-base sm:text-lg md:text-xl text-gray-400 tracking-tight">
             Selected{' '}
             <span className="font-semibold text-[#C4D600]">brands</span> I’ve designed for.
           </h2>
 
-          <LogoCloud />
+          <LogoCloud logos={graphicLogos} />
         </div>
       </section>
 
@@ -652,7 +705,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                         }}
                         className="w-full py-3.5 px-6 rounded-lg bg-[#C4D600] text-black font-extrabold text-sm sm:text-base hover:bg-[#d2e500] hover:shadow-[0_0_25px_rgba(196,214,0,0.5)] transition-all cursor-pointer inline-flex items-center justify-center gap-2.5 shadow-xl hover:scale-102"
                       >
-                        <span>Inspecter le projet</span>
+                        <span>View Project Details</span>
                         <ArrowUpRight className="w-4 h-4" />
                       </button>
                     </div>
@@ -669,13 +722,13 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
         <div className="space-y-10 pt-8 border-t border-white/10">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#C4D600] font-mono font-bold">
-              Champs d'intervention & Expertise
+              Areas of Expertise & Focus
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-heading">
-              Une vision globale pour <span className="text-[#C4D600]">votre marque</span>
+              A Comprehensive Vision for <span className="text-[#C4D600]">Your Brand</span>
             </h2>
             <p className="text-gray-400 text-sm sm:text-base">
-              Du premier trait de crayon sur votre logo jusqu'à la livraison de vos supports imprimés et votre stratégie de contenu digitale.
+              From the initial logo sketch to final printed collateral and high-impact digital content strategy.
             </p>
           </div>
 
@@ -725,17 +778,17 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
         {/* ========================================================================= */}
         <div className="p-10 sm:p-14 rounded-lg bg-gradient-to-r from-[#1E1F26] to-[#141519] border border-white/10 text-center space-y-6">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-heading max-w-2xl mx-auto leading-snug tracking-tight">
-            Prêt à donner vie à l'identité visuelle de votre marque ?
+            Ready to bring your brand's visual identity to life?
           </h2>
           <p className="text-gray-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            De la création de votre logo à la confection de vos supports print et de vos contenus réseaux sociaux, échangeons sur vos objectifs.
+            From logo creation to premium print media and engaging social content, let’s discuss your vision.
           </p>
           <div>
             <button
               onClick={onOpenContact}
               className="btn-liquid-fill px-8 py-4 rounded-lg font-extrabold text-sm sm:text-base cursor-pointer inline-flex items-center gap-2.5 shadow-xl group"
             >
-              <span>Parlons-en dès aujourd'hui</span>
+              <span>Let's talk today</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
@@ -781,7 +834,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               {/* Header Info */}
               <div className="space-y-2 text-left">
                 <span className="text-xs text-[#C4D600] font-mono uppercase tracking-wider block">
-                  Client : {selectedGraphicProject.client} · {selectedGraphicProject.year}
+                  Client: {selectedGraphicProject.client} · {selectedGraphicProject.year}
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-heading leading-tight">
                   {selectedGraphicProject.title}
@@ -804,7 +857,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
               {/* Deliverables List */}
               <div className="space-y-3 text-left">
                 <h4 className="text-xs uppercase tracking-widest text-[#C4D600] font-mono font-bold">
-                  Livrables & Spécifications
+                  Deliverables & Specifications
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {selectedGraphicProject.deliverables.map((deliv, idx) => (
@@ -822,7 +875,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                   onClick={() => setSelectedGraphicProject(null)}
                   className="px-5 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors cursor-pointer"
                 >
-                  Fermer
+                  Close
                 </button>
                 <button
                   onClick={() => {
@@ -831,7 +884,7 @@ export const DesignerPage: React.FC<DesignerPageProps> = ({ onSelectProject, onO
                   }}
                   className="px-6 py-2.5 rounded-lg bg-[#C4D600] text-black font-extrabold text-xs hover:bg-[#d2e500] transition-colors cursor-pointer inline-flex items-center gap-1.5"
                 >
-                  <span>Commander un projet similaire</span>
+                  <span>Inquire About a Similar Project</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

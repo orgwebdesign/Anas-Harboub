@@ -16,8 +16,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   const { projects } = usePortfolio();
   const [selectedFilter, setSelectedFilter] = useState<string>(initialCategory);
 
-  const desktopFilterOptions = ['All', 'Web Design', 'Vibe No Code', 'Infographiste', 'UI/UX'];
-  const mobileFilterOptions = ['Web Design', 'Vibe No Code', 'Infographiste'];
+  const desktopFilterOptions = ['All', 'Web Design', 'Vibe No Code', 'Graphic Design', 'UI/UX'];
+  const mobileFilterOptions = ['Web Design', 'Vibe No Code', 'Graphic Design'];
 
   const isProjectInFilter = (project: Project, filterName: string) => {
     if (filterName === 'All') return true;
@@ -28,11 +28,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     if (f === 'vibe no code' || f === 'no vibe code' || f === 'no code') {
       return project.category === 'Vibe No Code' || project.tags.includes('Vibe No Code') || project.tags.includes('Framer');
     }
-    if (f === 'infographiste' || f === 'designer' || f === 'ui/ux') {
+    if (f === 'graphic design' || f === 'infographiste' || f === 'designer' || f === 'ui/ux') {
       return (
+        project.category === 'Graphic Design' ||
         project.category === 'Infographiste' ||
         (project.category as string) === 'Designer' ||
         project.category === 'UI/UX' ||
+        project.tags.includes('Graphic Design') ||
         project.tags.includes('Infographiste') ||
         project.tags.includes('Designer') ||
         project.tags.includes('UI/UX')

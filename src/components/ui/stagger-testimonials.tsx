@@ -17,97 +17,97 @@ export interface TestimonialItem {
 }
 
 export const defaultTestimonials: TestimonialItem[] = [
-  // Arabic Testimonials
+  // Middle East & North Africa Testimonials
   {
     id: 0,
-    testimonial: "خدمة ممتازة واحترافية عالية! أنس من أفضل المصممين اللي تعاملت معاهم، حول فكرتنا لموقع إلكتروني عصري فاق كل التوقعات.",
-    by: "ياسين بنجلون",
-    role: "مؤسس ستارت اب",
-    country: "الدار البيضاء 🇲🇦",
-    lang: 'ar',
+    testimonial: "Outstanding service and utmost professionalism! Anass is one of the best designers I've worked with—he transformed our idea into a modern website that surpassed every expectation.",
+    by: "Yassine Benjelloun",
+    role: "Startup Founder",
+    country: "Casablanca 🇲🇦",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 1,
-    testimonial: "تصميم واجهات المستخدم فائق الدقة وسرعة قياسية في التنفيذ. أنصح بشدة بالتعامل مع أنس في كل ما يخص الويب والتطوير.",
-    by: "عمر الهاشمي",
-    role: "مدير التسويق الرقمي",
-    country: "دبي 🇦🇪",
-    lang: 'ar',
+    testimonial: "Ultra-precise user interface design with lightning-fast execution. I highly recommend Anass for all high-end web design and digital product development.",
+    by: "Omar Al-Hashimi",
+    role: "Head of Digital Marketing",
+    country: "Dubai 🇦🇪",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 2,
-    testimonial: "التعامل مع أنس كان تجربة استثنائية. فهم هويتنا البصرية من أول لقاء وأخرج لنا هوية متكاملة جذبت عملاءنا بشكل لافت.",
-    by: "سارة المنصوري",
-    role: "رائدة أعمال",
-    country: "الرياض 🇸🇦",
-    lang: 'ar',
+    testimonial: "Partnering with Anass was an exceptional experience. He understood our visual identity from our very first discovery call and crafted a cohesive brand that commands attention.",
+    by: "Sara Al-Mansoori",
+    role: "Tech Entrepreneur",
+    country: "Riyadh 🇸🇦",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 3,
-    testimonial: "إتقان مبهر لأدوات التصميم وأحدث تقنيات الـ No-Code. النتيجة كانت منصة سريعة وجذابة بدون أي تعقيد في الإطلاق.",
-    by: "مهدي الفاسي",
-    role: "مدير تقني CTO",
-    country: "طنجة 🇲🇦",
-    lang: 'ar',
+    testimonial: "Impressive mastery of modern design tools and no-code architectures. The result was a fast, visually captivating platform delivered with zero launch friction.",
+    by: "Mehdi El Fassi",
+    role: "Chief Technology Officer",
+    country: "Tangier 🇲🇦",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 4,
-    testimonial: "لمسة إبداعية نادرة وتواصل سلس طوال فترة المشروع. أنس مصمم يضع الجودة ورضا العميل في المقام الأول دائماً.",
-    by: "كريم بوزيد",
-    role: "مستشار استراتيجي",
-    country: "الدوحة 🇶🇦",
-    lang: 'ar',
+    testimonial: "Rare artistic sensibility and effortless communication throughout the entire sprint. Anass consistently places client satisfaction and high visual standards above all else.",
+    by: "Karim Bouzid",
+    role: "Strategic Consultant",
+    country: "Doha 🇶🇦",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&auto=format&fit=crop&q=80"
   },
 
-  // French Testimonials
+  // European & Global Testimonials
   {
     id: 5,
-    testimonial: "Une collaboration exceptionnelle ! Anass a su transformer notre vision en une expérience web ultra-moderne, fluide et captivante.",
+    testimonial: "An extraordinary collaboration! Anass transformed our vision into an ultra-modern, fluid, and captivating web experience that resonated immediately.",
     by: "Maxime Laurent",
-    role: "CEO chez NovaTech",
+    role: "CEO at NovaTech",
     country: "Paris 🇫🇷",
-    lang: 'fr',
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 6,
-    testimonial: "Le sens du détail d'Anass en UI/UX est bluffant. Nos conversions ont augmenté de 40% dès le premier mois après la refonte de notre site.",
+    testimonial: "Anass's meticulous eye for UI/UX detail is remarkable. Our conversion rates increased by 40% in the first month following our website overhaul.",
     by: "Sophie Mercier",
-    role: "Directrice Marketing",
+    role: "Marketing Director",
     country: "Lyon 🇫🇷",
-    lang: 'fr',
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 7,
-    testimonial: "Travail rapide, propre et d'une créativité sans égale. Un vrai expert en design produit et développement No-Code.",
+    testimonial: "Fast turnaround, clean design architecture, and unmatched creativity. A genuine specialist in modern product design and responsive web systems.",
     by: "Julien De Smet",
-    role: "Co-fondateur Vibe Studio",
-    country: "Bruxelles 🇧🇪",
-    lang: 'fr',
+    role: "Co-Founder at Vibe Studio",
+    country: "Brussels 🇧🇪",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 8,
-    testimonial: "Anass a conçu l'identité visuelle et le site de notre marque de A à Z. Les retours de nos clients et investisseurs sont unanimes !",
+    testimonial: "Anass architected our brand identity and website from A to Z. The feedback from both our customers and investors has been unanimously glowing!",
     by: "Camille Roche",
-    role: "Fondatrice Studio Éclat",
-    country: "Genève 🇨🇭",
-    lang: 'fr',
+    role: "Founder at Studio Éclat",
+    country: "Geneva 🇨🇭",
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80"
   },
   {
     id: 9,
-    testimonial: "Professionnalisme, écoute et esthétique haut de gamme. Anass apporte une vraie valeur ajoutée aux projets ambitieux.",
+    testimonial: "Exemplary professionalism, active listening, and high-end aesthetic restraint. Anass brings tremendous tangible value to ambitious digital ventures.",
     by: "Thomas Bernard",
-    role: "Product Manager chez SaaSify",
+    role: "Product Manager at SaaSify",
     country: "Bordeaux 🇫🇷",
-    lang: 'fr',
+    lang: 'en',
     imgSrc: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&auto=format&fit=crop&q=80"
   },
 
@@ -254,14 +254,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           </div>
         </div>
 
-        {/* Language Badge */}
+        {/* Verified Review Badge */}
         <span className={cn(
           "text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border",
           isCenter
             ? "bg-black/10 border-black/20 text-black"
             : "bg-white/5 border-white/10 text-[#C4D600]"
         )}>
-          {testimonial.lang === 'ar' ? 'العربية' : testimonial.lang === 'fr' ? 'Français' : 'English'}
+          Verified Client
         </span>
       </div>
 

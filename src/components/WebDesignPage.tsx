@@ -63,14 +63,14 @@ export const WebDesignPage: React.FC<WebDesignPageProps> = ({ onSelectProject, o
         {/* Bottom Call to Action */}
         <div className="p-10 sm:p-14 rounded-lg bg-gradient-to-r from-[#1E1F26] to-[#141519] border border-white/10 text-center space-y-6">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white font-heading max-w-2xl mx-auto leading-snug tracking-tight">
-            Prêt à concevoir une expérience mémorable pour votre projet ?
+            Ready to craft a memorable digital experience for your project?
           </h2>
           <div>
             <button
               onClick={onOpenContact}
               className="btn-liquid-fill px-8 py-4 rounded-lg font-extrabold text-sm sm:text-base cursor-pointer inline-flex items-center gap-2.5 shadow-xl group"
             >
-              <span>Parlons-en dès aujourd'hui</span>
+              <span>Let's talk today</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </div>

@@ -20,11 +20,11 @@ export const fallbackPortrait = portraitImg;
 
 export const ANASS_BIO = {
   name: "Anass Harboub",
-  role: "UI/UX Designer, Web Designer & Infographiste",
+  role: "UI/UX Designer, Web Designer & Graphic Designer",
   location: "Morocco",
   tagline: "I create digital experiences that leave an impression.\nFrom intuitive interfaces to immersive websites, I blend UI/UX, motion, and AI to turn complex ideas into seamless reality.",
   heroQuote: "Designing clear, modern and memorable digital experiences with strong visual direction.",
-  heroBadge: "✦ UI/UX • Web Designer • Infographiste",
+  heroBadge: "✦ UI/UX • Web Designer • Graphic Designer",
   aboutHeadline: "Who is Anass Harboub?",
   aboutDescription: "I'm a multidisciplinary designer focused on UI/UX, web design and modern digital experiences. I combine visual design, interaction, no-code tools and AI workflows to turn ideas into polished products.",
   aboutExtended: "With a deep appreciation for typographic hierarchy, dark luxury aesthetics, and seamless user journeys, I bridge the gap between creative visual direction and production-ready code. Whether crafting bespoke web applications or rapid no-code AI prototypes, every detail is engineered for clarity, emotion, and performance.",
@@ -36,7 +36,7 @@ export const ANASS_BIO = {
   ],
   socials: {
     behance: "https://behance.net",
-    dribbble: "https://dribbble.net",
+    dribbble: "https://dribbble.com",
     linkedin: "https://linkedin.com",
     instagram: "https://instagram.com",
     whatsapp: "https://wa.me/212698855924",
@@ -419,12 +419,12 @@ export const PROJECTS_DATA: Project[] = [
     id: "p3",
     title: "Orbit Design System & Component Library",
     client: "Orbit Digital Ecosystems",
-    category: "Infographiste",
+    category: "Graphic Design",
     year: "2025",
     description: "Multi-brand dark theme design system with 1,200+ Figma components and token architecture.",
     longDescription: "A unified design system engineered for a suite of digital products. Features comprehensive typography scales, WCAG-compliant color tokens, dark mode elevation guidelines, and modular React component mappings.",
     imageUrl: designSystemImg,
-    tags: ["Infographiste", "Design System", "Figma", "Tokens", "UI/UX"],
+    tags: ["Graphic Design", "Design System", "Figma", "Tokens", "UI/UX"],
     metrics: [
       { label: "Components Built", value: "1,200+" },
       { label: "Team Efficiency", value: "+3.5x" },
@@ -527,8 +527,8 @@ export const DESIGN_PILLARS = [
     description: "Leveraging cutting-edge AI generators and no-code publication engines (Framer, Webflow, Cursor) to transform creative design concepts into production-ready live web products in days."
   },
   {
-    title: "Infographiste",
-    subtitle: "Création Graphique & Expériences Visuelles",
-    description: "Conception graphique complète: identité visuelle, charte graphique, branding, supports de communication web et print, systèmes de design et direction artistique."
+    title: "Graphic Design",
+    subtitle: "Visual Identity & Brand Experiences",
+    description: "Complete visual design: brand identity, brand guidelines, logo systems, web and print collateral, design systems, and art direction."
   }
 ];

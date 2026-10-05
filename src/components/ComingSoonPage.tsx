@@ -44,6 +44,9 @@ interface FloatingIcon {
   delay: number;
 }
 
+const renderIcon = (IconComponent: any, className: string) =>
+  React.createElement(IconComponent, { className });
+
 export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
   type,
   onOpenContact,
@@ -56,7 +59,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'wordpress',
       label: 'WordPress',
-      icon: <SiWordpress className="w-7 h-7 sm:w-8 sm:h-8 text-[#21759B]" />,
+      icon: renderIcon(SiWordpress, 'w-7 h-7 sm:w-8 sm:h-8 text-[#21759B]'),
       positionClass: 'top-16 sm:top-20 left-[6%] sm:left-[10%]',
       duration: 6.2,
       delay: 0,
@@ -64,7 +67,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'vscode',
       label: 'VS Code',
-      icon: <TbBrandVscode className="w-7 h-7 sm:w-8 sm:h-8 text-[#007ACC]" />,
+      icon: renderIcon(TbBrandVscode, 'w-7 h-7 sm:w-8 sm:h-8 text-[#007ACC]'),
       positionClass: 'top-20 sm:top-24 right-[6%] sm:right-[12%]',
       duration: 5.8,
       delay: 0.6,
@@ -72,7 +75,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'react',
       label: 'React',
-      icon: <SiReact className="w-7 h-7 sm:w-8 sm:h-8 text-[#61DAFB]" />,
+      icon: renderIcon(SiReact, 'w-7 h-7 sm:w-8 sm:h-8 text-[#61DAFB]'),
       positionClass: 'top-[42%] left-[4%] sm:left-[8%]',
       duration: 6.8,
       delay: 1.2,
@@ -80,7 +83,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'typescript',
       label: 'TypeScript',
-      icon: <SiTypescript className="w-7 h-7 sm:w-8 sm:h-8 text-[#3178C6]" />,
+      icon: renderIcon(SiTypescript, 'w-7 h-7 sm:w-8 sm:h-8 text-[#3178C6]'),
       positionClass: 'bottom-28 sm:bottom-32 left-[8%] sm:left-[14%]',
       duration: 6.0,
       delay: 0.8,
@@ -88,7 +91,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'nextjs',
       label: 'Next.js',
-      icon: <SiNextdotjs className="w-7 h-7 sm:w-8 sm:h-8 text-white" />,
+      icon: renderIcon(SiNextdotjs, 'w-7 h-7 sm:w-8 sm:h-8 text-white'),
       positionClass: 'top-[40%] right-[5%] sm:right-[9%]',
       duration: 7.2,
       delay: 1.6,
@@ -96,7 +99,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'tailwind',
       label: 'Tailwind CSS',
-      icon: <SiTailwindcss className="w-7 h-7 sm:w-8 sm:h-8 text-[#38BDF8]" />,
+      icon: renderIcon(SiTailwindcss, 'w-7 h-7 sm:w-8 sm:h-8 text-[#38BDF8]'),
       positionClass: 'bottom-24 sm:bottom-28 right-[8%] sm:right-[14%]',
       duration: 6.4,
       delay: 0.4,
@@ -104,7 +107,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'nodejs',
       label: 'Node.js',
-      icon: <SiNodedotjs className="w-6 h-6 sm:w-7 sm:h-7 text-[#5FA04E]" />,
+      icon: renderIcon(SiNodedotjs, 'w-6 h-6 sm:w-7 sm:h-7 text-[#5FA04E]'),
       positionClass: 'top-14 left-[46%] -translate-x-1/2 hidden md:block',
       duration: 5.5,
       delay: 1.8,
@@ -112,7 +115,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'git',
       label: 'Git',
-      icon: <SiGit className="w-6 h-6 sm:w-7 sm:h-7 text-[#F05032]" />,
+      icon: renderIcon(SiGit, 'w-6 h-6 sm:w-7 sm:h-7 text-[#F05032]'),
       positionClass: 'bottom-16 left-[30%] hidden sm:block',
       duration: 6.6,
       delay: 1.0,
@@ -172,7 +175,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'c4d',
       label: 'Cinema 4D',
-      icon: <SiCinema4D className="w-7 h-7 sm:w-8 sm:h-8 text-[#0066FF]" />,
+      icon: renderIcon(SiCinema4D, 'w-7 h-7 sm:w-8 sm:h-8 text-[#0066FF]'),
       positionClass: 'top-[42%] left-[4%] sm:left-[8%]',
       duration: 6.9,
       delay: 1.4,
@@ -180,7 +183,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'blender',
       label: 'Blender 3D',
-      icon: <SiBlender className="w-7 h-7 sm:w-8 sm:h-8 text-[#E87D0D]" />,
+      icon: renderIcon(SiBlender, 'w-7 h-7 sm:w-8 sm:h-8 text-[#E87D0D]'),
       positionClass: 'bottom-28 sm:bottom-32 left-[8%] sm:left-[14%]',
       duration: 5.9,
       delay: 0.5,
@@ -188,7 +191,7 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
     {
       id: 'figma',
       label: 'Figma',
-      icon: <SiFigma className="w-7 h-7 sm:w-8 sm:h-8 text-[#A259FF]" />,
+      icon: renderIcon(SiFigma, 'w-7 h-7 sm:w-8 sm:h-8 text-[#A259FF]'),
       positionClass: 'top-[40%] right-[5%] sm:right-[9%]',
       duration: 7.1,
       delay: 1.7,
@@ -301,15 +304,10 @@ export const ComingSoonPage: React.FC<ComingSoonPageProps> = ({
           <AnassLogo height={80} className="relative z-10 transition-transform duration-500 group-hover:scale-105" />
         </div>
 
-        {/* Coming Soon Pill with Lime Ping */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#C4D600]/10 border border-[#C4D600]/30 text-[#C4D600] font-mono text-xs sm:text-sm font-bold tracking-widest uppercase mb-6 shadow-[0_0_25px_rgba(196,214,0,0.25)]">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C4D600] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C4D600]" />
-          </span>
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Coming Soon</span>
-        </div>
+        {/* Simple Coming Soon Text */}
+        <span className="text-[#C4D600] font-mono text-xs sm:text-sm font-bold tracking-widest uppercase mb-4">
+          Coming Soon
+        </span>
 
         {/* Dynamic Category Title */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold font-heading text-white tracking-tight leading-[1.08] mb-6">
